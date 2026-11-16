@@ -35,8 +35,8 @@ projeto(slug="canteiros-urbanos", area="comercio", manual=True, nome="Canteiros 
 projeto(slug="emede", area="comercio", nome="EMEDE",
         resumo="Loja de moda integrada ao Bling, Mercado Pago e Melhor Envio.",
         tec="Supabase · Bling · Mercado Pago · Melhor Envio",
-        lead="Especificação e arquitetura da loja virtual da EMEDE, marca de moda feminina fitness e casual. O estoque vem do Bling, o pagamento é feito pelo Mercado Pago e o frete pelo Melhor Envio.",
-        ficha=[("Cliente", "EMEDE"), ("Situação", "Especificada, banco testado"), ("Integrações", "Bling, Mercado Pago, Melhor Envio"), ("Publicação", "Cloudflare Pages")],
+        lead="Loja virtual da EMEDE, marca de moda feminina fitness e casual. O estoque vem do Bling, o pagamento é feito pelo Mercado Pago e o frete pelo Melhor Envio.",
+        ficha=[("Cliente", "EMEDE"), ("Endereço", '<a href="https://useemede.com.br/">useemede.com.br</a>'), ("Integrações", "Bling, Mercado Pago, Melhor Envio"), ("Publicação", "Cloudflare Pages")],
         numeros=[("3.743", "cadastros ativos no Bling, 393 produtos e 3.326 variações"), ("42", "regras de negócio"), ("28", "requisitos funcionais"), ("29", "cenários de segurança testados no banco")],
         blocos=[
             ("Levantamento", M.painel("", '<div class="kpis"><div class="kpi"><strong class="num">41</strong><span>pedidos em 7 dias</span></div><div class="kpi"><strong class="num">R$ 283,48</strong><span>ticket médio</span></div><div class="kpi"><strong class="num">2.335</strong><span>peças em estoque</span></div><div class="kpi"><strong class="num">12</strong><span>grafias diferentes de cor e tamanho</span></div></div>'), "Dados lidos do Bling antes do desenho da loja."),
@@ -52,7 +52,8 @@ projeto(slug="emede", area="comercio", nome="EMEDE",
                                 ("Protótipo", "Vitrine e card de produto com seleção de cor e tamanho."),
                                 ("Operação", "Roteiros de publicação e varredura de segredos no repositório.")])),
         ],
-        stack=["HTML, CSS e JavaScript", "Cloudflare Pages", "Supabase", "Edge Functions", "pg_cron", "Bling API v3", "Mercado Pago", "Melhor Envio", "pgTAP", "Playwright"])
+        stack=["HTML, CSS e JavaScript", "Cloudflare Pages", "Supabase", "Edge Functions", "pg_cron", "Bling API v3", "Mercado Pago", "Melhor Envio", "pgTAP", "Playwright"],
+        link=("Abrir a loja", "https://useemede.com.br/"))
 
 projeto(slug="curae", area="comercio", nome="CurAê",
         resumo="Vitrine e compra coletiva de queijos artesanais, com revenda, rateio de frete e Pix.",
