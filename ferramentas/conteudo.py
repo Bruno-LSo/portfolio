@@ -508,3 +508,29 @@ def _carregar_casos():
 
 
 _carregar_casos()
+
+
+# Ordem dos projetos dentro da área (os que não aparecem aqui ficam no fim, na ordem de cadastro).
+ORDEM = {
+    "gestao": ["plataforma-inspetores", "pericias", "conselheiros", "programa-mulher", "planner-grii", "planner",
+               "advinhae", "homecook", "forensic-bones"],
+    "dados": ["painel-confea", "cozinhas", "formados-registrados", "mapa-profissoes", "acervo-tecnico", "caged",
+              "toshi-caged", "analises-confea", "atendimento-creasp", "renda-real", "coleta-inep", "cnpj-rfb",
+              "csv-explorer"],
+    "modelos": ["risco-cardiovascular", "previsao-cancelamento-clientes", "previsao-pedidos-taxi",
+                "classificacao-resenhas-filmes", "estimativa-idade-imagens", "estatistica-avc",
+                "painel-anuncios-veiculos"],
+}
+
+
+def _ordenar():
+    pos_area = {a["id"]: i for i, a in enumerate(AREAS)}
+    cad = {id(p): i for i, p in enumerate(P)}
+
+    def chave(p):
+        lista = ORDEM.get(p["area"], [])
+        return (pos_area[p["area"]], lista.index(p["slug"]) if p["slug"] in lista else len(lista), cad[id(p)])
+    P.sort(key=chave)
+
+
+_ordenar()

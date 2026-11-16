@@ -304,3 +304,9 @@ span.navp__item{background:none;box-shadow:none}
 .diagrama svg{width:100%;height:auto}
 .diagrama figcaption{font-size:13.5px;color:var(--texto-suave);margin-top:12px}
 .colunas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:18px;align-items:start}
+/* página inicial com 7 áreas: 4 na primeira linha, 3 na segunda */
+.areas{grid-template-columns:repeat(12,minmax(0,1fr))}
+.areas > .area{grid-column:span 3}
+.areas > .area:nth-child(n+5){grid-column:span 4}
+@media (max-width:900px){.areas > .area,.areas > .area:nth-child(n+5){grid-column:span 6}.areas > .area:last-child:nth-child(odd){grid-column:span 12}}
+@media (max-width:560px){.areas > .area,.areas > .area:nth-child(n+5),.areas > .area:last-child:nth-child(odd){grid-column:span 12}}

@@ -22,10 +22,46 @@
 <section class="caso-hero"><div class="wrap">
   <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../areas/produtos.html">Aplicativos, jogos e automação</a></p>
   <h1 class="entra" style="--o:1">Núcleo de dados</h1>
-  <p class="lead entra" style="--o:2">Pacote Python usado pelos demais projetos para ler arquivos de dados do disco ou baixá-los de um armazenamento central, idênticos ao original, e para guardar novos arquivos com catálogo.</p>
-  <dl class="ficha entra" style="--o:3"><div><dt>Tipo</dt><dd>Infraestrutura interna</dd></div><div><dt>Armazenamento</dt><dd>Supabase Storage</dd></div><div><dt>Conferência</dt><dd>sha1</dd></div><div><dt>Compressão</dt><dd>zstd</dd></div></dl>
+  <p class="lead entra" style="--o:2">Pacote Python usado pelos demais projetos para abrir arquivos de dados. Se o arquivo está no disco, usa o do disco. Se não está, baixa a cópia guardada e confere que ela é idêntica ao original.</p>
+  <dl class="ficha entra" style="--o:3"><div><dt>Tipo</dt><dd>Infraestrutura interna</dd></div><div><dt>Armazenamento</dt><dd>Supabase Storage, 2 buckets privados</dd></div><div><dt>Conferência</dt><dd>sha1 no envio e em cada download</dd></div><div><dt>Compressão</dt><dd>zstd nível 19 para texto</dd></div></dl>
 </div></section>
-<section class="bloco"><div class="wrap bloco__grid"><div><h2>Tecnologias</h2></div><div><div class="stack"><span>Python</span><span>Supabase</span><span>PostgreSQL</span><span>zstd</span></div></div></div></section>
+<section class="bloco"><div class="wrap"><div class="kpis revela"><div class="kpi"><strong class="num">6</strong><span>funções de dados</span></div><div class="kpi"><strong class="num">4</strong><span>funções de credenciais</span></div><div class="kpi"><strong class="num">7</strong><span>tipos de arquivo público baixados da fonte</span></div><div class="kpi"><strong class="num">45 MB</strong><span>limite de cada parte</span></div></div></div></section>
+<section class="bloco"><div class="wrap"><div class="bloco__cab"><h2>Como o arquivo é encontrado</h2></div><div class="revela"><div class="fg"><div class="fg__nivel"><b class="fg__rot">Pedido</b><div class="fg__caixas"><div class="fg__caixa"><strong>nd.caminho(ref)</strong><span>caminho original ou só o nome</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i></div><div class="fg__nivel"><b class="fg__rot">Fonte pública?</b><div class="fg__caixas"><div class="fg__caixa"><strong>Sim</strong><span>baixa o zip da fonte oficial, confere ETag, data e tamanho</span></div><div class="fg__caixa"><strong>Não</strong><span>segue</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i><span>não</span></div><div class="fg__nivel"><b class="fg__rot">No disco?</b><div class="fg__caixas"><div class="fg__caixa"><strong>Sim</strong><span>usa o arquivo do disco</span></div><div class="fg__caixa"><strong>Não</strong><span>procura no catálogo</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i><span>não</span></div><div class="fg__nivel"><b class="fg__rot">Catálogo</b><div class="fg__caixas"><div class="fg__caixa"><strong>Baixa para o cache</strong><span>pasta local do usuário</span></div><div class="fg__caixa"><strong>Descomprime</strong><span>se for texto</span></div><div class="fg__caixa"><strong>Confere sha1</strong><span>idêntico byte a byte</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i></div><div class="fg__nivel"><b class="fg__rot">Resultado</b><div class="fg__caixas"><div class="fg__caixa"><strong>Caminho local</strong><span>o read_csv do projeto não muda</span></div></div></div></div><p class="nota">Sem conexão, a cópia pública já baixada é usada, com aviso. Shapefile traz junto .dbf, .shx, .prj e .cpg.</p></div></div></section>
+<section class="bloco"><div class="wrap"><div class="bloco__cab"><h2>Como o arquivo é guardado</h2></div><div class="revela"><figure class="diagrama"><svg viewBox="0 0 960 300" role="img" aria-label="Como o núcleo de dados guarda um arquivo">
+<defs><marker id="nd-seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#4FD1D4"/></marker></defs>
+<g font-family="Sora" text-anchor="middle">
+<rect x="20" y="100" width="170" height="90" rx="10" fill="#162A37" stroke="#4FB3E8"/>
+<text x="105" y="135" fill="#EAF1F6" font-size="15">Arquivo original</text>
+<text x="105" y="160" fill="#A9B8C6" font-size="13">.csv .xlsx .pdf .shp</text>
+<rect x="250" y="100" width="170" height="90" rx="10" fill="#162A37" stroke="#4FD1D4"/>
+<text x="335" y="135" fill="#EAF1F6" font-size="15">sha1 do conteúdo</text>
+<text x="335" y="160" fill="#A9B8C6" font-size="13">vira o nome do objeto</text>
+<rect x="480" y="30" width="200" height="80" rx="10" fill="#162A37" stroke="#FFD25E"/>
+<text x="580" y="63" fill="#EAF1F6" font-size="15">Texto: zstd nível 19</text>
+<text x="580" y="88" fill="#A9B8C6" font-size="13">CSV cerca de 30x menor</text>
+<rect x="480" y="180" width="200" height="80" rx="10" fill="#162A37" stroke="#FFD25E"/>
+<text x="580" y="213" fill="#EAF1F6" font-size="15">Binário: como está</text>
+<text x="580" y="238" fill="#A9B8C6" font-size="13">xlsx, docx, imagem, zip</text>
+<rect x="740" y="30" width="200" height="80" rx="10" fill="#162A37" stroke="#5CC98A"/>
+<text x="840" y="63" fill="#EAF1F6" font-size="15">Bucket dados</text>
+<text x="840" y="88" fill="#A9B8C6" font-size="13">privado</text>
+<rect x="740" y="180" width="200" height="80" rx="10" fill="#162A37" stroke="#F08A7E"/>
+<text x="840" y="213" fill="#EAF1F6" font-size="15">Bucket restrito</text>
+<text x="840" y="238" fill="#A9B8C6" font-size="13">dados pessoais</text>
+<path d="M190 145 H247" stroke="#4FD1D4" stroke-width="2" marker-end="url(#nd-seta)"/>
+<path d="M420 135 L477 80" stroke="#4FD1D4" stroke-width="2" marker-end="url(#nd-seta)"/>
+<path d="M420 155 L477 210" stroke="#4FD1D4" stroke-width="2" marker-end="url(#nd-seta)"/>
+<path d="M680 70 H737" stroke="#4FD1D4" stroke-width="2" marker-end="url(#nd-seta)"/>
+<path d="M680 220 H737" stroke="#4FD1D4" stroke-width="2" marker-end="url(#nd-seta)"/>
+<path d="M680 95 L737 195" stroke="#4FD1D4" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#nd-seta)"/>
+<path d="M680 195 L737 95" stroke="#4FD1D4" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#nd-seta)"/>
+
+<text x="480" y="292" fill="#A9B8C6" font-size="13">Acima de 45 MB, o objeto é dividido em partes. Com pessoal=True, vai para o bucket restrito.</text>
+</g></svg><figcaption>O mesmo conteúdo em duas pastas é guardado uma vez só, porque o nome do objeto é o sha1.</figcaption></figure></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Funções</h2></div><div class="revela"><ul class="lista"><li><strong>caminho(ref)</strong>Devolve um caminho local, do disco ou do cache.</li><li><strong>ler(ref)</strong>O mesmo, já lido com pandas pela extensão.</li><li><strong>guardar(arquivo)</strong>Envia e registra no catálogo, com os repositórios que leem o arquivo.</li><li><strong>glob(padrão)</strong>Junta o que está no disco com o que está no catálogo.</li><li><strong>existe(ref)</strong>Substitui os.path.exists para arquivos de dados.</li><li><strong>listar(filtro)</strong>Consulta o catálogo.</li><li><strong>credencial, segredo, preparar_env, preparar_arquivo</strong>Recriam .env e arquivos de chave a partir do cofre, sem guardar valor no repositório.</li></ul></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Segurança</h2></div><div class="revela"><ul class="lista"><li><strong>Buckets privados</strong>Sem URL pública.</li><li><strong>Catálogo fechado</strong>RLS ligado e forçado, sem política. Só a chave de serviço lê e escreve.</li><li><strong>Teste com chave pública</strong>Catálogo, arquivos e segredos respondem bloqueado (401).</li><li><strong>Uso</strong>Só em scripts locais. Nunca em página ou aplicativo no navegador.</li></ul></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Teste antes de apagar</h2></div><div class="revela"><div class="texto"><p>A variável NUCLEO_DADOS_SEM_DISCO=1 faz o pacote ignorar o disco para tudo que está no catálogo. O projeto roda como se a pasta original já tivesse sido apagada.</p></div></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Tecnologias</h2></div><div><div class="stack"><span>Python</span><span>Supabase Storage</span><span>PostgreSQL</span><span>Supabase Vault</span><span>zstd</span></div></div></div></section>
 <nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><a class="navp__item navp__ant" href="../projetos/alien-crue.html"><small>Anterior</small><span>GXxT</span></a><a class="navp__item navp__sum" href="../areas/produtos.html"><small>Sumário</small><span>Aplicativos, jogos e automação</span></a><a class="navp__item navp__prox" href="../projetos/transcritor.html"><small>Próximo</small><span>Transcritor de áudio</span></a></div></nav>
 </main>
 

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel de anúncios de veículos · HoldUp</title>
+<meta name="description" content="Aplicativo web que gera histogramas e gráficos de dispersão de 51.525 anúncios de carros usados.">
+<meta name="theme-color" content="#0B1820">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32px.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/css/portfolio.css">
+<style>:root{--acento:#F08A7E}</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo__in">
+  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio</span></a>
+  <nav class="nav" aria-label="Áreas"><a href="../areas/comercio.html">Comércio</a><a href="../areas/campo.html">Território</a><a href="../areas/gestao.html">Sistemas</a><a href="../areas/dados.html">Dados</a><a href="../areas/saude.html">Saúde</a><a href="../areas/modelos.html" aria-current="page">Modelos</a><a href="../areas/produtos.html">Aplicativos</a></nav>
+</div></header>
+<main id="conteudo">
+<section class="caso-hero"><div class="wrap">
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../areas/modelos.html">Modelos preditivos e estatística</a></p>
+  <h1 class="entra" style="--o:1">Painel de anúncios de veículos</h1>
+  <p class="lead entra" style="--o:2">Aplicativo web para explorar uma base de 51.525 anúncios de carros usados nos Estados Unidos. A pessoa escolhe a coluna e o aplicativo desenha o histograma ou o gráfico de dispersão.</p>
+  <dl class="ficha entra" style="--o:3"><div><dt>Contexto</dt><dd>Bootcamp de Ciência de Dados, TripleTen</dd></div><div><dt>Dados</dt><dd>51.525 anúncios, 13 colunas, maio/2018 a abril/2019</dd></div><div><dt>Aplicativo</dt><dd>Streamlit publicado no Render</dd></div><div><dt>Código</dt><dd><a href="https://github.com/Bruno-LSo/vehicles_us_TripleTen" target="_blank" rel="noopener noreferrer">github.com/Bruno-LSo/vehicles_us_TripleTen</a></dd></div></dl>
+</div></section>
+<section class="bloco"><div class="wrap"><div class="kpis revela"><div class="kpi"><strong class="num">51.525</strong><span>anúncios de carros usados</span></div><div class="kpi"><strong class="num">13</strong><span>colunas: preço, ano, modelo, estado, quilometragem e outras</span></div><div class="kpi"><strong class="num">US$ 9.000</strong><span>preço mediano dos anúncios</span></div><div class="kpi"><strong class="num">3</strong><span>gráficos no aplicativo: 2 histogramas e 1 dispersão</span></div></div></div></section>
+<section class="bloco"><div class="wrap"><div class="bloco__cab"><h2>Telas</h2><p>Aplicativo do repositório rodado localmente, com a base pública do projeto.</p></div><div class="revela"><div class="telas"><figure><a href="../assets/telas/painel-anuncios-veiculos/02-histograma.webp" data-ampliar><img src="../assets/telas/painel-anuncios-veiculos/02-histograma.webp" alt="Botão &quot;Criar histograma&quot;: distribuição da quilometragem (odometer)." loading="lazy"></a><figcaption>Botão "Criar histograma": distribuição da quilometragem (odometer).</figcaption></figure><figure><a href="../assets/telas/painel-anuncios-veiculos/03-histograma-coluna.webp" data-ampliar><img src="../assets/telas/painel-anuncios-veiculos/03-histograma-coluna.webp" alt="Caixa de seleção e escolha da coluna: histograma do ano do modelo." loading="lazy"></a><figcaption>Caixa de seleção e escolha da coluna: histograma do ano do modelo.</figcaption></figure><figure><a href="../assets/telas/painel-anuncios-veiculos/04-dispersao.webp" data-ampliar><img src="../assets/telas/painel-anuncios-veiculos/04-dispersao.webp" alt="Gráfico de dispersão com eixos escolhidos: quilometragem contra preço." loading="lazy"></a><figcaption>Gráfico de dispersão com eixos escolhidos: quilometragem contra preço.</figcaption></figure></div></div></div></section>
+<section class="bloco"><div class="wrap"><div class="bloco__cab"><h2>Fluxo da tela</h2></div><div class="revela"><div class="fg"><div class="fg__nivel"><b class="fg__rot">Entrada</b><div class="fg__caixas"><div class="fg__caixa"><strong>Página única</strong></div></div></div><div class="fg__seta" aria-hidden="true"><i></i></div><div class="fg__nivel"><b class="fg__rot">Controles</b><div class="fg__caixas"><div class="fg__caixa"><strong>Botão</strong><span>histograma da quilometragem</span></div><div class="fg__caixa"><strong>Caixa 1</strong><span>histograma de qualquer coluna</span></div><div class="fg__caixa"><strong>Caixa 2</strong><span>dispersão entre duas colunas</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i><span>escolha</span></div><div class="fg__nivel"><b class="fg__rot">Seleção</b><div class="fg__caixas"><div class="fg__caixa"><strong>Coluna</strong><span>1 das 13</span></div><div class="fg__caixa"><strong>Eixo X e eixo Y</strong><span>2 das 13</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i><span>desenha</span></div><div class="fg__nivel"><b class="fg__rot">Saída</b><div class="fg__caixas"><div class="fg__caixa"><strong>Gráfico Plotly</strong><span>zoom, filtro e download em PNG</span></div></div></div></div></div></div></section>
+<section class="bloco"><div class="wrap"><div class="bloco__cab"><h2>Arquitetura</h2></div><div class="revela"><figure class="diagrama"><svg viewBox="0 0 960 220" role="img" aria-label="Caminho do dado até o gráfico no aplicativo">
+<defs><marker id="veic-seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#4FD1D4"/></marker></defs>
+<rect x="10" y="60" width="190" height="90" rx="12" fill="#162A37" stroke="#4FD1D4"/>
+<text x="105" y="98" fill="#EAF1F6" font-family="Sora" font-size="14" text-anchor="middle">vehicles_us.csv</text>
+<text x="105" y="124" fill="#A9B8C6" font-family="JetBrains Mono" font-size="13" text-anchor="middle">51.525 anúncios</text>
+<path d="M200 105 H250" stroke="#4FD1D4" stroke-width="2" marker-end="url(#veic-seta)"/>
+<rect x="250" y="60" width="190" height="90" rx="12" fill="#162A37" stroke="#4FB3E8"/>
+<text x="345" y="98" fill="#EAF1F6" font-family="Sora" font-size="14" text-anchor="middle">pandas</text>
+<text x="345" y="124" fill="#A9B8C6" font-family="Sora" font-size="13" text-anchor="middle">leitura na abertura</text>
+<path d="M440 105 H490" stroke="#4FD1D4" stroke-width="2" marker-end="url(#veic-seta)"/>
+<rect x="490" y="60" width="200" height="90" rx="12" fill="#162A37" stroke="#FFD25E"/>
+<text x="590" y="98" fill="#EAF1F6" font-family="Sora" font-size="14" text-anchor="middle">Streamlit</text>
+<text x="590" y="124" fill="#A9B8C6" font-family="Sora" font-size="13" text-anchor="middle">botão, caixas, seletores</text>
+<path d="M690 105 H740" stroke="#4FD1D4" stroke-width="2" marker-end="url(#veic-seta)"/>
+<rect x="740" y="60" width="200" height="90" rx="12" fill="#162A37" stroke="#F08A7E"/>
+<text x="840" y="98" fill="#EAF1F6" font-family="Sora" font-size="14" text-anchor="middle">Plotly Express</text>
+<text x="840" y="124" fill="#A9B8C6" font-family="Sora" font-size="13" text-anchor="middle">gráfico interativo</text>
+<text x="10" y="195" fill="#A9B8C6" font-family="Sora" font-size="13">Publicado no Render como serviço web. O arquivo de configuração fixa a porta 10000 e o modo sem janela.</text>
+</svg><figcaption>Um arquivo Python de 57 linhas, sem banco de dados.</figcaption></figure></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Dados</h2></div><div class="revela"><ul class="lista"><li><strong>Colunas</strong>preço, ano do modelo, modelo, estado, cilindros, combustível, quilometragem, câmbio, tipo, cor, tração 4x4, data e dias no ar.</li><li><strong>Período</strong>Anúncios publicados de 01/05/2018 a 19/04/2019.</li><li><strong>Ausentes</strong>tração 4x4 em 25.953 linhas, cor em 9.267, quilometragem em 7.892, cilindros em 5.260 e ano em 3.619.</li><li><strong>Tipos</strong>SUV (12.405), caminhonete truck (12.353) e sedã (12.154) somam 71,6% dos anúncios.</li></ul></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Preço mediano por estado do carro</h2></div><div class="revela"><figure class="grafico"><p class="grafico__tit">Preço mediano em US$</p><div data-barras='{&quot;itens&quot;: [{&quot;rotulo&quot;: &quot;Novo&quot;, &quot;valor&quot;: 21999, &quot;destaque&quot;: true}, {&quot;rotulo&quot;: &quot;Como novo&quot;, &quot;valor&quot;: 13995, &quot;destaque&quot;: false}, {&quot;rotulo&quot;: &quot;Excelente&quot;, &quot;valor&quot;: 10495, &quot;destaque&quot;: false}, {&quot;rotulo&quot;: &quot;Bom&quot;, &quot;valor&quot;: 7900, &quot;destaque&quot;: false}, {&quot;rotulo&quot;: &quot;Razoável&quot;, &quot;valor&quot;: 2500, &quot;destaque&quot;: false}, {&quot;rotulo&quot;: &quot;Sucata&quot;, &quot;valor&quot;: 2500, &quot;destaque&quot;: false}], &quot;titulo&quot;: &quot;Preço mediano em US$&quot;, &quot;casas&quot;: 0, &quot;sufixo&quot;: &quot;&quot;}'></div><p class="nota">Calculado sobre o vehicles_us.csv do repositório. Novo: 143 anúncios; excelente: 24.773.</p></figure></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Achados</h2></div><div class="revela"><div class="achados"><div class="achado"><strong class="num">0,59</strong><p>correlação de Spearman entre preço e ano do modelo: carro mais novo, preço maior.</p></div><div class="achado"><strong class="num">−0,48</strong><p>correlação de Spearman entre preço e quilometragem.</p></div><div class="achado"><strong class="num">0,00</strong><p>correlação entre preço e dias no ar: o preço não muda o tempo do anúncio.</p></div><div class="achado"><strong class="num">990.000</strong><p>milhas é a maior quilometragem. Valores extremos pedem limpeza antes de modelar.</p></div></div></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Limites</h2></div><div class="revela"><ul class="lista"><li><strong>Exploração</strong>O aplicativo mostra a base sem limpeza. Valores ausentes e extremos entram nos gráficos.</li><li><strong>Sem modelo</strong>O projeto não estima preço. É uma etapa de análise e publicação.</li><li><strong>Hospedagem</strong>O endereço no Render não respondeu na conferência de 16/11/2026.</li></ul></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Tecnologias</h2></div><div><div class="stack"><span>Python</span><span>pandas</span><span>Streamlit</span><span>Plotly Express</span><span>Render</span><span>Git</span></div><p style="margin-top:22px"><a class="btn btn--mini btn--linha" href="https://github.com/Bruno-LSo/vehicles_us_TripleTen" rel="noopener noreferrer" target="_blank">Ver o código <span class="seta" aria-hidden="true">→</span></a></p></div></div></section>
+<nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><a class="navp__item navp__ant" href="../projetos/estatistica-avc.html"><small>Anterior</small><span>Estrutura de saúde e letalidade do AVC</span></a><a class="navp__item navp__sum" href="../areas/modelos.html"><small>Sumário</small><span>Modelos preditivos e estatística</span></a><span class="navp__item navp__prox" aria-hidden="true"></span></div></nav>
+</main>
+
+<footer class="rodape"><div class="wrap rodape__in">
+  <img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
+  <p>HoldUp · <a href="https://holdupsolucoes.com.br/" target="_blank" rel="noopener noreferrer">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+</div></footer>
+<script src="../assets/js/graficos.js"></script>
+<script src="../assets/js/mosaico.js"></script>
+<script src="../assets/js/telas.js"></script>
+
+</body>
+</html>

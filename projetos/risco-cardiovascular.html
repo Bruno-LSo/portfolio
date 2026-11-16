@@ -39,20 +39,7 @@
   </div>
 </div></section>
 
-<section class="bloco"><div class="wrap bloco__grid">
-  <div><h2>Etapas</h2></div>
-  <div class="revela">
-    <div class="fluxo">
-      <div><b>01 · dados</b><h4>Base de 425.195 pacientes</h4><p>Demografia, fatores de risco e medidas clínicas. Conferência de nulos e de valores codificados como ausentes.</p></div>
-      <div><b>02 · recorte</b><h4>Acima de 55 anos</h4><p>Ficam 125.335 registros (29,5%) e 10 variáveis, sem identificador nem tratamento.</p></div>
-      <div><b>03 · preparo</b><h4>Codificação e padronização</h4><p>Label e one-hot encoding nas categóricas, padronização das contínuas, divisão 70/30 estratificada.</p></div>
-      <div><b>04 · modelos</b><h4>Cinco algoritmos</h4><p>Busca de hiperparâmetros com RandomizedSearchCV nos quatro modelos de árvores; TabPFN direto, sem ajuste.</p></div>
-      <div><b>05 · seleção</b><h4>Boruta</h4><p>De 12 colunas, 4 confirmadas como relevantes. Modelo refeito só com elas para comparar.</p></div>
-      <div><b>06 · explicação</b><h4>SHAP e persistência</h4><p>Peso de cada variável por paciente e o modelo salvo e recarregado para uso.</p></div>
-    </div>
-    <p class="nota">Para caber no limite do TabPFN, a modelagem usou uma amostra de 1.000 pacientes do recorte: 700 para treino e 300 para teste.</p>
-  </div>
-</div></section>
+<section class="bloco"><div class="wrap"><div class="bloco__cab"><h2>Etapas</h2><p>Do dado bruto ao modelo explicado.</p></div><div class="revela"><div class="fg"><div class="fg__nivel"><b class="fg__rot">Dados</b><div class="fg__caixas"><div class="fg__caixa"><strong>Base original</strong><span>425.195 pacientes, 13 variáveis</span></div><div class="fg__caixa"><strong>Conferência</strong><span>nulos e ausentes codificados</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i><span>recorte</span></div><div class="fg__nivel"><b class="fg__rot">Recorte</b><div class="fg__caixas"><div class="fg__caixa"><strong>Acima de 55 anos</strong><span>125.335 registros (29,5%)</span></div><div class="fg__caixa"><strong>Amostra</strong><span>1.000 pacientes, limite do TabPFN</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i><span>preparo</span></div><div class="fg__nivel"><b class="fg__rot">Preparo</b><div class="fg__caixas"><div class="fg__caixa"><strong>Codificação</strong><span>label e one-hot</span></div><div class="fg__caixa"><strong>Padronização</strong><span>variáveis contínuas</span></div><div class="fg__caixa"><strong>Divisão 70/30</strong><span>700 treino, 300 teste, estratificada</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i><span>cinco modelos em paralelo</span></div><div class="fg__nivel"><b class="fg__rot">Modelos</b><div class="fg__caixas"><div class="fg__caixa"><strong>Random Forest</strong><span>busca aleatória</span></div><div class="fg__caixa"><strong>XGBoost</strong><span>busca aleatória</span></div><div class="fg__caixa"><strong>LightGBM</strong><span>busca aleatória</span></div><div class="fg__caixa"><strong>CatBoost</strong><span>busca aleatória</span></div><div class="fg__caixa"><strong>TabPFN</strong><span>sem ajuste</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i><span>comparação no teste</span></div><div class="fg__nivel"><b class="fg__rot">Seleção</b><div class="fg__caixas"><div class="fg__caixa"><strong>Boruta</strong><span>12 colunas → 4 confirmadas</span></div><div class="fg__caixa"><strong>TabPFN com 4 variáveis</strong><span>comparado ao modelo com 12</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i><span>explicação</span></div><div class="fg__nivel"><b class="fg__rot">Saída</b><div class="fg__caixas"><div class="fg__caixa"><strong>SHAP</strong><span>peso de cada variável por paciente</span></div><div class="fg__caixa"><strong>Modelo salvo</strong><span>recarregado para uso</span></div></div></div></div><p class="nota">Busca aleatória: RandomizedSearchCV com validação cruzada de 3 partes. A amostra de 1.000 cabe no limite do TabPFN.</p></div></div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
   <div><h2>Resultados</h2><p>Métricas no conjunto de teste após a otimização. Precisão e recall na classe positiva.</p></div>
@@ -111,11 +98,13 @@
   </div>
 </div></section>
 
+<section class="bloco"><div class="wrap"><div class="bloco__cab"><h2>Gráficos do notebook</h2><p>Imagens geradas pelo notebook do estudo.</p></div><div class="revela"><div class="telas"><figure><a href="../assets/telas/risco-cardiovascular/01-curvas-roc.webp" data-ampliar><img src="../assets/telas/risco-cardiovascular/01-curvas-roc.webp" alt="Curvas ROC dos cinco modelos na primeira rodada, antes da busca de hiperparâmetros. TabPFN com AUC 0,788." loading="lazy"></a><figcaption>Curvas ROC dos cinco modelos na primeira rodada, antes da busca de hiperparâmetros. TabPFN com AUC 0,788.</figcaption></figure><figure><a href="../assets/telas/risco-cardiovascular/02-calibracao.webp" data-ampliar><img src="../assets/telas/risco-cardiovascular/02-calibracao.webp" alt="Calibração dos cinco modelos: probabilidade prevista contra frequência real. A diagonal é a calibração perfeita." loading="lazy"></a><figcaption>Calibração dos cinco modelos: probabilidade prevista contra frequência real. A diagonal é a calibração perfeita.</figcaption></figure><figure><a href="../assets/telas/risco-cardiovascular/03-shap-dispersao.webp" data-ampliar><img src="../assets/telas/risco-cardiovascular/03-shap-dispersao.webp" alt="SHAP por paciente no CatBoost. Vermelho é valor alto da variável; à direita, mais risco. Pressão sistólica e idade altas elevam o risco." loading="lazy"></a><figcaption>SHAP por paciente no CatBoost. Vermelho é valor alto da variável; à direita, mais risco. Pressão sistólica e idade altas elevam o risco.</figcaption></figure><figure><a href="../assets/telas/risco-cardiovascular/04-tabpfn-probabilidades.webp" data-ampliar><img src="../assets/telas/risco-cardiovascular/04-tabpfn-probabilidades.webp" alt="TabPFN: distribuição das probabilidades previstas para os 300 pacientes de teste." loading="lazy"></a><figcaption>TabPFN: distribuição das probabilidades previstas para os 300 pacientes de teste.</figcaption></figure></div></div></div></section>
+
 <section class="bloco"><div class="wrap bloco__grid"><div><h2>Tecnologias</h2></div>
   <div class="stack"><span>Python</span><span>Jupyter</span><span>pandas</span><span>scikit-learn</span><span>TabPFN</span><span>CatBoost</span><span>LightGBM</span><span>XGBoost</span><span>Boruta</span><span>SHAP</span><span>Matplotlib</span></div>
 </div></section>
 
-<!--nav--><nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><span class="navp__item navp__ant" aria-hidden="true"></span><a class="navp__item navp__sum" href="../areas/modelos.html"><small>Sumário</small><span>Modelos preditivos e estatística</span></a><span class="navp__item navp__prox" aria-hidden="true"></span></div></nav><!--/nav-->
+<!--nav--><nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><span class="navp__item navp__ant" aria-hidden="true"></span><a class="navp__item navp__sum" href="../areas/modelos.html"><small>Sumário</small><span>Modelos preditivos e estatística</span></a><a class="navp__item navp__prox" href="../projetos/previsao-cancelamento-clientes.html"><small>Próximo</small><span>Previsão de cancelamento de clientes</span></a></div></nav><!--/nav-->
 </main>
 
 <footer class="rodape"><div class="wrap rodape__in">
@@ -125,6 +114,7 @@
 
 <script src="../assets/js/graficos.js"></script>
 <script src="../assets/js/mosaico.js"></script>
+<script src="../assets/js/telas.js"></script>
 <script>
 (function () {
   const M = [

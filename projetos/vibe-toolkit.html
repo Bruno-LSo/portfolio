@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vibe Coding Toolkit · HoldUp</title>
+<meta name="description" content="Programa que junta a estrutura e o código de um projeto em dois arquivos para colar num chat com IA.">
+<meta name="theme-color" content="#0B1820">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32px.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/css/portfolio.css">
+<style>:root{--acento:#D3A574}</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo__in">
+  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio</span></a>
+  <nav class="nav" aria-label="Áreas"><a href="../areas/comercio.html">Comércio</a><a href="../areas/campo.html">Território</a><a href="../areas/gestao.html">Sistemas</a><a href="../areas/dados.html">Dados</a><a href="../areas/saude.html">Saúde</a><a href="../areas/modelos.html">Modelos</a><a href="../areas/produtos.html" aria-current="page">Aplicativos</a></nav>
+</div></header>
+<main id="conteudo">
+<section class="caso-hero"><div class="wrap">
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../areas/produtos.html">Aplicativos, jogos e automação</a></p>
+  <h1 class="entra" style="--o:1">Vibe Coding Toolkit</h1>
+  <p class="lead entra" style="--o:2">Programa de computador que recebe uma pasta de projeto e gera dois arquivos: a árvore de pastas e o conteúdo de todos os arquivos. Os dois servem de contexto completo para um chat com IA. Respeita o .gitignore e limpa notebooks Jupyter.</p>
+  <dl class="ficha entra" style="--o:3"><div><dt>Tipo</dt><dd>Ferramenta própria, versão pública no GitHub</dd></div><div><dt>Interface</dt><dd>tkinter</dd></div><div><dt>Saída</dt><dd>NomeArquitetura.bash e NomeConteudo.txt</dd></div><div><dt>Arquivos do projeto</dt><dd>Somente leitura</dd></div></dl>
+</div></section>
+<section class="bloco"><div class="wrap"><div class="kpis revela"><div class="kpi"><strong class="num">2</strong><span>arquivos gerados por pasta</span></div><div class="kpi"><strong class="num">3</strong><span>repositórios: AiAmmo, Vibe-Coding-Toolkit e vibe-toolkit</span></div><div class="kpi"><strong class="num">5</strong><span>versões do toolkit, de março a novembro de 2025</span></div></div></div></section>
+<section class="bloco"><div class="wrap"><div class="bloco__cab"><h2>Tela</h2><p>Tela reproduzida a partir do código da interface (mesmos textos e disposição).</p></div><div class="revela"><div class="telas"><figure><a href="../assets/telas/vibe-toolkit/01-janela.webp" data-ampliar><img src="../assets/telas/vibe-toolkit/01-janela.webp" alt="Janela principal: árvore do projeto com a coluna Ignorar. Marcar uma pasta marca tudo dentro dela. Dados fictícios." loading="lazy"></a><figcaption>Janela principal: árvore do projeto com a coluna Ignorar. Marcar uma pasta marca tudo dentro dela. Dados fictícios.</figcaption></figure></div></div></div></section>
+<section class="bloco"><div class="wrap"><div class="bloco__cab"><h2>Processo</h2></div><div class="revela"><div class="fg"><div class="fg__nivel"><b class="fg__rot">Escolha</b><div class="fg__caixas"><div class="fg__caixa"><strong>Selecionar Diretório</strong><span>projeto inteiro</span></div><div class="fg__caixa"><strong>Selecionar Arquivo</strong><span>um arquivo só</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i></div><div class="fg__nivel"><b class="fg__rot">Árvore</b><div class="fg__caixas"><div class="fg__caixa"><strong>Marcar o que ignorar</strong><span>pasta marcada leva os filhos junto</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i></div><div class="fg__nivel"><b class="fg__rot">Perguntas</b><div class="fg__caixas"><div class="fg__caixa"><strong>Remover __pycache__?</strong><span>se houver</span></div><div class="fg__caixa"><strong>Usar o .gitignore?</strong><span>se houver</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i><span>executar</span></div><div class="fg__nivel"><b class="fg__rot">Geração</b><div class="fg__caixas"><div class="fg__caixa"><strong>Arquitetura.bash</strong><span>árvore com ├─ e └─</span></div><div class="fg__caixa"><strong>Conteudo.txt</strong><span>caminho e conteúdo de cada arquivo, separados por linha de /</span></div></div></div><div class="fg__seta" aria-hidden="true"><i></i></div><div class="fg__nivel"><b class="fg__rot">Limpeza</b><div class="fg__caixas"><div class="fg__caixa"><strong>Notebooks .ipynb</strong><span>mantém células e saída de texto</span></div><div class="fg__caixa"><strong>Imagens em base64</strong><span>trocadas por uma descrição curta</span></div></div></div></div></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Saída</h2></div><div class="revela"><div class="colunas"><div><div class="painel"><div class="painel__barra"><i></i><i></i><i></i><span>loja-exemploArquitetura.bash</span></div><div class="painel__corpo"><pre style="margin:0;white-space:pre;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.5;overflow-x:auto">loja-exemplo/
+├─ backend/
+│  ├─ src/
+│  │  ├─ routes/
+│  │  │  ├─ pedidos.js
+│  │  │  └─ produtos.js
+│  │  ├─ app.js
+│  │  └─ db.js
+│  └─ package.json
+├─ frontend/
+│  ├─ src/
+│  │  ├─ Carrinho.jsx
+│  │  ├─ Catalogo.jsx
+│  │  └─ main.jsx
+│  └─ index.html
+├─ notebooks/
+│  └─ vendas.ipynb
+├─ .gitignore
+└─ README.md</pre><p class="nota">Árvore gerada para o projeto da tela. As pastas marcadas não aparecem. Dados fictícios.</p></div></div></div><div><ul class="lista"><li><strong>Contexto inteiro</strong>Os dois arquivos vão juntos para o chat. A IA vê a estrutura e o código de uma vez.</li><li><strong>Nada é alterado</strong>O programa só lê o projeto e grava os 2 arquivos novos.</li><li><strong>Notebook limpo</strong>Saídas em imagem e blocos de metadados saem, para caber no limite do chat.</li><li><strong>Arquivo único</strong>Também extrai o conteúdo de um arquivo só, sem a árvore.</li></ul></div></div></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Versões</h2></div><div class="revela"><div class="fluxo"><div><b>fev. 2025</b><h4>AiAmmo</h4><p>6 scripts: árvore e conteúdo, remoção de imagem em base64 e a primeira interface com a coluna Ignorar.</p></div><div><b>mar. 2025</b><h4>Vibe-Coding-Toolkit</h4><p>Versão 1, pública no GitHub, com README e instruções de uso.</p></div><div><b>mai. a nov. 2025</b><h4>vibe-toolkit</h4><p>Versões 2 a 5: leitura do .gitignore, remoção de __pycache__ e limpeza de notebooks.</p></div></div></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Tecnologias</h2></div><div><div class="stack"><span>Python</span><span>tkinter</span><span>fnmatch</span><span>json</span></div></div></div></section>
+<nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><a class="navp__item navp__ant" href="../projetos/elicitador.html"><small>Anterior</small><span>Elicitador de requisitos</span></a><a class="navp__item navp__sum" href="../areas/produtos.html"><small>Sumário</small><span>Aplicativos, jogos e automação</span></a><span class="navp__item navp__prox" aria-hidden="true"></span></div></nav>
+</main>
+
+<footer class="rodape"><div class="wrap rodape__in">
+  <img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
+  <p>HoldUp · <a href="https://holdupsolucoes.com.br/" target="_blank" rel="noopener noreferrer">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+</div></footer>
+<script src="../assets/js/graficos.js"></script>
+<script src="../assets/js/mosaico.js"></script>
+<script src="../assets/js/telas.js"></script>
+
+</body>
+</html>
