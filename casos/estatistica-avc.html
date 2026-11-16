@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estrutura de saúde e letalidade do AVC · Bruno Lima</title>
+<meta name="description" content="Testes estatísticos nas 27 UFs para saber se tomógrafos, neurologistas e trombólise acompanham menor letalidade do AVC.">
+<meta name="theme-color" content="#0B1820">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/portfolio.css">
+<style>:root{--acento:#4FD1D4}</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo__in">
+  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
+  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
+  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
+</div></header>
+<main id="conteudo">
+<section class="caso-hero"><div class="wrap">
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-saude">Saúde e aprendizado de máquina</a></p>
+  <h1 class="entra" style="--o:1">Mais tomógrafo, menos morte? <em>A estatística responde</em></h1>
+  <p class="lead entra" style="--o:2">Uma pesquisadora em saúde pública precisava saber, com rigor, se a estrutura de atendimento de cada estado explica as diferenças de letalidade do AVC. Apliquei correlação de Spearman, Kruskal-Wallis e Mann-Whitney nas 27 UFs e entreguei relatórios em texto e Excel prontos para o artigo.</p>
+  <dl class="ficha entra" style="--o:3"><div><dt>Cliente</dt><dd>Pesquisa em saúde pública</dd></div><div><dt>Unidade</dt><dd>27 unidades da federação</dd></div><div><dt>Testes</dt><dd>Spearman, Kruskal-Wallis, Mann-Whitney, t, Shapiro-Wilk</dd></div><div><dt>Entrega</dt><dd>Relatórios em texto e Excel com 7 abas</dd></div></dl>
+</div></section>
+<section class="bloco"><div class="wrap"><div class="kpis revela"><div class="kpi"><strong class="num">−0,566</strong><span>correlação entre taxa de trombólise e letalidade (p = 0,002)</span></div><div class="kpi"><strong class="num">16,6%</strong><span>letalidade média do AVC entre as UFs, de 12,2% a 26,2%</span></div><div class="kpi"><strong class="num">12,9% × 17,9%</strong><span>letalidade média no Sul contra o Norte</span></div><div class="kpi"><strong class="num">p = 0,26</strong><span>centros habilitados sozinhos não mostraram diferença significativa</span></div></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><p class="rotulo"><i></i>Resultados</p><h2>Quem anda junto com a letalidade</h2><p>Correlação de Spearman de cada indicador com a letalidade do AVC. Quanto mais negativa, mais o indicador alto acompanha letalidade baixa. As três são significativas a 5%.</p></div><div class="revela"><div class="painel"><div class="painel__barra"><i></i><i></i><i></i><span>spearman.py</span></div><div class="painel__corpo"><div id="g-sp"></div><p class="nota">ρ de Spearman em 27 UFs. Trombólise p = 0,0021; tomógrafos p = 0,0047; neurologistas p = 0,0129.</p></div></div></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><p class="rotulo"><i></i>Diferença regional</p><h2>Letalidade média por região</h2><p>Kruskal-Wallis confirma que as regiões são diferentes (H = 10,43, p = 0,034), assim como a oferta de tomógrafos e de neurologistas.</p></div><div class="revela"><div class="painel"><div class="painel__corpo"><div id="g-reg"></div></div></div></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><p class="rotulo"><i></i>Escopo</p><h2>O que foi entregue</h2></div><div class="revela"><ul class="lista"><li><strong>Correlações</strong>Spearman entre letalidade, tomógrafos, neurologistas e trombólise, e entre os próprios indicadores.</li><li><strong>Comparação regional</strong>Kruskal-Wallis entre as cinco regiões para cada indicador.</li><li><strong>Centros habilitados</strong>Mann-Whitney, teste t, tamanho de efeito e correlação ponto-bisserial entre UFs com e sem centro.</li><li><strong>Pressupostos conferidos</strong>Normalidade por Shapiro-Wilk e variância por Levene antes de escolher o teste.</li><li><strong>Excel com 7 abas</strong>Resumo, estatísticas, dados, normalidade, testes, regional e interpretações em linguagem simples.</li><li><strong>Leitura honesta</strong>O resultado que não deu diferença também está lá, explicado, em vez de escondido.</li></ul></div></div></section>
+<section class="bloco"><div class="wrap"><p class="rotulo"><i></i>Tecnologias</p><div class="stack" style="margin-top:16px"><span>Python</span><span>pandas</span><span>NumPy</span><span>SciPy</span><span>openpyxl</span></div></div></section>
+<section class="bloco"><div class="wrap"><p class="rotulo"><i></i>Continue vendo</p><div class="proximos" style="margin-top:20px" data-proximos="estatistica-avc"></div></div></section>
+</main>
+
+<footer class="rodape"><div class="wrap rodape__in">
+  <img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
+  <p>Bruno Lima · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">github.com/Bruno-LSo</a></p>
+</div></footer>
+
+<script src="../assets/js/graficos.js"></script>
+<script src="../assets/js/projetos.js"></script>
+<script src="../assets/js/mosaico.js"></script>
+<script>
+G.barrasH(document.getElementById('g-sp'),[{rotulo:'Taxa de trombólise',valor:.566,destaque:true},{rotulo:'Tomógrafos / 100 mil',valor:.527,cor:'#4FB3E8'},{rotulo:'Neurologistas / 100 mil',valor:.472,cor:'#3B5566'}],{max:.7,esquerda:180,formato:v=>'−'+G.fmt(v,3),titulo:'Correlação com a letalidade'});
+G.barrasH(document.getElementById('g-reg'),[{rotulo:'Norte',valor:17.95,cor:'#F08A7E'},{rotulo:'Nordeste',valor:17.88,cor:'#F08A7E'},{rotulo:'Sudeste',valor:15.79,cor:'#3B5566'},{rotulo:'Centro-Oeste',valor:14.73,cor:'#3B5566'},{rotulo:'Sul',valor:12.91,destaque:true}],{min:8,max:20,esquerda:120,formato:v=>G.fmt(v,1)+'%',titulo:'Letalidade média por região'});
+</script>
+</body>
+</html>

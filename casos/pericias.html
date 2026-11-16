@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plataforma de perícias · Bruno Lima</title>
+<meta name="description" content="Especificação de plataforma para peritos judiciais: leitura diária dos tribunais, prazos, honorários, modelos de laudo e um robô que só lê.">
+<meta name="theme-color" content="#0B1820">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/portfolio.css">
+<style>:root{--acento:#4FB3E8}</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo__in">
+  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
+  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
+  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
+</div></header>
+<main id="conteudo">
+<section class="caso-hero"><div class="wrap">
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-gestao">Sistemas de gestão e plataformas</a></p>
+  <h1 class="entra" style="--o:1">O perito judicial <em>sem perder prazo</em> em nenhum tribunal</h1>
+  <p class="lead entra" style="--o:2">Um perito de engenharia acompanha processos em vários sistemas de tribunal, cada um com login e jeito próprio, redige peças à mão e controla honorários de forma espalhada. A plataforma lê os tribunais uma vez por dia, transforma cada movimentação em etapa, prazo e tarefa, e prepara os documentos a partir de modelos.</p>
+  <dl class="ficha entra" style="--o:3"><div><dt>Cliente</dt><dd>Perita judicial de engenharia civil</dd></div><div><dt>Fase</dt><dd>Especificação completa, versão 5.1</dd></div><div><dt>Tribunais</dt><dd>57 levantados</dd></div><div><dt>Princípio</dt><dd>Nada sem fonte</dd></div></dl>
+</div></section>
+<section class="bloco"><div class="wrap"><div class="kpis revela"><div class="kpi"><strong class="num">57</strong><span>tribunais levantados; um único tradutor atende 15 deles</span></div><div class="kpi"><strong class="num">14</strong><span>etapas do ciclo da perícia, da nomeação ao pagamento</span></div><div class="kpi"><strong class="num">620</strong><span>documentos de 50 processos analisados para desenhar o fluxo</span></div><div class="kpi"><strong class="num">25</strong><span>tabelas no modelo de dados</span></div></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><p class="rotulo"><i></i>Arquitetura</p><h2>Como a plataforma funciona</h2></div><div class="revela"><div class="fluxo"><div><b>cofre</b><h4>Credenciais protegidas</h4><p>Senhas dos tribunais cifradas e guardadas separadas do banco.</p></div><div><b>robô</b><h4>Leitura somente</h4><p>Uma vez por dia, só os processos do perito, sem nunca protocolar nada.</p></div><div><b>2FA</b><h4>Código pelo WhatsApp</h4><p>Quando o tribunal pede código de segurança, a plataforma pergunta ao perito.</p></div><div><b>eventos</b><h4>Motor de prazos</h4><p>Cada movimentação vira etapa, prazo e tarefa, com aviso.</p></div><div><b>documentos</b><h4>Modelos por tipo</h4><p>11 modelos de laudo e petições, preenchidos com o que está no processo.</p></div></div></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><p class="rotulo"><i></i>Rigor</p><h2>Nada sem fonte</h2></div><div class="revela"><ul class="lista"><li><strong>Cada campo com origem</strong>A leitura de decisões cita de qual documento e trecho veio cada informação.</li><li><strong>Conta é código</strong>Honorários e avaliações são calculados por programa testado, em centavos, nunca estimados.</li><li><strong>Honorários pela tabela</strong>Hora técnica do IBAPE de cada estado aplicada automaticamente.</li><li><strong>Livro financeiro</strong>Depósitos, levantamentos e repasses registrados por processo.</li><li><strong>Funciona em campo</strong>Aplicativo de vistoria que trabalha sem internet.</li><li><strong>Custo previsível</strong>Estimado em cerca de R$ 6 por mês por perito, além da base fixa.</li></ul></div></div></section>
+<section class="bloco"><div class="wrap"><p class="rotulo"><i></i>Tecnologias</p><div class="stack" style="margin-top:16px"><span>Supabase</span><span>Playwright</span><span>WhatsApp Business</span><span>Resend</span><span>Python</span><span>ReportLab</span><span>Mermaid</span></div></div></section>
+<section class="bloco"><div class="wrap"><p class="rotulo"><i></i>Continue vendo</p><div class="proximos" style="margin-top:20px" data-proximos="pericias"></div></div></section>
+</main>
+
+<footer class="rodape"><div class="wrap rodape__in">
+  <img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
+  <p>Bruno Lima · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">github.com/Bruno-LSo</a></p>
+</div></footer>
+
+<script src="../assets/js/graficos.js"></script>
+<script src="../assets/js/projetos.js"></script>
+<script src="../assets/js/mosaico.js"></script>
+
+</body>
+</html>

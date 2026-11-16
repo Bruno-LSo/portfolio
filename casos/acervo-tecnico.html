@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prioridade no Acervo Técnico · Bruno Lima</title>
+<meta name="description" content="Painel que ordena os pedidos de certidão de acervo técnico pelo valor do edital e pela data da licitação, com alerta de capital social insuficiente.">
+<meta name="theme-color" content="#0B1820">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/portfolio.css">
+<style>:root{--acento:#FFD25E}</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo__in">
+  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
+  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
+  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
+</div></header>
+<main id="conteudo">
+<section class="caso-hero"><div class="wrap">
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-dados">Dados públicos e inteligência</a></p>
+  <h1 class="entra" style="--o:1">Analisar primeiro <em>o que vence primeiro</em></h1>
+  <p class="lead entra" style="--o:2">Empresas pedem certidão de acervo técnico para disputar licitações, e uma certidão que sai depois da sessão pública não serve para nada. O painel lê os pedidos direto do banco, cruza com o edital de cada um e mostra a fila na ordem que importa: data da sessão e valor em jogo.</p>
+  <dl class="ficha entra" style="--o:3"><div><dt>Instituição</dt><dd>Crea-SP, Acervo Técnico</dd></div><div><dt>Fonte</dt><dd>Banco DB2 e arquivos dos protocolos</dd></div><div><dt>Entrega</dt><dd>Painel web publicado no servidor interno</dd></div><div><dt>Atualização</dt><dd>Por rotina programada</dd></div></dl>
+</div></section>
+<section class="bloco"><div class="wrap"><div class="kpis revela"><div class="kpi"><strong class="num">1.365</strong><span>pedidos em análise na data de referência</span></div><div class="kpi"><strong class="num">R$ 25,8 bi</strong><span>em editais únicos, sem duplicados</span></div><div class="kpi"><strong class="num">259</strong><span>sessões urgentes: vencidas ou em até 3 dias</span></div><div class="kpi"><strong class="num">246</strong><span>alertas de capital social abaixo de 10% do edital</span></div></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><p class="rotulo"><i></i>Regra</p><h2>Como a fila é montada</h2></div><div class="revela"><div class="fluxo"><div><b>01</b><h4>Pedidos</h4><p>Protocolos de certidão de acervo lidos do banco, com o documento de cada um.</p></div><div><b>02</b><h4>Edital</h4><p>Valor e data da sessão pública extraídos e duplicados removidos.</p></div><div><b>03</b><h4>Urgência</h4><p>Dias até a sessão: vencidas, até 3 dias, até 7, depois.</p></div><div><b>04</b><h4>Risco</h4><p>Capital social da empresa menor que 10% do edital acende alerta.</p></div><div><b>05</b><h4>Fila</h4><p>Ordem final por urgência e valor, com o perfil da empresa e do profissional.</p></div></div></div></div></section>
+<section class="bloco"><div class="wrap"><p class="rotulo"><i></i>Tecnologias</p><div class="stack" style="margin-top:16px"><span>DB2</span><span>Python</span><span>pandas</span><span>Plotly</span><span>SFTP</span></div></div></section>
+<section class="bloco"><div class="wrap"><p class="rotulo"><i></i>Continue vendo</p><div class="proximos" style="margin-top:20px" data-proximos="acervo-tecnico"></div></div></section>
+</main>
+
+<footer class="rodape"><div class="wrap rodape__in">
+  <img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
+  <p>Bruno Lima · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">github.com/Bruno-LSo</a></p>
+</div></footer>
+
+<script src="../assets/js/graficos.js"></script>
+<script src="../assets/js/projetos.js"></script>
+<script src="../assets/js/mosaico.js"></script>
+
+</body>
+</html>

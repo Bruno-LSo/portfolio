@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel do Sistema Confea/Crea · Bruno Lima</title>
+<meta name="description" content="Painel com o retrato dos profissionais registrados no Sistema Confea/Crea: estoque por UF e sexo, idade, títulos, anuidades e fluxo de registros.">
+<meta name="theme-color" content="#0B1820">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/portfolio.css">
+<style>:root{--acento:#FFD25E}</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo__in">
+  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
+  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
+  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
+</div></header>
+<main id="conteudo">
+<section class="caso-hero"><div class="wrap">
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-dados">Dados públicos e inteligência</a></p>
+  <h1 class="entra" style="--o:1">O retrato de <em>1,2 milhão de profissionais</em></h1>
+  <p class="lead entra" style="--o:2">O painel antigo era uma planilha com gráficos colados. Passei a ler direto do banco nacional de registros, aplicando as regras oficiais de contagem, e a gerar o painel a partir de uma extração com data e hora, para que qualquer número possa ser refeito e conferido.</p>
+  <dl class="ficha entra" style="--o:3"><div><dt>Instituição</dt><dd>CONFEA, Presidência</dd></div><div><dt>Fonte</dt><dd>Banco nacional de registros</dd></div><div><dt>Entrega</dt><dd>Extração datada e painel web</dd></div><div><dt>Período</dt><dd>Fluxo de registros de 2010 a 2026</dd></div></dl>
+</div></section>
+<section class="bloco"><div class="wrap"><div class="kpis revela"><div class="kpi"><strong class="num">1.222.610</strong><span>profissionais no estoque, nas 27 UFs</span></div><div class="kpi"><strong class="num">248.033</strong><span>mulheres registradas</span></div><div class="kpi"><strong class="num">417</strong><span>títulos profissionais diferentes</span></div><div class="kpi"><strong class="num">1939</strong><span>ano do registro mais antigo ainda na base</span></div></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><p class="rotulo"><i></i>Escopo</p><h2>O que o painel mostra</h2></div><div class="revela"><ul class="lista"><li><strong>Quem são</strong>Estoque por UF e sexo, pirâmide etária e títulos profissionais.</li><li><strong>De onde vêm e para onde vão</strong>Coortes de registro e migração entre estados.</li><li><strong>Entradas e saídas</strong>Ingressos, reingressos e desligamentos, com os últimos 12 meses.</li><li><strong>Anuidades</strong>Série por ano e UF, ritmo de pagamento, parcelamento e inadimplência recorrente.</li><li><strong>Número que se refaz</strong>Cada versão sai de um arquivo de extração com data e hora, guardado.</li><li><strong>Regras oficiais</strong>Consultas validadas contra as regras de contagem do sistema.</li></ul></div></div></section>
+<section class="bloco"><div class="wrap bloco__grid"><div><p class="rotulo"><i></i>Antes e depois</p><h2>De planilha a fonte única</h2></div><div class="revela"><div class="texto"><p>O ganho não é só visual. Antes, cada área tinha o seu número. Agora existe <strong>uma extração oficial com data</strong>, e o painel é só a leitura dela. O próximo passo, já planejado, é levar as regras dos indicadores para dentro do banco, com atualização diária e acesso por perfil.</p></div></div></div></section>
+<section class="bloco"><div class="wrap"><p class="rotulo"><i></i>Tecnologias</p><div class="stack" style="margin-top:16px"><span>SQL Server</span><span>Python</span><span>pandas</span><span>pymssql</span><span>HTML e JavaScript</span></div></div></section>
+<section class="bloco"><div class="wrap"><p class="rotulo"><i></i>Continue vendo</p><div class="proximos" style="margin-top:20px" data-proximos="painel-confea"></div></div></section>
+</main>
+
+<footer class="rodape"><div class="wrap rodape__in">
+  <img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
+  <p>Bruno Lima · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">github.com/Bruno-LSo</a></p>
+</div></footer>
+
+<script src="../assets/js/graficos.js"></script>
+<script src="../assets/js/projetos.js"></script>
+<script src="../assets/js/mosaico.js"></script>
+
+</body>
+</html>
