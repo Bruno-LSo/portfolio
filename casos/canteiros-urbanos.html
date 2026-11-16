@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canteiros Urbanos · Bruno Lima</title>
+<meta name="description" content="Loja virtual de hortaliças e temperos de canteiros urbanos: catálogo, carrinho, pagamento, pedido pelo WhatsApp, repetição de cesta e painel com métricas por região.">
+<meta name="theme-color" content="#0B1820">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/portfolio.css">
+<style>
+:root{--acento:#C9E36A}
+.loja{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px}
+@media (max-width:900px){.loja{grid-template-columns:1fr}}
+.prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.prod{display:flex;flex-direction:column;gap:6px;padding:14px;border-radius:14px;background:var(--noite-3);box-shadow:0 0 0 1px var(--linha)}
+.prod__ico{height:64px;border-radius:10px;display:grid;place-items:center;background:color-mix(in oklab,var(--c) 18%,var(--noite-2))}
+.prod__ico svg{width:34px;height:34px;color:var(--c)}
+.prod h4{font-size:14px;font-weight:600}
+.prod p{font-size:12px;color:var(--texto-fraco)}
+.prod strong{font:500 14px/1 var(--mono)}
+.prod button{margin-top:auto;min-height:36px;border:0;border-radius:9px;background:rgb(201 227 106 / .14);color:var(--lima);font:600 13px var(--sans);cursor:pointer;transition-property:background-color,transform;transition-duration:.15s}
+.prod button:hover{background:rgb(201 227 106 / .24)}
+.prod button:active{transform:scale(.96)}
+.carrinho{display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:16px;background:var(--noite-3);box-shadow:0 0 0 1px var(--linha)}
+.linha-item{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;color:var(--texto-suave)}
+.linha-item span:last-child{font-family:var(--mono);color:var(--texto)}
+.qtd{display:inline-flex;gap:4px;align-items:center}
+.qtd button{width:26px;height:26px;border-radius:7px;border:0;background:var(--noite-4);color:var(--texto);cursor:pointer;position:relative}
+.qtd button::after{content:"";position:absolute;inset:-6px}
+.total{display:flex;justify-content:space-between;padding-top:10px;box-shadow:inset 0 1px 0 var(--linha);font-weight:600}
+.zap{white-space:pre-wrap;font:400 12.5px/1.55 var(--mono);background:#0E2A22;color:#D6F5E3;border-radius:12px 12px 12px 4px;padding:14px;max-height:300px;overflow:auto;box-shadow:0 0 0 1px rgb(92 201 138 / .25)}
+.status{display:flex;gap:6px;flex-wrap:wrap}
+.status button{min-height:34px;padding:0 12px;border-radius:999px;border:0;font:500 12px var(--mono);cursor:pointer;background:var(--noite-4);color:var(--texto-fraco);transition-property:background-color,color}
+.status button.feito{background:rgb(201 227 106 / .16);color:var(--lima)}
+.status button.atual{background:var(--lima);color:#1d2a05}
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo__in">
+  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
+  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
+  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
+</div></header>
+
+<main id="conteudo">
+<section class="caso-hero"><div class="wrap">
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-comercio">Lojas virtuais e marketplaces</a></p>
+  <h1 class="entra" style="--o:1">Canteiros Urbanos: a horta do bairro <em>vendendo pela internet</em></h1>
+  <p class="lead entra" style="--o:2">Loja virtual completa para quem produz hortaliças e temperos em canteiros na cidade: o cliente monta a cesta no celular, paga online ou fecha pelo WhatsApp, repete o pedido da semana com um toque, e quem vende acompanha pedidos, estoque e clientes por bairro num painel próprio.</p>
+  <dl class="ficha entra" style="--o:3">
+    <div><dt>Cliente</dt><dd>Produção urbana de hortaliças e temperos</dd></div>
+    <div><dt>Entrega</dt><dd>Loja, área do cliente, painel administrativo e API</dd></div>
+    <div><dt>Arquitetura</dt><dd>React, Node.js, MongoDB e Redis em Docker</dd></div>
+    <div><dt>Canais</dt><dd>Site, painel do lojista e WhatsApp</dd></div>
+  </dl>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <div class="kpis revela">
+    <div class="kpi"><strong class="num">61</strong><span>rotas na API: produtos, categorias, carrinho, pedidos, usuários e métricas</span><small>contadas nos arquivos de rotas</small></div>
+    <div class="kpi"><strong class="num">7</strong><span>etapas do pedido, do carrinho à entrega, com histórico de cada mudança</span></div>
+    <div class="kpi"><strong class="num">3</strong><span>origens de pedido: site, lançamento pelo lojista e WhatsApp</span></div>
+    <div class="kpi"><strong class="num">6</strong><span>painéis de métricas: vendas, clientes, estoque, telefone, frete e visão geral</span></div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Experimente</p><h2>Monte uma cesta</h2><p>Demonstração com produtos de exemplo. Ao fechar, a loja gera a mensagem do pedido para o WhatsApp no mesmo formato do sistema real, e o lojista avança o pedido pelas etapas.</p></div>
+  <div class="revela">
+    <div class="painel">
+      <div class="painel__barra"><i></i><i></i><i></i><span>canteirosurbanos / loja</span></div>
+      <div class="painel__corpo">
+        <div class="loja">
+          <div class="prods" id="prods"></div>
+          <div class="carrinho">
+            <p class="rotulo"><i></i>Sua cesta</p>
+            <div id="itens"></div>
+            <div class="linha-item"><span>Taxa de entrega</span><span id="frete"></span></div>
+            <div class="total"><span>Total</span><span class="num mono" id="total"></span></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn btn--mini" id="fechar" type="button" style="background:var(--lima);color:#1d2a05;box-shadow:none">Fechar pelo WhatsApp</button>
+              <button class="btn btn--mini btn--linha" id="repetir" type="button">Repetir pedido da semana</button>
+            </div>
+          </div>
+        </div>
+        <div id="pos" hidden style="grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:18px">
+          <div><p class="rotulo" style="margin-bottom:10px"><i></i>Mensagem gerada</p><div class="zap" id="zap"></div></div>
+          <div><p class="rotulo" style="margin-bottom:10px"><i></i>Painel do lojista: etapa do pedido</p><div class="status" id="status"></div><p class="nota" id="hist" role="status"></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Escopo</p><h2>O que foi construído</h2></div>
+  <ul class="lista revela">
+    <li><strong>Catálogo e busca</strong>Categorias com imagem, várias fotos por produto com ordem e foto principal, busca por palavra, filtros e paginação.</li>
+    <li><strong>Carrinho que vira hábito</strong>Cesta salva com nome e cópia de pedidos anteriores, para a compra recorrente da semana.</li>
+    <li><strong>Pagamento e pedido pelo WhatsApp</strong>Pagamento online integrado e, como alternativa, a mensagem do pedido pronta para enviar ao produtor.</li>
+    <li><strong>Pedido lançado pelo lojista</strong>Quem vende registra pedidos que chegaram por telefone e associa ao cliente depois.</li>
+    <li><strong>Etapas com histórico</strong>Não processado, processando, em separação, enviado, entregue ou cancelado, com registro de cada mudança.</li>
+    <li><strong>Contas e segurança</strong>Cadastro com verificação por e-mail, recuperação de senha, login com token, limite de tentativas e áreas separadas para cliente e lojista.</li>
+    <li><strong>Métricas por bairro</strong>Clientes e frete agrupados por bairro e cidade, clientes novos em 30 dias, taxa de retenção, desempenho por produto e alerta de estoque.</li>
+    <li><strong>SEO de produto</strong>Título e descrição próprios para buscadores em cada produto, e endereço amigável.</li>
+  </ul>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Arquitetura</p><h2>Como as peças conversam</h2></div>
+  <div class="revela">
+    <div class="fluxo">
+      <div><b>cliente</b><h4>Loja em React</h4><p>Ant Design, gráficos com Recharts, máscara de telefone e endereço, carrinho e busca com cache local.</p></div>
+      <div><b>api</b><h4>Node.js e Express</h4><p>Controladores, serviços e modelos separados; autenticação por token e limite de requisições.</p></div>
+      <div><b>dados</b><h4>MongoDB e Redis</h4><p>Pedidos, produtos e usuários no Mongo; Redis para cache das consultas mais pedidas.</p></div>
+      <div><b>serviços</b><h4>E-mail, pagamento, WhatsApp</h4><p>SendGrid para verificação e senha, gateway de pagamento e geração do link do WhatsApp.</p></div>
+    </div>
+    <p class="nota">Ambiente em Docker Compose com banco e painel de administração do Mongo.</p>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Por que importa</p><h2>Pequeno produtor, venda organizada</h2></div>
+  <div class="texto revela">
+    <p>Quem planta em canteiro na cidade vende pouco volume para muita gente, quase sempre pelo celular. A loja respeita isso: <strong>o pedido pode terminar no WhatsApp</strong>, que é onde o cliente já está, sem perder o registro. A cesta repetida transforma a compra avulsa em assinatura informal, e as métricas por bairro mostram onde vale concentrar a entrega.</p>
+    <p>A mesma base serve para qualquer venda de hortifrúti: catálogo por produtor, estoque com quantidade, pedido com etapas e entrega por região.</p>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <p class="rotulo"><i></i>Tecnologias</p>
+  <div class="stack" style="margin-top:16px"><span>React 18</span><span>Ant Design</span><span>Recharts</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Mongoose</span><span>Redis</span><span>JWT</span><span>SendGrid</span><span>Braintree</span><span>Docker</span></div>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <p class="rotulo"><i></i>Continue vendo</p>
+  <div class="proximos" style="margin-top:20px" data-proximos="canteiros-urbanos"></div>
+</div></section>
+</main>
+
+<footer class="rodape"><div class="wrap rodape__in">
+  <img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
+  <p>Bruno Lima · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">github.com/Bruno-LSo</a></p>
+</div></footer>
+
+<script src="../assets/js/graficos.js"></script>
+<script src="../assets/js/projetos.js"></script>
+<script src="../assets/js/mosaico.js"></script>
+<script>
+(function () {
+  const folha = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14Z"/><path d="M5 19 13 11"/></svg>';
+  const P = [
+    { id: 1, nome: 'Alface crespa', desc: 'pé', preco: 4.5, c: '#5CC98A' },
+    { id: 2, nome: 'Rúcula', desc: 'maço', preco: 4, c: '#2E9B57' },
+    { id: 3, nome: 'Manjericão', desc: 'maço', preco: 5, c: '#9CC43B' },
+    { id: 4, nome: 'Cebolinha', desc: 'maço', preco: 3.5, c: '#C9E36A' },
+    { id: 5, nome: 'Tomate cereja', desc: 'bandeja 300 g', preco: 9, c: '#F08A7E' },
+    { id: 6, nome: 'Couve', desc: 'maço', preco: 4, c: '#1FA5A8' }
+  ];
+  const brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+  const cesta = new Map();
+  const FRETE = 6;
+  const $ = (id) => document.getElementById(id);
+  $('prods').innerHTML = P.map((p) => `<div class="prod" style="--c:${p.c}"><div class="prod__ico">${folha}</div><h4>${p.nome}</h4><p>${p.desc}</p><strong class="num">${brl.format(p.preco)}</strong><button type="button" data-id="${p.id}">Adicionar</button></div>`).join('');
+  function render() {
+    const itens = [...cesta.entries()].filter(([, q]) => q > 0);
+    $('itens').innerHTML = itens.length ? itens.map(([id, q]) => { const p = P.find((x) => x.id == id); return `<div class="linha-item"><span class="qtd"><button type="button" data-menos="${id}" aria-label="Menos ${p.nome}">−</button><span class="num mono">${q}</span><button type="button" data-mais="${id}" aria-label="Mais ${p.nome}">+</button> ${p.nome}</span><span>${brl.format(p.preco * q)}</span></div>`; }).join('') : '<p style="font-size:13.5px;color:var(--texto-fraco)">Sua cesta está vazia. Adicione produtos ao lado ou repita o pedido da semana.</p>';
+    const sub = itens.reduce((s, [id, q]) => s + P.find((x) => x.id == id).preco * q, 0);
+    $('frete').textContent = itens.length ? brl.format(FRETE) : brl.format(0);
+    $('total').textContent = brl.format(sub + (itens.length ? FRETE : 0));
+    $('fechar').disabled = !itens.length;
+    return { itens, sub };
+  }
+  document.addEventListener('click', (e) => {
+    const t = e.target.closest('button'); if (!t) return;
+    if (t.dataset.id) cesta.set(+t.dataset.id, (cesta.get(+t.dataset.id) || 0) + 1);
+    if (t.dataset.mais) cesta.set(+t.dataset.mais, cesta.get(+t.dataset.mais) + 1);
+    if (t.dataset.menos) cesta.set(+t.dataset.menos, cesta.get(+t.dataset.menos) - 1);
+    if (t.dataset.id || t.dataset.mais || t.dataset.menos) render();
+  });
+  $('repetir').addEventListener('click', () => { cesta.clear(); [[1, 2], [3, 1], [5, 1], [6, 1]].forEach(([i, q]) => cesta.set(i, q)); render(); });
+  const ETAPAS = ['Não processado', 'Processando', 'Em separação', 'Enviado', 'Entregue'];
+  let etapa = 0; const hist = [];
+  function renderStatus() {
+    $('status').innerHTML = ETAPAS.map((s, i) => `<button type="button" data-etapa="${i}" class="${i < etapa ? 'feito' : i === etapa ? 'atual' : ''}">${s}</button>`).join('');
+    $('hist').textContent = hist.map((h) => `${h.hora} · ${h.s}`).join('  |  ');
+  }
+  $('status').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; etapa = +b.dataset.etapa; hist.push({ s: ETAPAS[etapa], hora: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }) }); renderStatus(); });
+  $('fechar').addEventListener('click', () => {
+    const { itens, sub } = render();
+    const n = String(Math.floor(1000 + Math.random() * 8999));
+    const linhas = ['Confira o pedido abaixo:', `Pedido #${n} - Canteiros Urbanos`, '---------------------------------------',
+      ...itens.map(([id, q]) => { const p = P.find((x) => x.id == id); return `${q}x ${p.nome} ${brl.format(p.preco * q)}`; }),
+      `Subtotal: ${brl.format(sub)}`, `Taxa de entrega: +${brl.format(FRETE)}`, `Total: ${brl.format(sub + FRETE)}`, '---------------------------------------',
+      'Cliente de demonstração', '(11) 90000-0000', 'Rua das Hortas, 100, Centro', '---------------------------------------',
+      `Pedido gerado em ${new Date().toLocaleDateString('pt-BR')} às ${new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}`];
+    $('zap').textContent = linhas.join('\n');
+    const pos = $('pos'); pos.hidden = false; pos.style.display = 'grid';
+    etapa = 0; hist.length = 0; hist.push({ s: ETAPAS[0], hora: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }) });
+    renderStatus();
+  });
+  render();
+  if (innerWidth < 760) document.getElementById('pos').style.gridTemplateColumns = '1fr';
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monitoramento da pesca artesanal · Bruno Lima</title>
+<meta name="description" content="Sistema para comunidades de pesca artesanal registrarem a produção pelo celular mesmo sem sinal, com painel por perfil, histórico de versões, regras de qualidade e proteção de dados sensíveis.">
+<meta name="theme-color" content="#0B1820">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/portfolio.css">
+<style>
+:root{--acento:#4FB3E8}
+.demo{display:grid;grid-template-columns:300px minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:860px){.demo{grid-template-columns:1fr}}
+.cel{border-radius:34px;padding:12px;background:#05101A;box-shadow:0 0 0 1px var(--linha-forte),0 30px 60px -30px rgb(0 0 0 / .8);max-width:300px;margin:0 auto;width:100%}
+.cel__tela{border-radius:24px;background:var(--noite-2);padding:16px 14px;min-height:470px;display:flex;flex-direction:column;gap:10px}
+.cel__status{display:flex;justify-content:space-between;align-items:center;font:500 11px/1 var(--mono);color:var(--texto-fraco)}
+.sinal{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border-radius:999px}
+.sinal.on{background:rgb(92 201 138 / .16);color:var(--verde)}
+.sinal.off{background:rgb(240 138 126 / .16);color:var(--coral)}
+.cel h4{font-size:15px;font-weight:600}
+.cel label{font-size:12px;color:var(--texto-suave);display:block;margin-bottom:4px}
+.cel select,.cel input{width:100%;min-height:40px;border-radius:9px;border:0;background:var(--noite-3);color:var(--texto);box-shadow:inset 0 0 0 1px var(--linha-forte);padding:0 10px;font:400 16px var(--sans)}
+.fila{display:grid;gap:6px;margin-top:4px}
+.fila div{display:flex;justify-content:space-between;gap:8px;font:400 11.5px/1.3 var(--mono);padding:8px 10px;border-radius:8px;background:var(--noite-3);color:var(--texto-suave)}
+.fila .pend{box-shadow:inset 3px 0 0 var(--amarelo)}
+.fila .env{box-shadow:inset 3px 0 0 var(--verde)}
+.servidor{display:grid;gap:12px}
+.log{font:400 12px/1.6 var(--mono);color:var(--texto-suave);background:var(--noite-3);border-radius:12px;padding:14px;min-height:150px;max-height:240px;overflow:auto;box-shadow:inset 0 0 0 1px var(--linha)}
+.log b{color:var(--verde);font-weight:500}
+.log em{color:var(--amarelo);font-style:normal}
+.mini-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.mini-kpis div{padding:12px;border-radius:10px;background:var(--noite-3);box-shadow:0 0 0 1px var(--linha)}
+.mini-kpis strong{display:block;font:300 24px/1 var(--sans);font-variant-numeric:tabular-nums;color:var(--azul)}
+.mini-kpis span{font-size:11.5px;color:var(--texto-fraco)}
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo__in">
+  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
+  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
+  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
+</div></header>
+
+<main id="conteudo">
+<section class="caso-hero"><div class="wrap">
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-campo">Campo, território e comunidades</a></p>
+  <h1 class="entra" style="--o:1">Registrar a pesca <em>onde não tem sinal</em>, sem perder nenhuma ficha</h1>
+  <p class="lead entra" style="--o:2">Sistema de automonitoramento para comunidades caiçaras do litoral norte de São Paulo e sul do Rio. O pescador preenche a ficha no celular no barco ou na praia, ela fica guardada cifrada no aparelho e sobe sozinha quando aparece sinal. Na outra ponta, um painel mostra a produção para cada perfil e protege o que é sensível.</p>
+  <dl class="ficha entra" style="--o:3">
+    <div><dt>Cliente</dt><dd>Núcleo de pesca artesanal de um observatório de territórios tradicionais</dd></div>
+    <div><dt>Território</dt><dd>Ubatuba, Caraguatatuba e São Sebastião</dd></div>
+    <div><dt>Entrega</dt><dd>Painel piloto no ar, banco, app de campo e plano</dd></div>
+    <div><dt>Base</dt><dd>PostgreSQL com regras por linha e MFA</dd></div>
+  </dl>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <div class="kpis revela">
+    <div class="kpi"><strong class="num">338</strong><span>fichas de pesca no painel piloto</span></div>
+    <div class="kpi"><strong class="num">13</strong><span>localidades em 3 municípios</span></div>
+    <div class="kpi"><strong class="num">70 → 24</strong><span>grafias diferentes padronizadas em 24 espécies principais</span></div>
+    <div class="kpi"><strong class="num">23</strong><span>tabelas no modelo de dados, com histórico de cada alteração</span></div>
+    <div class="kpi"><strong class="num">27</strong><span>requisitos levantados com a comunidade e rastreados até a reunião</span></div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Experimente</p><h2>Ficha sem sinal, envio sem duplicar</h2><p>Desligue o sinal, registre algumas fichas e ligue de novo. Cada ficha nasce com um identificador gerado no celular: se o envio cair no meio e for repetido, o servidor reconhece e não grava duas vezes.</p></div>
+  <div class="revela">
+    <div class="painel"><div class="painel__corpo">
+      <div class="demo">
+        <div class="cel"><div class="cel__tela">
+          <div class="cel__status"><span>App de campo</span><button type="button" class="sinal on" id="sinal" aria-pressed="true">● com sinal</button></div>
+          <h4>Nova ficha</h4>
+          <div><label for="esp">Espécie</label><select id="esp"><option>Tainha</option><option>Robalo</option><option>Corvina</option><option>Sororoca</option><option>Camarão-branco</option><option>Lula</option></select></div>
+          <div><label for="kg">Quantidade (kg)</label><input id="kg" type="number" inputmode="decimal" min="0" step="0.5" value="12"></div>
+          <div><label for="emb">Embarcação</label><select id="emb"><option>Canoa a remo</option><option>Canoa a motor</option><option>Bote</option><option>Traineira</option></select></div>
+          <button class="btn btn--mini" id="salvar" type="button" style="background:var(--azul);color:#04202f;box-shadow:none">Salvar ficha</button>
+          <p class="rotulo" style="margin-top:6px"><i></i>No aparelho</p>
+          <div class="fila" id="fila" aria-live="polite"></div>
+        </div></div>
+        <div class="servidor">
+          <div class="mini-kpis"><div><strong id="k-rec">0</strong><span>fichas no banco</span></div><div><strong id="k-dup">0</strong><span>reenvios ignorados</span></div><div><strong id="k-pen">0</strong><span>pendências de qualidade</span></div></div>
+          <div class="log" id="log" role="log" aria-label="Registro do servidor"><span style="color:var(--texto-fraco)">Registro do servidor aparece aqui.</span></div>
+          <button class="btn btn--mini btn--linha" id="reenviar" type="button">Simular reenvio após queda de conexão</button>
+        </div>
+      </div>
+      <p class="nota">Demonstração em memória com dados fictícios. No sistema, a função de envio confere se o registrador pode enviar para aquela localidade, padroniza o nome da espécie e cria uma versão no histórico.</p>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Três portas de entrada</p><h2>Toda ficha chega, venha de onde vier</h2></div>
+  <div class="revela">
+    <div class="fluxo">
+      <div><b>01 · celular</b><h4>App de campo</h4><p>Valida na hora. Sem sinal, guarda cifrado e envia depois; depois do envio, apaga do aparelho.</p></div>
+      <div><b>02 · papel</b><h4>Foto da ficha</h4><p>Leitura por OCR com nível de confiança, e conferência obrigatória por uma pessoa antes de aprovar.</p></div>
+      <div><b>03 · painel</b><h4>Digitação em lote</h4><p>Para quem prefere o computador, com prévia das mudanças antes de confirmar.</p></div>
+      <div><b>04 · banco</b><h4>Qualidade e versão</h4><p>Padroniza, versiona com autor, data e motivo, e roda as regras de qualidade.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Escopo</p><h2>O que já existe</h2></div>
+  <ul class="lista revela">
+    <li><strong>Painel piloto no ar</strong>Login com recuperação de senha, gráficos, exportação para Excel e ZIP e histórico de versões com aplicar, reverter e restaurar.</li>
+    <li><strong>Histórico de tudo</strong>Cada mudança vira versão numerada: inicial, edição, importação, envio do app, OCR, padronização ou reversão.</li>
+    <li><strong>Regras de qualidade</strong>Viagem acima de 20 dias, canoa a remo com motor, espécie sem quantidade, campo em branco, incidental sem animal: viram pendência para o editor.</li>
+    <li><strong>Dado sensível protegido</strong>Captura incidental, como a de toninha, pode ser usada contra a comunidade. Leitor vê só totais por município, nunca a praia exata.</li>
+    <li><strong>Acesso em camadas</strong>E-mail autorizado antes da tela de login, senha mais código no celular, bloqueio após 5 erros e papéis de administrador, editor, leitor e registrador.</li>
+    <li><strong>Download rastreado</strong>Planilha detalhada só para perfil autorizado, com marca d'água e registro de quem baixou.</li>
+    <li><strong>Devolutiva pronta</strong>Relatório em PowerPoint ou PDF gerado com os dados do dia, para levar de volta à comunidade.</li>
+    <li><strong>Dado é da comunidade</strong>Backup diário guardado por 7 dias e cópia mensal entregue à organização.</li>
+  </ul>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Lição que serve além do mar</p><h2>Quem trabalha longe da antena</h2></div>
+  <div class="texto revela">
+    <p>Pescador, agricultor, agente de campo: quem produz costuma estar onde a internet não chega. O desenho aqui parte disso. <strong>O celular é a fonte da verdade até o envio</strong>, o servidor nunca duplica, e quem está no escritório sabe exatamente o que chegou, o que falta e o que precisa ser conferido.</p>
+    <p>Também parte de outra coisa: confiança. Comunidade que desconfia de quem chega só entrega dado se souber quem vê o quê. Por isso o sigilo está no banco, e não só na tela.</p>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <p class="rotulo"><i></i>Tecnologias</p>
+  <div class="stack" style="margin-top:16px"><span>PWA</span><span>PostgreSQL</span><span>Supabase</span><span>Row Level Security</span><span>MFA</span><span>Cloudflare Pages e Access</span><span>ECharts</span><span>ExcelJS</span><span>OCR</span><span>Python</span><span>python-pptx</span><span>WeasyPrint</span></div>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <p class="rotulo"><i></i>Continue vendo</p>
+  <div class="proximos" style="margin-top:20px" data-proximos="pesca-artesanal"></div>
+</div></section>
+</main>
+
+<footer class="rodape"><div class="wrap rodape__in">
+  <img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
+  <p>Bruno Lima · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">github.com/Bruno-LSo</a></p>
+</div></footer>
+
+<script src="../assets/js/projetos.js"></script>
+<script src="../assets/js/mosaico.js"></script>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  let online = true; const local = []; const banco = new Map(); let dup = 0, pen = 0, ultimo = null;
+  const hora = () => new Date().toLocaleTimeString('pt-BR');
+  const uuid = () => (crypto.randomUUID ? crypto.randomUUID() : String(Math.random()).slice(2)).slice(0, 8);
+  let vazio = true;
+  function log(html) { const l = $('log'); if (vazio) { l.innerHTML = ''; vazio = false; } l.insertAdjacentHTML('beforeend', `<div>${hora()} ${html}</div>`); l.scrollTop = l.scrollHeight; }
+  function render() {
+    $('fila').innerHTML = local.length ? local.map((f) => `<div class="${f.enviada ? 'env' : 'pend'}"><span>${f.esp} · ${f.kg} kg</span><span>${f.enviada ? 'enviada' : 'aguardando sinal'}</span></div>`).join('') : '<div><span>Nenhuma ficha guardada</span></div>';
+    $('k-rec').textContent = banco.size; $('k-dup').textContent = dup; $('k-pen').textContent = pen;
+    const s = $('sinal'); s.className = 'sinal ' + (online ? 'on' : 'off'); s.textContent = online ? '● com sinal' : '○ sem sinal'; s.setAttribute('aria-pressed', online);
+  }
+  function enviar(f) {
+    if (banco.has(f.id)) { dup++; log(`<em>reenvio</em> ficha ${f.id} já existe, nada gravado`); return; }
+    banco.set(f.id, f); f.enviada = true; ultimo = f;
+    log(`<b>gravada</b> ficha ${f.id} · ${f.esp} ${f.kg} kg · versão 1`);
+    if (!(f.kg > 0)) { pen++; log('<em>pendência</em> espécie sem quantidade'); }
+    if (f.emb === 'Canoa a remo' && f.motor) { pen++; }
+    setTimeout(() => { const i = local.indexOf(f); if (i >= 0) { local.splice(i, 1); render(); } }, 1600);
+  }
+  function sincronizar() { local.filter((f) => !f.enviada).forEach(enviar); render(); }
+  $('sinal').addEventListener('click', () => { online = !online; if (online) { log('sinal voltou, enviando fila'); sincronizar(); } render(); });
+  $('salvar').addEventListener('click', () => {
+    const f = { id: uuid(), esp: $('esp').value, kg: parseFloat($('kg').value), emb: $('emb').value, enviada: false };
+    local.push(f);
+    if (online) enviar(f); else log(`<em>sem sinal</em> ficha ${f.id} guardada cifrada no aparelho`);
+    render();
+  });
+  $('reenviar').addEventListener('click', () => { if (!ultimo) { log('envie uma ficha primeiro'); return; } enviar(ultimo); render(); });
+  render();
+})();
+</script>
+</body>
+</html>
