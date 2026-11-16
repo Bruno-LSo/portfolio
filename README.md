@@ -1,4 +1,4 @@
-# Portfólio · Bruno Lima · HoldUp
+# Portfólio · HoldUp
 
 Projetos organizados por área.
 

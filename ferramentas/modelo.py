@@ -6,7 +6,7 @@ CABECA = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{titulo} · Bruno Lima</title>
+<title>{titulo} · HoldUp</title>
 <meta name="description" content="{descricao}">
 <meta name="theme-color" content="#0B1820">
 <link rel="icon" href="{raiz}favicon.svg" type="image/svg+xml">
@@ -18,7 +18,7 @@ CABECA = """<!doctype html>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo"><div class="topo__in">
-  <a class="marca" href="{raiz}index.html"><img src="{raiz}assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
+  <a class="marca" href="{raiz}index.html"><img src="{raiz}assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio</span></a>
   <nav class="nav" aria-label="Áreas">{menu}</nav>
 </div></header>
 """
@@ -26,7 +26,7 @@ CABECA = """<!doctype html>
 RODAPE = """
 <footer class="rodape"><div class="wrap rodape__in">
   <img src="{raiz}assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
-  <p>Bruno Lima · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">github.com/Bruno-LSo</a></p>
+  <p>HoldUp · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">GitHub</a></p>
 </div></footer>
 {scripts}
 </body>

@@ -58,7 +58,7 @@ def atualizar_manual(p):
     ant, prox = vizinhos(p)
     arq = RAIZ / "projetos" / f"{p['slug']}.html"
     t = arq.read_text(encoding="utf-8")
-    topo = f'<header class="topo"><div class="topo__in">\n  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>\n  <nav class="nav" aria-label="Áreas">{M.menu(AREAS, "../", a["id"])}</nav>\n</div></header>'
+    topo = f'<header class="topo"><div class="topo__in">\n  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio</span></a>\n  <nav class="nav" aria-label="Áreas">{M.menu(AREAS, "../", a["id"])}</nav>\n</div></header>'
     t = trocar(t, "cabeca", topo)
     t = trocar(t, "migalha", f'<a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../areas/{a["id"]}.html">{a["nome"]}</a>')
     t = trocar(t, "nav", M.navegacao(ant, prox, a, "../").replace("\n</main>\n", ""))
@@ -102,8 +102,8 @@ def pagina_inicial():
   <canvas data-mosaico aria-hidden="true"></canvas>
   <div class="wrap">
     <p class="rotulo entra"><i></i>Portfólio</p>
-    <h1 class="entra" style="--o:1">Bruno Lima</h1>
-    <p class="lead entra" style="--o:2">HoldUp, desenvolvimento de soluções. Projetos organizados por área.</p>
+    <h1 class="entra" style="--o:1">HoldUp</h1>
+    <p class="lead entra" style="--o:2">Desenvolvimento de soluções. Projetos organizados por área.</p>
   </div>
 </section>
 <section class="secao" id="areas"><div class="wrap">
@@ -111,12 +111,12 @@ def pagina_inicial():
   <div class="areas">{cartoes}</div>
 </div></section>
 <section class="secao secao--clara" id="contato"><div class="wrap contato">
-  <div><p class="rotulo"><i></i>Contato</p><h2>Bruno Lima</h2><p>Sócio da HoldUp. Análise e Desenvolvimento de Sistemas, Filosofia e Ciência de Dados.</p></div>
+  <div><p class="rotulo"><i></i>Contato</p><h2>HoldUp</h2><p>Desenvolvimento de sistemas, painéis de dados e aprendizado de máquina.</p></div>
   <div class="hero__acoes"><a class="btn" href="https://wa.me/5531987510985">WhatsApp</a><a class="btn btn--linha" href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a><a class="btn btn--linha" href="https://github.com/Bruno-LSo">GitHub</a></div>
 </div></section>
 </main>
 """
-    html = cabeca("Portfólio", "Projetos de Bruno Lima, HoldUp, organizados por área.", "#4FD1D4", "").replace("<title>Portfólio · Bruno Lima</title>", "<title>Portfólio · Bruno Lima · HoldUp</title>")
+    html = cabeca("Portfólio", "Projetos da HoldUp organizados por área.", "#4FD1D4", "").replace("<title>Portfólio · HoldUp</title>", "<title>Portfólio · HoldUp</title>")
     (RAIZ / "index.html").write_text(html + corpo + M.RODAPE.format(raiz="", scripts=SCRIPTS.format(r="")), encoding="utf-8")
 
 
