@@ -16,11 +16,11 @@
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo"><div class="topo__in">
   <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio</span></a>
-  <nav class="nav" aria-label="Áreas"><a href="../areas/comercio.html">Comércio</a><a href="../areas/campo.html">Território</a><a href="../areas/gestao.html" aria-current="page">Gestão</a><a href="../areas/dados.html">Dados</a><a href="../areas/saude.html">Saúde e ML</a><a href="../areas/produtos.html">Aplicativos</a></nav>
+  <nav class="nav" aria-label="Áreas"><a href="../areas/comercio.html">Comércio</a><a href="../areas/campo.html">Território</a><a href="../areas/gestao.html" aria-current="page">Sistemas</a><a href="../areas/dados.html">Dados</a><a href="../areas/saude.html">Saúde</a><a href="../areas/modelos.html">Modelos</a><a href="../areas/produtos.html">Aplicativos</a></nav>
 </div></header>
 <main id="conteudo">
 <section class="caso-hero"><div class="wrap">
-  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../areas/gestao.html">Sistemas de gestão</a></p>
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../areas/gestao.html">Sistemas e plataformas</a></p>
   <h1 class="entra" style="--o:1">AdvinhAê</h1>
   <p class="lead entra" style="--o:2">Site de bolão: os participantes criam bolões, convidam amigos por e-mail, registram palpites e acompanham o ranking. Jogos e placares são atualizados a partir de uma base esportiva.</p>
   <dl class="ficha entra" style="--o:3"><div><dt>Cliente</dt><dd>AdvinhAê</dd></div><div><dt>Esportes</dt><dd>7</dd></div><div><dt>Login</dt><dd>E-mail ou Google</dd></div><div><dt>Atualização</dt><dd>A cada 5 minutos</dd></div></dl>
@@ -29,7 +29,7 @@
 <section class="bloco"><div class="wrap bloco__grid"><div><h2>Demonstração</h2><p>Placar exato vale 20 pontos; acertar o vencedor ou o empate vale 10.</p></div><div class="revela"><div class="painel"><div class="painel__barra"><i></i><i></i><i></i><span>pontuação</span></div><div class="painel__corpo"><div class="controles"><div class="campo"><label for="pa">Palpite, mandante <output id="pa-o">2</output></label><input id="pa" type="range" min="0" max="6" value="2"></div><div class="campo"><label for="pb">Palpite, visitante <output id="pb-o">1</output></label><input id="pb" type="range" min="0" max="6" value="1"></div><div class="campo"><label for="ra">Resultado, mandante <output id="ra-o">2</output></label><input id="ra" type="range" min="0" max="6" value="2"></div><div class="campo"><label for="rb">Resultado, visitante <output id="rb-o">0</output></label><input id="rb" type="range" min="0" max="6" value="0"></div></div><div class="kpi" style="margin-top:16px"><strong class="num" id="pts">10</strong><span id="pts-t" role="status">pontos</span></div></div></div></div></div></section>
 <section class="bloco"><div class="wrap bloco__grid"><div><h2>Funcionalidades</h2></div><div class="revela"><ul class="lista"><li><strong>Bolões</strong>Criação, convite por e-mail e fuso horário de cada participante.</li><li><strong>Resultados</strong>Ligas, times e partidas atualizados por rotina no banco.</li><li><strong>Rodadas durante o jogo</strong>Opcionais, valendo um décimo dos pontos.</li><li><strong>Ranking</strong>Classificação enviada por e-mail.</li><li><strong>Implantação</strong>Guia de banco, e-mail, domínio e login com Google.</li></ul></div></div></section>
 <section class="bloco"><div class="wrap bloco__grid"><div><h2>Tecnologias</h2></div><div><div class="stack"><span>React 18</span><span>Supabase</span><span>PostgreSQL</span><span>pg_cron</span><span>Edge Functions</span><span>TheSportsDB</span><span>Resend</span><span>Google OAuth</span></div></div></div></section>
-<nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><a class="navp__item navp__ant" href="../projetos/programa-mulher.html"><small>Anterior</small><span>Programa Mulher 2026</span></a><a class="navp__item navp__sum" href="../areas/gestao.html"><small>Sumário</small><span>Sistemas de gestão</span></a><a class="navp__item navp__prox" href="../projetos/homecook.html"><small>Próximo</small><span>HomeCook</span></a></div></nav>
+<nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><a class="navp__item navp__ant" href="../projetos/programa-mulher.html"><small>Anterior</small><span>Programa Mulher 2026</span></a><a class="navp__item navp__sum" href="../areas/gestao.html"><small>Sumário</small><span>Sistemas e plataformas</span></a><a class="navp__item navp__prox" href="../projetos/homecook.html"><small>Próximo</small><span>HomeCook</span></a></div></nav>
 </main>
 
 <footer class="rodape"><div class="wrap rodape__in">
@@ -38,6 +38,7 @@
 </div></footer>
 <script src="../assets/js/graficos.js"></script>
 <script src="../assets/js/mosaico.js"></script>
+<script src="../assets/js/telas.js"></script>
 <script>
 (function(){const ids=['pa','pb','ra','rb'],v=i=>+document.getElementById(i).value;
 function calc(){ids.forEach(i=>document.getElementById(i+'-o').textContent=v(i));const s=Math.sign(v('pa')-v('pb')),r=Math.sign(v('ra')-v('rb'));let p=0,t='pontos';

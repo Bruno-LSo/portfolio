@@ -17,7 +17,7 @@ from conteudo import AREAS, P  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
 AREA = {a["id"]: a for a in AREAS}
-SCRIPTS = '<script src="{r}assets/js/graficos.js"></script>\n<script src="{r}assets/js/mosaico.js"></script>'
+SCRIPTS = '<script src="{r}assets/js/graficos.js"></script>\n<script src="{r}assets/js/mosaico.js"></script>\n<script src="{r}assets/js/telas.js"></script>'
 
 
 def por_area(aid):
@@ -39,7 +39,9 @@ def pagina_projeto(p):
     ant, prox = vizinhos(p)
     partes = [cabeca(p["nome"], p["resumo"], a["cor"], "../", a["id"]), M.hero(p, a, "../"), M.numeros(p.get("numeros"))]
     for bloco in p.get("blocos", []):
-        partes.append(M.secao(bloco[0], bloco[1], bloco[2] if len(bloco) > 2 else ""))
+        apoio = bloco[2] if len(bloco) > 2 else ""
+        larga = len(bloco) > 3 and bloco[3] == "larga"
+        partes.append((M.secao_larga if larga else M.secao)(bloco[0], bloco[1], apoio))
     partes.append(M.tecnologias(p["stack"], p.get("link")))
     partes.append(M.navegacao(ant, prox, a, "../"))
     partes.append(M.RODAPE.format(raiz="../", scripts=SCRIPTS.format(r="../") + "\n" + p.get("script", "")))

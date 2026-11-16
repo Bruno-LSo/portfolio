@@ -8,16 +8,18 @@ import modelo as M
 AREAS = [
     {"id": "comercio", "nome": "Comércio eletrônico", "curto": "Comércio", "cor": "#C9E36A",
      "texto": "Lojas virtuais com catálogo, carrinho, pagamento, frete e integração com ERP."},
-    {"id": "campo", "nome": "Campo e território", "curto": "Território", "cor": "#5CC98A",
-     "texto": "Coleta de dados em campo, mapeamento e bases municipais."},
-    {"id": "gestao", "nome": "Sistemas de gestão", "curto": "Gestão", "cor": "#4FB3E8",
+    {"id": "campo", "nome": "Território e infraestrutura", "curto": "Território", "cor": "#5CC98A",
+     "texto": "Coleta de dados em campo, mapas, infraestrutura e bases municipais."},
+    {"id": "gestao", "nome": "Sistemas e plataformas", "curto": "Sistemas", "cor": "#4FB3E8",
      "texto": "Plataformas com fluxos de aprovação, perfis de acesso e assinatura digital."},
     {"id": "dados", "nome": "Dados e painéis", "curto": "Dados", "cor": "#FFD25E",
      "texto": "Extração, conferência e visualização de bases públicas e institucionais."},
-    {"id": "saude", "nome": "Saúde e aprendizado de máquina", "curto": "Saúde e ML", "cor": "#4FD1D4",
-     "texto": "Modelos preditivos, avaliação econômica e análises estatísticas em saúde."},
-    {"id": "produtos", "nome": "Aplicativos e produtos", "curto": "Aplicativos", "cor": "#D3A574",
-     "texto": "Aplicativos de celular, jogo online e ferramentas de áudio e vídeo."},
+    {"id": "saude", "nome": "Saúde", "curto": "Saúde", "cor": "#4FD1D4",
+     "texto": "Avaliação econômica, painéis da rede de atendimento e apoio a pareceres técnicos."},
+    {"id": "modelos", "nome": "Modelos preditivos e estatística", "curto": "Modelos", "cor": "#F08A7E",
+     "texto": "Classificação, séries temporais, texto, imagem e análise estatística, do dado bruto ao resultado."},
+    {"id": "produtos", "nome": "Aplicativos, jogos e automação", "curto": "Aplicativos", "cor": "#D3A574",
+     "texto": "Aplicativos de celular, jogos, ferramentas de áudio e vídeo e automação de rotinas."},
 ]
 
 P = []
@@ -352,7 +354,7 @@ projeto(slug="calculadora-avc", area="saude", manual=True, nome="Calculadora de 
         resumo="Impacto orçamentário de tenecteplase e alteplase no AVC isquêmico, por território.",
         tec="JavaScript · Supabase · PostgreSQL · Python")
 
-projeto(slug="risco-cardiovascular", area="saude", manual=True, nome="Predição de risco cardiovascular",
+projeto(slug="risco-cardiovascular", area="modelos", manual=True, nome="Predição de risco cardiovascular",
         resumo="Comparação de cinco algoritmos, com seleção de variáveis por Boruta e interpretação por SHAP.",
         tec="Python · TabPFN · CatBoost · SHAP")
 
@@ -476,3 +478,33 @@ projeto(slug="elicitador", area="produtos", nome="Elicitador de requisitos",
         lead="Roteiro de levantamento de requisitos descrito em YAML, com um script que confere a consistência entre fases e gera os diagramas.",
         ficha=[("Tipo", "Método"), ("Formato", "YAML"), ("Diagramas", "Mermaid"), ("Conferência", "Script em Python")],
         stack=["Python", "YAML", "Mermaid"])
+
+
+# ================================================================ casos detalhados
+# Cada arquivo ferramentas/casos/<slug>.py define CASO = {...}.
+# Projeto já listado acima: as chaves de CASO substituem as do registro (lead, ficha, numeros, blocos, stack, link...).
+# Projeto novo: CASO traz também nome, resumo, tec e area.
+def _carregar_casos():
+    import importlib.util
+    from pathlib import Path
+    pasta = Path(__file__).parent / "casos"
+    por_slug = {p["slug"]: p for p in P}
+    for arq in sorted(pasta.glob("*.py")):
+        if arq.name.startswith("_"):
+            continue
+        spec = importlib.util.spec_from_file_location(f"casos.{arq.stem}", arq)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        caso = dict(mod.CASO)
+        slug = caso.setdefault("slug", arq.stem)
+        if slug in por_slug:
+            por_slug[slug].update(caso)
+        else:
+            faltam = [k for k in ("nome", "resumo", "tec", "area") if k not in caso]
+            assert not faltam, f"{arq.name}: faltam {faltam}"
+            caso.setdefault("stack", [])
+            P.append(caso)
+            por_slug[slug] = caso
+
+
+_carregar_casos()

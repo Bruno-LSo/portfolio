@@ -264,3 +264,43 @@ span.navp__item{background:none;box-shadow:none}
 .navp__prox{text-align:right}
 @media (max-width:700px){.navp__in{grid-template-columns:1fr}.navp__sum{order:3}.navp__prox{text-align:left}span.navp__item{display:none}}
 .bloco__grid > div:first-child h2{font-size:clamp(22px,2.4vw,28px);margin-top:0}
+
+/* componentes visuais dos casos */
+.bloco__cab{max-width:760px;margin-bottom:26px}
+.bloco__cab h2{font-size:clamp(24px,2.8vw,34px)}
+.bloco__cab p{color:var(--texto-suave);font-size:14.5px;margin-top:10px}
+.telas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.telas--celular{grid-template-columns:repeat(4,minmax(0,1fr))}
+.telas figure{margin:0}
+.telas a{display:block;border-radius:14px;overflow:hidden;background:var(--noite-2);box-shadow:0 0 0 1px var(--linha),0 24px 48px -36px rgb(0 0 0 / .9);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.telas a:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--linha-forte),0 30px 60px -36px rgb(0 0 0 / .9)}
+.telas img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.telas--celular img{aspect-ratio:9/19.5}
+.telas figcaption{font-size:13.5px;color:var(--texto-suave);margin-top:10px;line-height:1.45}
+@media (max-width:860px){.telas--celular{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.telas{grid-template-columns:1fr}.telas--celular{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ampliada{position:fixed;inset:0;z-index:200;background:rgb(5 12 17 / .92);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(12px,3vw,40px);gap:12px;cursor:zoom-out}
+.ampliada img{max-width:100%;max-height:calc(100vh - 90px);border-radius:10px;box-shadow:0 0 0 1px var(--linha-forte)}
+.ampliada p{color:var(--texto-suave);font-size:14px;text-align:center;max-width:820px}
+.ampliada button{position:absolute;top:14px;right:16px;background:var(--noite-3);color:var(--texto);border:0;border-radius:999px;width:40px;height:40px;font-size:20px;cursor:pointer;box-shadow:0 0 0 1px var(--linha-forte)}
+.fg{display:flex;flex-direction:column;align-items:stretch}
+.fg__nivel{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:center}
+.fg__rot{font:500 11.5px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--acento);text-align:right}
+.fg__caixas{display:flex;flex-wrap:wrap;gap:10px}
+.fg__caixa{flex:1 1 160px;padding:13px 15px;border-radius:12px;background:var(--noite-3);box-shadow:0 0 0 1px var(--linha);border-top:2px solid var(--acento)}
+.fg__caixa strong{display:block;font-size:14.5px;font-weight:600;line-height:1.3}
+.fg__caixa span{display:block;font-size:12.5px;color:var(--texto-suave);margin-top:4px;line-height:1.4}
+.fg__seta{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;height:34px;align-items:center}
+.fg__seta i{grid-column:2;justify-self:center;position:relative;width:2px;height:100%;background:linear-gradient(var(--linha-forte),var(--acento))}
+.fg__seta i::after{content:"";position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--acento);border-bottom:0}
+.fg__seta span{grid-column:2;grid-row:1;justify-self:center;margin-left:calc(2ch + 90px);font:400 11.5px/1 var(--mono);color:var(--texto-fraco)}
+@media (max-width:700px){.fg__nivel,.fg__seta{grid-template-columns:1fr}.fg__rot{text-align:left}.fg__seta i,.fg__seta span{grid-column:1}}
+.achados{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.achado{padding:18px;border-radius:14px;background:var(--noite-3);box-shadow:0 0 0 1px var(--linha);border-left:3px solid var(--acento)}
+.achado strong{display:block;font-size:clamp(20px,2.2vw,26px);font-weight:400;color:var(--texto);letter-spacing:-.01em}
+.achado p{font-size:14px;color:var(--texto-suave);margin-top:8px;line-height:1.5}
+.grafico,.diagrama{margin:0;padding:clamp(14px,2.4vw,24px);border-radius:16px;background:var(--noite-2);box-shadow:0 0 0 1px var(--linha)}
+.grafico__tit{font:500 12px/1.3 var(--mono);color:var(--texto-fraco);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+.diagrama svg{width:100%;height:auto}
+.diagrama figcaption{font-size:13.5px;color:var(--texto-suave);margin-top:12px}
+.colunas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:18px;align-items:start}

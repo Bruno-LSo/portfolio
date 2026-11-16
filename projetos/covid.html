@@ -16,11 +16,11 @@
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo"><div class="topo__in">
   <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio</span></a>
-  <nav class="nav" aria-label="Áreas"><a href="../areas/comercio.html">Comércio</a><a href="../areas/campo.html">Território</a><a href="../areas/gestao.html">Gestão</a><a href="../areas/dados.html">Dados</a><a href="../areas/saude.html" aria-current="page">Saúde e ML</a><a href="../areas/produtos.html">Aplicativos</a></nav>
+  <nav class="nav" aria-label="Áreas"><a href="../areas/comercio.html">Comércio</a><a href="../areas/campo.html">Território</a><a href="../areas/gestao.html">Sistemas</a><a href="../areas/dados.html">Dados</a><a href="../areas/saude.html" aria-current="page">Saúde</a><a href="../areas/modelos.html">Modelos</a><a href="../areas/produtos.html">Aplicativos</a></nav>
 </div></header>
 <main id="conteudo">
 <section class="caso-hero"><div class="wrap">
-  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../areas/saude.html">Saúde e aprendizado de máquina</a></p>
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../areas/saude.html">Saúde</a></p>
   <h1 class="entra" style="--o:1">Painel da COVID-19</h1>
   <p class="lead entra" style="--o:2">Painel interativo com a evolução da COVID-19 no Brasil e nos estados, a partir dos dados do Ministério da Saúde.</p>
   <dl class="ficha entra" style="--o:3"><div><dt>Fonte</dt><dd>Ministério da Saúde</dd></div><div><dt>Período</dt><dd>25/02/2020 a 25/04/2025</dd></div><div><dt>Unidade</dt><dd>Brasil e 27 UFs</dd></div><div><dt>Código</dt><dd><a href="https://github.com/Bruno-LSo/DashCovid19" target="_blank" rel="noopener noreferrer">github.com/Bruno-LSo/DashCovid19</a></dd></div></dl>
@@ -29,7 +29,7 @@
 <section class="bloco"><div class="wrap bloco__grid"><div><h2>Casos novos por ano</h2></div><div class="revela"><div class="painel"><div class="painel__corpo"><div id="g-covid"></div><p class="nota">2025 até abril.</p></div></div></div></div></section>
 <section class="bloco"><div class="wrap bloco__grid"><div><h2>Funcionalidades</h2></div><div class="revela"><ul class="lista"><li><strong>Mapa</strong>Mapa por UF; o clique filtra os gráficos.</li><li><strong>Período</strong>Filtro de ano e seletor de data.</li><li><strong>Indicadores</strong>Casos, óbitos, recuperados e em acompanhamento.</li><li><strong>Comparação</strong>Dois estados lado a lado, com picos diário e mensal.</li></ul></div></div></section>
 <section class="bloco"><div class="wrap bloco__grid"><div><h2>Tecnologias</h2></div><div><div class="stack"><span>Python</span><span>pandas</span><span>Dash</span><span>Plotly</span></div><p style="margin-top:22px"><a class="btn btn--mini btn--linha" href="https://github.com/Bruno-LSo/DashCovid19" rel="noopener noreferrer" target="_blank">Ver o código <span class="seta" aria-hidden="true">→</span></a></p></div></div></section>
-<nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><a class="navp__item navp__ant" href="../projetos/estatistica-avc.html"><small>Anterior</small><span>Estrutura de saúde e letalidade do AVC</span></a><a class="navp__item navp__sum" href="../areas/saude.html"><small>Sumário</small><span>Saúde e aprendizado de máquina</span></a><a class="navp__item navp__prox" href="../projetos/formatador.html"><small>Próximo</small><span>Formatador de pareceres técnicos</span></a></div></nav>
+<nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><a class="navp__item navp__ant" href="../projetos/estatistica-avc.html"><small>Anterior</small><span>Estrutura de saúde e letalidade do AVC</span></a><a class="navp__item navp__sum" href="../areas/saude.html"><small>Sumário</small><span>Saúde</span></a><a class="navp__item navp__prox" href="../projetos/formatador.html"><small>Próximo</small><span>Formatador de pareceres técnicos</span></a></div></nav>
 </main>
 
 <footer class="rodape"><div class="wrap rodape__in">
@@ -38,6 +38,7 @@
 </div></footer>
 <script src="../assets/js/graficos.js"></script>
 <script src="../assets/js/mosaico.js"></script>
+<script src="../assets/js/telas.js"></script>
 <script>
 G.colunas(document.getElementById('g-covid'),[['2020',7.68],['2021',14.61],['2022',14.04],['2023',1.91],['2024',.86],['2025',.18]].map(([r,v])=>({rotulo:r,valores:[v]})),[{nome:'Casos novos (milhões)',cor:'#4FD1D4'}],{formatoY:v=>G.fmt(v,0)+' mi',formato:v=>G.fmt(v,2)+' mi',titulo:'Casos novos por ano, em milhões'});
 </script>
