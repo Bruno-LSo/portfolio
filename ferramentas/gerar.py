@@ -96,7 +96,7 @@ def pagina_inicial():
     cartoes = "".join(
         f'<a class="area revela" href="areas/{a["id"]}.html" style="--c:{a["cor"]}"><div class="area__mosaico">'
         + "".join(f'<b style="--o:{0.25 + ((k * 7 + i * 3) % 10) / 13:.2f}"></b>' for k in range(12))
-        + f'</div><h3>{a["nome"]}</h3><p>{a["texto"]}</p><small>{len(por_area(a["id"]))} projetos <span class="seta" aria-hidden="true">→</span></small></a>'
+        + f'</div><h3>{a["nome"]}</h3><p>{a["texto"]}</p><small>Ver projetos <span class="seta" aria-hidden="true">→</span></small></a>'
         for i, a in enumerate(AREAS)
     )
     corpo = f"""<main id="conteudo">
