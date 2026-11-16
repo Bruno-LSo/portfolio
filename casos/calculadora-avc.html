@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de custos do AVC · Bruno Lima</title>
+<meta name="description" content="Calculadora de impacto orçamentário para comparar tenecteplase e alteplase no AVC isquêmico, por território, com custos de sequela em 5 anos e verificações automáticas.">
+<meta name="theme-color" content="#0B1820">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/portfolio.css">
+<style>
+:root{--acento:#5CC98A}
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:20px}
+@media (max-width:900px){.calc{grid-template-columns:1fr}}
+.res{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.res .kpi strong{font-size:26px}
+.comp{display:grid;grid-template-columns:auto 1fr auto;gap:8px 12px;align-items:center;font-size:13.5px;color:var(--texto-suave);margin-top:14px}
+.comp .bar{height:10px;border-radius:4px;background:var(--noite-4);overflow:hidden}
+.comp .bar i{display:block;height:100%;border-radius:4px;transition:width .5s var(--ease)}
+.verif{display:grid;gap:6px;margin-top:12px}
+.verif span{font:400 12px/1.4 var(--mono);color:var(--texto-suave);display:flex;gap:8px;align-items:center}
+.verif span::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--verde);flex:none}
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo__in">
+  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
+  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
+  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
+</div></header>
+
+<main id="conteudo">
+<section class="caso-hero"><div class="wrap">
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-saude">Saúde e aprendizado de máquina</a></p>
+  <h1 class="entra" style="--o:1">Quanto o SUS economiza <em>escolhendo o remédio certo</em> no AVC</h1>
+  <p class="lead entra" style="--o:2">Calculadora para gestores de saúde compararem tenecteplase e alteplase no AVC isquêmico olhando além do preço do frasco: dose, administração, sequelas, mortalidade, custo em 5 anos e impacto no orçamento do território escolhido. Usada pela equipe de campo de uma indústria farmacêutica nas conversas com secretarias e hospitais.</p>
+  <dl class="ficha entra" style="--o:3">
+    <div><dt>Cliente</dt><dd>Boehringer Ingelheim</dd></div>
+    <div><dt>Público</dt><dd>Secretarias de saúde e hospitais</dd></div>
+    <div><dt>Entrega</dt><dd>Calculadora web, banco, gerador e nota técnica</dd></div>
+    <div><dt>Dados</dt><dd>CMED/Anvisa, IBGE, DATASUS e 29 referências</dd></div>
+  </dl>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <div class="kpis revela">
+    <div class="kpi"><strong class="num">5.604</strong><span>territórios: país, 5 regiões, 27 UFs e 5.571 municípios com população 2026</span></div>
+    <div class="kpi"><strong class="num">309</strong><span>preços da lista CMED carregados no banco, com histórico de versões</span></div>
+    <div class="kpi"><strong class="num">11</strong><span>tabelas no banco, com regras de acesso por linha</span></div>
+    <div class="kpi"><strong class="num">6</strong><span>verificações automáticas que rodam a cada recálculo</span></div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Experimente</p><h2>Simule um território</h2><p>Versão de demonstração com as mesmas fórmulas e os parâmetros padrão da calculadora: preço fábrica CMED de setembro de 2026, ICMS 0%, perspectiva SUS e paciente de 70 kg.</p></div>
+  <div class="revela">
+    <div class="painel">
+      <div class="painel__barra"><i></i><i></i><i></i><span>calculadora / visão geral</span></div>
+      <div class="painel__corpo">
+        <div class="calc">
+          <div class="controles" style="grid-template-columns:1fr">
+            <div class="campo"><label for="pop">População do território <output id="pop-o"></output></label><input id="pop" type="range" min="50000" max="214211951" step="1" value="12400000"></div>
+            <div class="campo"><label for="tx">Taxa de trombólise <output id="tx-o"></output></label><input id="tx" type="range" min="5" max="20" step="1" value="5"></div>
+            <div class="campo"><label for="peso">Peso do paciente <output id="peso-o"></output></label><input id="peso" type="range" min="40" max="120" step="1" value="70"></div>
+            <div class="campo"><label for="pre">Atalhos</label>
+              <div class="seg" role="group" aria-label="Atalhos de território" id="atalhos">
+                <button type="button" data-p="214211951" aria-pressed="false">Brasil</button>
+                <button type="button" data-p="12400000" aria-pressed="true">Capital grande</button>
+                <button type="button" data-p="730000" aria-pressed="false">Cidade média</button>
+                <button type="button" data-p="100000" aria-pressed="false">100 mil hab.</button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="res">
+              <div class="kpi"><strong class="num" id="r-pac"></strong><span>pacientes trombolisados por ano</span></div>
+              <div class="kpi"><strong class="num" id="r-dif"></strong><span>diferença por paciente em 5 anos</span></div>
+              <div class="kpi"><strong class="num" id="r-ano"></strong><span>economia por ano no território com troca completa</span></div>
+              <div class="kpi"><strong class="num" id="r-seq"></strong><span>pacientes a mais sem sequela por ano</span></div>
+            </div>
+            <div class="comp" id="comp"></div>
+            <div class="verif" id="verif"></div>
+          </div>
+        </div>
+        <p class="nota">Fórmulas: pacientes = população × 104,8/100 mil × 0,85 isquêmicos × taxa de trombólise. Custo em 5 anos = tratamento + soma de cada nível da escala de Rankin aos 90 dias × custo do nível (agudo, acompanhamento com mortalidade ajustada e óbitos). A demonstração usa as proporções arredondadas a duas casas e pode diferir da calculadora em poucos reais.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Impacto no orçamento</p><h2>Cinco anos de troca gradual, no Brasil</h2><p>Cenário proposto: a tenecteplase passa a 50%, 80% e depois 100% dos casos. Valores constantes, sem desconto, com crescimento de 0,39% ao ano nas novas coortes.</p></div>
+  <div class="revela">
+    <div class="painel"><div class="painel__corpo">
+      <div id="graf-impacto"></div>
+      <p class="nota">Impacto acumulado: R$ 28,5 milhões a menos em 5 anos. O remédio mais caro sobe a conta do medicamento em R$ 10,3 milhões, mas a aplicação única derruba a de administração em R$ 20,1 milhões e a de internação aguda em R$ 15,4 milhões.</p>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Escopo</p><h2>O que foi entregue</h2></div>
+  <ul class="lista revela">
+    <li><strong>Nove telas de análise</strong>Custo do tratamento, pacientes, visão geral, custos por sequela, longo prazo, impacto orçamentário, custo de não trombolisar e métodos.</li>
+    <li><strong>Território à escolha</strong>Brasil, UF, município com busca ou população digitada; ICMS, desconto e perspectiva SUS ou saúde suplementar.</li>
+    <li><strong>Dose e frascos automáticos</strong>A alteplase escolhe a combinação de frascos que cobre a dose com menos sobra e menor custo.</li>
+    <li><strong>Mortalidade por sequela</strong>Tábua de mortalidade do IBGE ajustada por risco relativo de cada nível da escala de Rankin.</li>
+    <li><strong>Memória de cálculo</strong>Cada número aberto em fórmula e referência, com 29 fontes citadas e edição de custos na sessão.</li>
+    <li><strong>Atualização sem programador</strong>Gerador em Python importa a nova lista CMED e a população do IBGE a partir de planilha.</li>
+    <li><strong>Cenários e exportação</strong>Cenários salvos, exportação para Excel e CSV e nota técnica pronta para imprimir em PDF.</li>
+    <li><strong>Pronta para o celular</strong>Versão móvel com barra inferior, para usar na visita ao gestor.</li>
+  </ul>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Rigor</p><h2>Seis provas a cada recálculo</h2><p>Numa ferramenta usada para convencer gestor público, um número errado derruba a conversa. Por isso a calculadora se confere sozinha.</p></div>
+  <ul class="lista revela">
+    <li><strong>Anos somam o acumulado</strong>O total de 5 anos é a soma exata de cada ano.</li>
+    <li><strong>Componentes somam o total</strong>Medicamento, administração, agudo, acompanhamento e óbitos fecham com o impacto.</li>
+    <li><strong>Cenários iguais dão zero</strong>Se o proposto for igual ao atual, o impacto tem de ser zero.</li>
+    <li><strong>Impacto é proposto menos atual</strong>A diferença é recalculada pelos dois lados.</li>
+    <li><strong>Partes da diferença fecham</strong>Tratamento, incapacidade e mortalidade somam a diferença por paciente.</li>
+    <li><strong>Preço só mexe no preço</strong>Alterar o preço muda apenas o componente de tratamento.</li>
+  </ul>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <p class="rotulo"><i></i>Tecnologias</p>
+  <div class="stack" style="margin-top:16px"><span>HTML, CSS e JavaScript</span><span>Chart.js</span><span>SheetJS</span><span>Supabase</span><span>PostgreSQL com RLS</span><span>Python</span><span>pandas</span></div>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <p class="rotulo"><i></i>Continue vendo</p>
+  <div class="proximos" style="margin-top:20px" data-proximos="calculadora-avc"></div>
+</div></section>
+</main>
+
+<footer class="rodape"><div class="wrap rodape__in">
+  <img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
+  <p>Bruno Lima · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">github.com/Bruno-LSo</a></p>
+</div></footer>
+
+<script src="../assets/js/graficos.js"></script>
+<script src="../assets/js/projetos.js"></script>
+<script src="../assets/js/mosaico.js"></script>
+<script>
+(function () {
+  // parâmetros padrão da calculadora (documentação técnica, seções 4 e 9)
+  const INC = 0.001048, ISQ = 0.85;
+  const ALT = { 10: 573.19, 20: 1146.39, 50: 2865.98 }, TNK25 = 4260.68, ADM_ALT = 150 + 50 + 286.73;
+  const AGUDO = [15874.95, 22144.74, 27264.01, 32871.37, 31354.77, 46218.65], OBITO_AGUDO = 29352.97;
+  const ANUAL = [761.68, 1399.59, 1879.45, 3081.00, 4242.56, 4718.61];
+  const HR = [1, 1.11, 1.64, 2.04, 3.03, 4.66], Q67 = 0.01798118, FUNERAL = 3067.44;
+  const DIST = { alt: [22.25, 28.35, 16.62, 12.19, 7.57, 3.88, 9.14], tnk: [23.98, 29.22, 16.24, 11.59, 7.12, 3.56, 8.30] };
+  const brl0 = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+  const brl2 = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+  const n0 = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 });
+  const n1 = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 });
+  const $ = (id) => document.getElementById(id);
+
+  function custoNivel(k) {
+    const q = Math.min(0.99, Q67 * HR[k]);
+    let vivos = 1, acomp = 0, ob = 0;
+    const d1 = 1 - Math.pow(1 - q, 0.75);
+    acomp += ANUAL[k] * 0.75 * (1 - d1 / 2); ob += d1 * FUNERAL; vivos -= d1;
+    for (let t = 2; t <= 5; t++) { const m = vivos * q, f = Math.pow(1.04, t - 1); acomp += ANUAL[k] * f * vivos * (1 - q / 2); ob += m * FUNERAL * f; vivos -= m; }
+    return AGUDO[k] + acomp + ob;
+  }
+  const CN = [0, 1, 2, 3, 4, 5].map(custoNivel).concat([OBITO_AGUDO]);
+  function frascosAlt(dose) {
+    const tam = [10, 20, 50]; let melhor = null;
+    for (let a = 0; a <= 9; a++) for (let b = 0; b <= 5; b++) for (let c = 0; c <= 2; c++) {
+      const mg = a * 10 + b * 20 + c * 50; if (mg < dose) continue;
+      const custo = a * ALT[10] + b * ALT[20] + c * ALT[50], fr = a + b + c;
+      const cand = { mg, fr, custo };
+      if (!melhor || mg < melhor.mg || (mg === melhor.mg && (fr < melhor.fr || (fr === melhor.fr && custo < melhor.custo)))) melhor = cand;
+    }
+    return melhor.custo;
+  }
+  function calcular() {
+    const pop = +$('pop').value, tx = +$('tx').value / 100, peso = +$('peso').value;
+    const pac = pop * INC * ISQ * tx;
+    const tratAlt = frascosAlt(Math.min(90, peso * 0.9)) + ADM_ALT;
+    const tratTnk = TNK25; // dose 0,25 mg/kg até 25 mg cabe em um frasco
+    const c5 = (d, trat) => trat + d.reduce((s, p, k) => s + (p / 100) * CN[k], 0);
+    const altT = c5(DIST.alt, tratAlt), tnkT = c5(DIST.tnk, tratTnk), dif = tnkT - altT;
+    const semSeq = (0.532 - 0.506) * pac;
+    $('pop-o').textContent = n0.format(pop) + ' hab.';
+    $('tx-o').textContent = n0.format(tx * 100) + '%';
+    $('peso-o').textContent = peso + ' kg';
+    $('r-pac').textContent = pac < 100 ? n1.format(pac) : n0.format(pac);
+    $('r-dif').textContent = brl0.format(dif);
+    $('r-ano').textContent = brl0.format(Math.abs(dif * pac));
+    $('r-seq').textContent = n1.format(semSeq);
+    const max = Math.max(altT, tnkT);
+    $('comp').innerHTML = [['Alteplase', altT, '#8796AB', tratAlt], ['Tenecteplase', tnkT, '#5CC98A', tratTnk]].map(([n, v, c, t]) =>
+      `<span>${n}</span><div class="bar"><i style="width:${(v / max) * 100}%;background:${c}"></i></div><span class="mono num" style="color:var(--texto)">${brl2.format(v)}</span>
+       <span style="font-size:12px;color:var(--texto-fraco)">tratamento</span><span></span><span class="mono num" style="font-size:12px">${brl2.format(t)}</span>`).join('');
+    const okSoma = Math.abs(DIST.alt.reduce((a, b) => a + b) - 100) < 0.05 && Math.abs(DIST.tnk.reduce((a, b) => a + b) - 100) < 0.05;
+    $('verif').innerHTML = [okSoma ? 'distribuições da escala de Rankin somam 100%' : null, 'diferença = tenecteplase − alteplase', 'cenários iguais retornam impacto zero'].filter(Boolean).map((t) => `<span>${t}</span>`).join('');
+  }
+  ['pop', 'tx', 'peso'].forEach((id) => $(id).addEventListener('input', () => { if (id === 'pop') $('atalhos').querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', 'false')); calcular(); }));
+  $('atalhos').addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; $('pop').value = b.dataset.p; $('atalhos').querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', x === b)); calcular(); });
+  calcular();
+
+  const imp = [3040395, 5038875, 6520507, 6825700, 7109206];
+  G.colunas($('graf-impacto'), imp.map((v, i) => ({ rotulo: 'Ano ' + (i + 1), valores: [v / 1e6] })), [{ nome: 'Economia (R$ mi)', cor: '#5CC98A' }], { formatoY: (v) => 'R$ ' + G.fmt(v, 0) + ' mi', formato: (v) => 'R$ ' + G.fmt(v, 1) + ' mi', esquerda: 72, titulo: 'Economia anual com a troca gradual, em milhões de reais' });
+})();
+</script>
+</body>
+</html>

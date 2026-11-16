@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telemedicina no AVC · Bruno Lima</title>
+<meta name="description" content="Estudo de custo e impacto da telemedicina no atendimento do AVC em 16 hospitais municipais de São Paulo, de 2023 a 2025, com painel interativo, PDF e Word.">
+<meta name="theme-color" content="#0B1820">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/portfolio.css">
+<style>:root{--acento:#4FD1D4}.duas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}@media (max-width:860px){.duas{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo__in">
+  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
+  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
+  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
+</div></header>
+
+<main id="conteudo">
+<section class="caso-hero"><div class="wrap">
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-saude">Saúde e aprendizado de máquina</a></p>
+  <h1 class="entra" style="--o:1">Um plantão por vídeo no lugar de <em>dezesseis presenciais</em></h1>
+  <p class="lead entra" style="--o:2">A habilitação de unidade de AVC exige neurologista disponível 24 horas, e nenhuma das 16 unidades da rede municipal de São Paulo cumpria o requisito. Cruzei oito bases da Secretaria Municipal de Saúde para mostrar quanto custa cada modelo, quanto recurso federal e estadual fica sem ser captado e o que mudou no atendimento entre 2023 e 2025.</p>
+  <dl class="ficha entra" style="--o:3">
+    <div><dt>Cliente</dt><dd>Boehringer Ingelheim</dd></div>
+    <div><dt>Rede analisada</dt><dd>16 hospitais municipais de São Paulo</dd></div>
+    <div><dt>Entrega</dt><dd>Painel de 23 páginas, PDF e Word</dd></div>
+    <div><dt>Dados</dt><dd>AIH, SIH, SIM, SIHSUS, Telestroke e consolidados da SMS-SP</dd></div>
+  </dl>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <div class="kpis revela">
+    <div class="kpi"><strong class="num">5,6×</strong><span>mais caro manter neurologista presencial nas 16 unidades do que um plantão por telemedicina</span></div>
+    <div class="kpi"><strong class="num">R$ 16,4 mi</strong><span>por ano em incentivo federal e estadual que a rede deixa de captar sem habilitação</span></div>
+    <div class="kpi"><strong class="num">+76%</strong><span>trombólises entre 2023 e 2025, de 398 para 701 por ano</span></div>
+    <div class="kpi"><strong class="num">−19%</strong><span>no tempo médio de internação, de 7,75 para 6,28 dias</span></div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>A conta principal</p><h2>Custo anual dos dois modelos</h2><p>16 postos presenciais exigem 144 neurologistas; o plantão por vídeo cobre a rede com 9. Os modelos só empatariam com o plantão a R$ 510,51.</p></div>
+  <div class="revela">
+    <div class="painel"><div class="painel__corpo">
+      <div id="g-custo"></div>
+      <p class="nota">Plantão de R$ 2.600, 744 plantões por posto no ano. Inclui diaristas, contrato do serviço de telemedicina (R$ 1,2 mi) e 16 estações (R$ 720 mil de investimento inicial). Retorno do investimento em menos de um mês.</p>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Atendimento</p><h2>Trombólises mês a mês</h2><p>A taxa de trombólise passou de 8,8% para 13,8% das internações. Com a teleconsulta, a resposta do neurologista tem mediana de 4 minutos.</p></div>
+  <div class="revela">
+    <div class="painel"><div class="painel__corpo">
+      <div id="leg-trombo" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"></div>
+      <div id="g-trombo"></div>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <div class="duas revela">
+    <div class="painel"><div class="painel__corpo">
+      <p class="rotulo"><i></i>Teleconsultas por ano</p>
+      <div id="leg-tele" style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0"></div>
+      <div id="g-tele"></div>
+      <p class="nota">1.563 teleconsultas de julho de 2019 a março de 2026, em 14 hospitais. 2026 parcial.</p>
+    </div></div>
+    <div class="painel"><div class="painel__corpo">
+      <p class="rotulo"><i></i>Tempo porta-agulha em 2025</p>
+      <div id="g-porta" style="margin-top:12px"></div>
+      <p class="nota">Casos por faixa de tempo entre a chegada e o início da trombólise.</p>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Escopo</p><h2>Como o estudo foi entregue</h2></div>
+  <ul class="lista revela">
+    <li><strong>Oito bases cruzadas</strong>Internações, mortalidade, microdados hospitalares, teleconsultas e consolidados por hospital, com os CIDs do AVC.</li>
+    <li><strong>Painel de 23 páginas</strong>Arquivo único que abre sem internet, com navegação por páginas e gráficos desenhados pelo gerador.</li>
+    <li><strong>Cada número com rótulo</strong>Tudo marcado como dado, premissa ou projeção, com memória de cálculo e fonte na própria página.</li>
+    <li><strong>Projeção de cinco anos</strong>Diferença acumulada de R$ 138 milhões e resultado líquido de R$ 50,8 milhões a favor da telemedicina.</li>
+    <li><strong>Habilitação por unidade</strong>Tipo de habilitação possível, leitos e recurso anual de cada hospital.</li>
+    <li><strong>PDF e Word prontos</strong>O mesmo conteúdo em relatório para circular entre gestores e anexar a processos.</li>
+  </ul>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <p class="rotulo"><i></i>Tecnologias</p>
+  <div class="stack" style="margin-top:16px"><span>Python</span><span>pandas</span><span>SVG gerado em código</span><span>ReportLab</span><span>python-docx</span><span>HTML autônomo</span></div>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <p class="rotulo"><i></i>Continue vendo</p>
+  <div class="proximos" style="margin-top:20px" data-proximos="telemedicina-avc"></div>
+</div></section>
+</main>
+
+<footer class="rodape"><div class="wrap rodape__in">
+  <img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
+  <p>Bruno Lima · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">github.com/Bruno-LSo</a></p>
+</div></footer>
+
+<script src="../assets/js/graficos.js"></script>
+<script src="../assets/js/projetos.js"></script>
+<script src="../assets/js/mosaico.js"></script>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const mi = (v) => 'R$ ' + G.fmt(v, 1) + ' mi';
+  G.barrasH($('g-custo'), [
+    { rotulo: 'Presencial', valor: 33.89, cor: '#F08A7E' },
+    { rotulo: 'Telemedicina', valor: 6.08, cor: '#4FD1D4', destaque: true },
+    { rotulo: 'Receita da habilitação', valor: 16.38, cor: '#5CC98A' }
+  ], { formato: mi, esquerda: 170, titulo: 'Custo anual por modelo e receita possível, em milhões de reais' });
+  const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+  const S = [
+    { nome: '2023', cor: '#3B5566', valores: [32, 31, 39, 34, 30, 37, 42, 34, 38, 30, 41, 44] },
+    { nome: '2024', cor: '#4FB3E8', valores: [32, 44, 48, 37, 52, 38, 41, 45, 47, 48, 55, 52] },
+    { nome: '2025', cor: '#4FD1D4', valores: [55, 49, 50, 55, 65, 70, 63, 62, 73, 73, 63, 60] }
+  ];
+  G.legenda($('leg-trombo'), S);
+  G.linhas($('g-trombo'), meses, S, { min: 20, max: 80, titulo: 'Trombólises por mês em 2023, 2024 e 2025' });
+  const anos = ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
+  const tele = [49, 57, 32, 22, 18, 244, 848, 293], trom = [20, 16, 16, 9, 4, 93, 331, 100];
+  const st = [{ nome: 'Teleconsultas', cor: '#4FB3E8' }, { nome: 'Com trombólise', cor: '#4FD1D4' }];
+  G.legenda($('leg-tele'), st);
+  G.colunas($('g-tele'), anos.map((a, i) => ({ rotulo: a, valores: [tele[i], trom[i]] })), st, { largura: 520, altura: 260, esquerda: 44, titulo: 'Teleconsultas e trombólises por ano' });
+  G.barrasH($('g-porta'), [
+    { rotulo: 'até 30 min', valor: 69, cor: '#5CC98A' }, { rotulo: '31 a 45 min', valor: 143, cor: '#4FD1D4' },
+    { rotulo: '46 a 60 min', valor: 117, cor: '#4FB3E8' }, { rotulo: 'mais de 60 min', valor: 409, cor: '#3B5566' }
+  ], { largura: 520, esquerda: 120, titulo: 'Casos por tempo porta-agulha em 2025' });
+})();
+</script>
+</body>
+</html>

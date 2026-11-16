@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Risco cardiovascular com TabPFN · Bruno Lima</title>
+<meta name="description" content="Estudo de aprendizado de máquina que compara cinco algoritmos para prever risco cardiovascular em pacientes acima de 55 anos, com seleção de variáveis por Boruta e interpretação por SHAP.">
+<meta name="theme-color" content="#0B1820">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/portfolio.css">
+<style>:root{--acento:#4FD1D4}</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="topo__in">
+  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
+  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
+  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
+</div></header>
+
+<main id="conteudo">
+<section class="caso-hero"><div class="wrap">
+  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-saude">Saúde e aprendizado de máquina</a></p>
+  <h1 class="entra" style="--o:1">Prever risco cardiovascular com um <em>transformer</em> feito para tabelas</h1>
+  <p class="lead entra" style="--o:2">Comparei cinco algoritmos sobre uma base de 425.195 pacientes para descobrir quem tem mais chance de doença cardiovascular depois dos 55 anos. O TabPFN, um modelo pré-treinado publicado na Nature em 2025, venceu sem precisar de ajuste fino, e a interpretação mostrou por que cada paciente foi classificado como foi.</p>
+  <dl class="ficha entra" style="--o:3">
+    <div><dt>Contexto</dt><dd>Curso de Verão 2025, LABDAPS, Faculdade de Saúde Pública da USP</dd></div>
+    <div><dt>Problema</dt><dd>Classificação binária: tem ou não doença cardiovascular</dd></div>
+    <div><dt>Técnicas</dt><dd>TabPFN, CatBoost, LightGBM, XGBoost, Random Forest, Boruta, SHAP</dd></div>
+    <div><dt>Código</dt><dd><a href="https://github.com/Bruno-LSo/ML-Health-TABPFN">Notebook no GitHub</a></dd></div>
+  </dl>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <div class="kpis revela">
+    <div class="kpi"><strong class="num">425.195</strong><span>registros de pacientes na base original, com 13 variáveis e nenhum valor nulo</span></div>
+    <div class="kpi"><strong class="num">125.335</strong><span>pacientes acima de 55 anos, o grupo de maior risco, depois do recorte</span></div>
+    <div class="kpi"><strong class="num">0,788</strong><span>AUC-ROC do TabPFN no conjunto de teste, a melhor entre os cinco modelos</span></div>
+    <div class="kpi"><strong class="num">4 de 12</strong><span>variáveis realmente relevantes segundo o Boruta: idade, colesterol, pressão sistólica e hipertensão</span></div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Escopo</p><h2>Do dado bruto ao modelo salvo, passo a passo</h2><p>O pipeline completo de ciência de dados, documentado célula a célula para outra pessoa conseguir repetir.</p></div>
+  <div class="revela">
+    <div class="fluxo">
+      <div><b>01 · dados</b><h4>Base de 425.195 pacientes</h4><p>Demografia, fatores de risco e medidas clínicas. Conferência de nulos e de valores codificados como ausentes.</p></div>
+      <div><b>02 · recorte</b><h4>Acima de 55 anos</h4><p>Ficam 125.335 registros (29,5%) e 10 variáveis, sem identificador nem tratamento.</p></div>
+      <div><b>03 · preparo</b><h4>Codificação e padronização</h4><p>Label e one-hot encoding nas categóricas, padronização das contínuas, divisão 70/30 estratificada.</p></div>
+      <div><b>04 · modelos</b><h4>Cinco algoritmos</h4><p>Busca de hiperparâmetros com RandomizedSearchCV nos quatro modelos de árvores; TabPFN direto, sem ajuste.</p></div>
+      <div><b>05 · seleção</b><h4>Boruta</h4><p>De 12 colunas, 4 confirmadas como relevantes. Modelo refeito só com elas para comparar.</p></div>
+      <div><b>06 · explicação</b><h4>SHAP e persistência</h4><p>Peso de cada variável por paciente e o modelo salvo e recarregado para uso.</p></div>
+    </div>
+    <p class="nota">Para caber no limite do TabPFN, a modelagem usou uma amostra de 1.000 pacientes do recorte: 700 para treino e 300 para teste.</p>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Resultados</p><h2>Cinco modelos, a mesma régua</h2><p>Métricas no conjunto de teste depois da otimização. Precisão e recall medidos na classe positiva, quem tem a doença, que é a que importa para triagem.</p></div>
+  <div class="revela">
+    <div class="painel">
+      <div class="painel__barra"><i></i><i></i><i></i><span>comparacao_modelos.ipynb</span></div>
+      <div class="painel__corpo">
+        <div class="seg" role="group" aria-label="Métrica" id="metricas">
+          <button type="button" data-m="auc" aria-pressed="true">AUC-ROC</button>
+          <button type="button" data-m="acc" aria-pressed="false">Acurácia</button>
+          <button type="button" data-m="prec" aria-pressed="false">Precisão</button>
+          <button type="button" data-m="rec" aria-pressed="false">Recall</button>
+        </div>
+        <div id="graf-modelos" style="margin-top:22px"></div>
+        <p class="nota" id="leitura-metrica" role="status"></p>
+      </div>
+    </div>
+    <div class="tabela-wrap" style="margin-top:16px">
+      <table>
+        <thead><tr><th>Modelo</th><th class="n">Acurácia</th><th class="n">Precisão</th><th class="n">Recall</th><th class="n">AUC-ROC</th></tr></thead>
+        <tbody id="tab-modelos"></tbody>
+      </table>
+    </div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>O que o modelo erra</p><h2>Matriz de confusão do TabPFN</h2><p>Dos 300 pacientes de teste, 90 tinham a doença. O modelo acerta 230 casos no total. Os 40 falsos negativos são o ponto de atenção numa triagem: é onde entra o ajuste do limiar de decisão.</p></div>
+  <div class="revela">
+    <div class="painel"><div class="painel__corpo">
+      <div id="matriz" style="display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:stretch;max-width:560px"></div>
+      <p class="nota">Valores reconstruídos a partir do relatório de classificação do notebook (precisão 0,62 e recall 0,56 na classe positiva, 210 negativos e 90 positivos).</p>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Interpretabilidade</p><h2>Por que o modelo decide o que decide</h2><p>Valores de Shapley no CatBoost: quanto cada variável empurra a previsão, em média. A pressão sistólica lidera, seguida por idade e sexo, o que bate com a literatura médica. As variáveis de raça quase não pesam, e o Boruta também as descartou.</p></div>
+  <div class="revela">
+    <div class="painel"><div class="painel__corpo">
+      <div id="graf-shap"></div>
+      <p class="nota">Média do valor absoluto de SHAP por variável, lida do gráfico gerado no notebook. Em destaque, as quatro confirmadas pelo Boruta.</p>
+    </div></div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Seleção de variáveis</p><h2>Menos variáveis, mesma acurácia</h2><p>Com só 4 variáveis o TabPFN manteve 76,7% de acurácia e subiu a precisão para 0,67, ao custo de recall. Na prática, um formulário de triagem muito mais curto.</p></div>
+  <div class="revela">
+    <div class="kpis">
+      <div class="kpi"><strong class="num">12 → 4</strong><span>colunas de entrada depois do Boruta</span></div>
+      <div class="kpi"><strong class="num">76,7%</strong><span>acurácia com e sem seleção</span></div>
+      <div class="kpi"><strong class="num">0,625 → 0,672</strong><span>precisão na classe positiva</span></div>
+      <div class="kpi"><strong class="num">0,556 → 0,433</strong><span>recall na classe positiva</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap bloco__grid">
+  <div><p class="rotulo"><i></i>Aplicação</p><h2>Onde isso entra no dia a dia</h2></div>
+  <div class="texto revela">
+    <p>Um modelo assim serve como <strong>primeira peneira</strong>: com quatro dados que qualquer unidade básica já mede, ele aponta quem deve ter prioridade na consulta. A escolha entre o modelo completo e o enxuto depende do que custa mais caro no serviço: deixar um caso passar ou chamar alguém sem necessidade.</p>
+    <p>O mesmo método, comparar modelos com a mesma régua, explicar cada decisão e salvar o modelo pronto para uso, vale para qualquer previsão em tabela: inadimplência, perda de safra, demanda de estoque, abandono de cliente.</p>
+  </div>
+</div></section>
+
+<section class="bloco"><div class="wrap">
+  <p class="rotulo"><i></i>Tecnologias</p>
+  <div class="stack" style="margin-top:16px"><span>Python</span><span>Jupyter</span><span>pandas</span><span>scikit-learn</span><span>TabPFN</span><span>CatBoost</span><span>LightGBM</span><span>XGBoost</span><span>Boruta</span><span>SHAP</span><span>Matplotlib</span></div>
+</div></section>
+
+<section class="bloco" id="mais"><div class="wrap">
+  <p class="rotulo"><i></i>Continue vendo</p>
+  <div class="proximos" style="margin-top:20px" data-proximos="risco-cardiovascular"></div>
+</div></section>
+</main>
+
+<footer class="rodape"><div class="wrap rodape__in">
+  <img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
+  <p>Bruno Lima · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">github.com/Bruno-LSo</a></p>
+</div></footer>
+
+<script src="../assets/js/graficos.js"></script>
+<script src="../assets/js/projetos.js"></script>
+<script src="../assets/js/mosaico.js"></script>
+<script>
+(function () {
+  const M = [
+    { nome: 'TabPFN', acc: .7667, prec: .6250, rec: .5556, auc: .7884, melhor: true },
+    { nome: 'CatBoost', acc: .7467, prec: .5897, rec: .5111, auc: .7849 },
+    { nome: 'LightGBM', acc: .7467, prec: .5875, rec: .5222, auc: .7742 },
+    { nome: 'Random Forest', acc: .7400, prec: .5769, rec: .5000, auc: .7670 },
+    { nome: 'XGBoost', acc: .7033, prec: .5055, rec: .5111, auc: .7181 },
+    { nome: 'TabPFN + Boruta', acc: .7667, prec: .6724, rec: .4333, auc: .7640 }
+  ];
+  const nomes = { auc: 'AUC-ROC', acc: 'acurácia', prec: 'precisão', rec: 'recall' };
+  const f3 = (v) => G.fmt(v, 3);
+  document.getElementById('tab-modelos').innerHTML = M.map((m) => `<tr class="${m.melhor ? 'melhor' : ''}"><td>${m.nome}</td><td class="n">${f3(m.acc)}</td><td class="n">${f3(m.prec)}</td><td class="n">${f3(m.rec)}</td><td class="n">${f3(m.auc)}</td></tr>`).join('');
+  function desenhar(k) {
+    const itens = M.map((m) => ({ rotulo: m.nome, valor: m[k] })).sort((a, b) => b.valor - a.valor);
+    const top = itens[0].valor; itens.forEach((i) => (i.destaque = i.valor === top));
+    G.barrasH(document.getElementById('graf-modelos'), itens, { min: 0.3, max: 0.85, formato: f3, esquerda: 136, titulo: 'Comparação de modelos por ' + nomes[k] });
+    document.getElementById('leitura-metrica').textContent = `Maior ${nomes[k]}: ${itens.filter((i) => i.destaque).map((i) => i.rotulo).join(' e ')} (${f3(top)}). Eixo começa em 0,30 para mostrar a diferença.`;
+  }
+  const seg = document.getElementById('metricas');
+  seg.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; seg.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', x === b)); desenhar(b.dataset.m); });
+  desenhar('auc');
+
+  const cel = (v, rot, cor) => `<div style="padding:clamp(10px,3vw,22px);border-radius:12px;background:${cor};text-align:center"><strong class="num" style="display:block;font:300 clamp(24px,5vw,34px)/1 Sora">${v}</strong><span style="display:block;font-size:12.5px;margin-top:8px;color:#EAF1F6;opacity:.85">${rot}</span></div>`;
+  const cab = (t) => `<div style="font:500 11px/1.3 'JetBrains Mono';color:#7FA3B5;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center">${t}</div>`;
+  document.getElementById('matriz').innerHTML =
+    cab('') + cab('Previsto: sem doença') + cab('Previsto: com doença') +
+    cab('Real: sem doença') + cel(180, 'verdadeiros negativos', 'rgb(79 209 212 / .22)') + cel(30, 'falsos positivos', 'rgb(234 241 246 / .06)') +
+    cab('Real: com doença') + cel(40, 'falsos negativos', 'rgb(240 138 126 / .22)') + cel(50, 'verdadeiros positivos', 'rgb(79 209 212 / .38)');
+
+  const S = [['Pressão sistólica', .48, 1], ['Idade', .44, 1], ['Sexo', .38], ['Colesterol total', .27, 1], ['Tabagismo', .25], ['IMC', .21], ['Hipertensão', .19, 1], ['Diabetes tipo 2', .105], ['Raça: asiática', .078], ['Raça: branca', .03], ['Raça: negra', .007], ['Raça: indígena', .001]];
+  G.barrasH(document.getElementById('graf-shap'), S.map(([r, v, b]) => ({ rotulo: r, valor: v, destaque: !!b, cor: b ? '#4FD1D4' : '#3B5566' })), { max: .5, formato: (v) => G.fmt(v, 2), esquerda: 150, altura: 26, gap: 8, titulo: 'Importância SHAP por variável' });
+})();
+</script>
+</body>
+</html>
