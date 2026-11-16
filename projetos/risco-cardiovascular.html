@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Risco cardiovascular com TabPFN · Bruno Lima</title>
+<title>Predição de risco cardiovascular · Bruno Lima</title>
 <meta name="description" content="Estudo de aprendizado de máquina que compara cinco algoritmos para prever risco cardiovascular em pacientes acima de 55 anos, com seleção de variáveis por Boruta e interpretação por SHAP.">
 <meta name="theme-color" content="#0B1820">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -12,17 +12,16 @@
 </head>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
-<header class="topo"><div class="topo__in">
+<!--cabeca--><header class="topo"><div class="topo__in">
   <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
-  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
-  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
-</div></header>
+  <nav class="nav" aria-label="Áreas"><a href="../areas/comercio.html">Comércio</a><a href="../areas/campo.html">Território</a><a href="../areas/gestao.html">Gestão</a><a href="../areas/dados.html">Dados</a><a href="../areas/saude.html" aria-current="page">Saúde e ML</a><a href="../areas/produtos.html">Aplicativos</a></nav>
+</div></header><!--/cabeca-->
 
 <main id="conteudo">
 <section class="caso-hero"><div class="wrap">
-  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-saude">Saúde e aprendizado de máquina</a></p>
-  <h1 class="entra" style="--o:1">Prever risco cardiovascular com um <em>transformer</em> feito para tabelas</h1>
-  <p class="lead entra" style="--o:2">Comparei cinco algoritmos sobre uma base de 425.195 pacientes para descobrir quem tem mais chance de doença cardiovascular depois dos 55 anos. O TabPFN, um modelo pré-treinado publicado na Nature em 2025, venceu sem precisar de ajuste fino, e a interpretação mostrou por que cada paciente foi classificado como foi.</p>
+  <p class="migalha entra"><!--migalha--><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../areas/saude.html">Saúde e aprendizado de máquina</a><!--/migalha--></p>
+  <h1 class="entra" style="--o:1">Predição de risco cardiovascular</h1>
+  <p class="lead entra" style="--o:2">Comparação de cinco algoritmos de classificação para prever doença cardiovascular em pacientes acima de 55 anos, com seleção de variáveis por Boruta e interpretação por valores de Shapley. O melhor resultado foi do TabPFN, modelo pré-treinado para dados tabulares, sem ajuste de hiperparâmetros.</p>
   <dl class="ficha entra" style="--o:3">
     <div><dt>Contexto</dt><dd>Curso de Verão 2025, LABDAPS, Faculdade de Saúde Pública da USP</dd></div>
     <div><dt>Problema</dt><dd>Classificação binária: tem ou não doença cardiovascular</dd></div>
@@ -34,14 +33,14 @@
 <section class="bloco"><div class="wrap">
   <div class="kpis revela">
     <div class="kpi"><strong class="num">425.195</strong><span>registros de pacientes na base original, com 13 variáveis e nenhum valor nulo</span></div>
-    <div class="kpi"><strong class="num">125.335</strong><span>pacientes acima de 55 anos, o grupo de maior risco, depois do recorte</span></div>
-    <div class="kpi"><strong class="num">0,788</strong><span>AUC-ROC do TabPFN no conjunto de teste, a melhor entre os cinco modelos</span></div>
-    <div class="kpi"><strong class="num">4 de 12</strong><span>variáveis realmente relevantes segundo o Boruta: idade, colesterol, pressão sistólica e hipertensão</span></div>
+    <div class="kpi"><strong class="num">125.335</strong><span>pacientes acima de 55 anos após o recorte</span></div>
+    <div class="kpi"><strong class="num">0,788</strong><span>AUC-ROC do TabPFN no conjunto de teste</span></div>
+    <div class="kpi"><strong class="num">4 de 12</strong><span>variáveis confirmadas pelo Boruta: idade, colesterol, pressão sistólica e hipertensão</span></div>
   </div>
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Escopo</p><h2>Do dado bruto ao modelo salvo, passo a passo</h2><p>O pipeline completo de ciência de dados, documentado célula a célula para outra pessoa conseguir repetir.</p></div>
+  <div><h2>Etapas</h2></div>
   <div class="revela">
     <div class="fluxo">
       <div><b>01 · dados</b><h4>Base de 425.195 pacientes</h4><p>Demografia, fatores de risco e medidas clínicas. Conferência de nulos e de valores codificados como ausentes.</p></div>
@@ -56,7 +55,7 @@
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Resultados</p><h2>Cinco modelos, a mesma régua</h2><p>Métricas no conjunto de teste depois da otimização. Precisão e recall medidos na classe positiva, quem tem a doença, que é a que importa para triagem.</p></div>
+  <div><h2>Resultados</h2><p>Métricas no conjunto de teste após a otimização. Precisão e recall na classe positiva.</p></div>
   <div class="revela">
     <div class="painel">
       <div class="painel__barra"><i></i><i></i><i></i><span>comparacao_modelos.ipynb</span></div>
@@ -81,7 +80,7 @@
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>O que o modelo erra</p><h2>Matriz de confusão do TabPFN</h2><p>Dos 300 pacientes de teste, 90 tinham a doença. O modelo acerta 230 casos no total. Os 40 falsos negativos são o ponto de atenção numa triagem: é onde entra o ajuste do limiar de decisão.</p></div>
+  <div><h2>Matriz de confusão</h2><p>TabPFN no conjunto de teste: 300 pacientes, 90 com a doença, 230 classificações corretas.</p></div>
   <div class="revela">
     <div class="painel"><div class="painel__corpo">
       <div id="matriz" style="display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:stretch;max-width:560px"></div>
@@ -91,7 +90,7 @@
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Interpretabilidade</p><h2>Por que o modelo decide o que decide</h2><p>Valores de Shapley no CatBoost: quanto cada variável empurra a previsão, em média. A pressão sistólica lidera, seguida por idade e sexo, o que bate com a literatura médica. As variáveis de raça quase não pesam, e o Boruta também as descartou.</p></div>
+  <div><h2>Interpretação</h2><p>Valores de Shapley no modelo CatBoost. Pressão sistólica, idade e sexo têm maior peso; as variáveis de raça têm peso baixo e foram descartadas pelo Boruta.</p></div>
   <div class="revela">
     <div class="painel"><div class="painel__corpo">
       <div id="graf-shap"></div>
@@ -101,7 +100,7 @@
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Seleção de variáveis</p><h2>Menos variáveis, mesma acurácia</h2><p>Com só 4 variáveis o TabPFN manteve 76,7% de acurácia e subiu a precisão para 0,67, ao custo de recall. Na prática, um formulário de triagem muito mais curto.</p></div>
+  <div><h2>Seleção de variáveis</h2><p>TabPFN com as 4 variáveis selecionadas, comparado ao modelo com todas.</p></div>
   <div class="revela">
     <div class="kpis">
       <div class="kpi"><strong class="num">12 → 4</strong><span>colunas de entrada depois do Boruta</span></div>
@@ -112,23 +111,11 @@
   </div>
 </div></section>
 
-<section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Aplicação</p><h2>Onde isso entra no dia a dia</h2></div>
-  <div class="texto revela">
-    <p>Um modelo assim serve como <strong>primeira peneira</strong>: com quatro dados que qualquer unidade básica já mede, ele aponta quem deve ter prioridade na consulta. A escolha entre o modelo completo e o enxuto depende do que custa mais caro no serviço: deixar um caso passar ou chamar alguém sem necessidade.</p>
-    <p>O mesmo método, comparar modelos com a mesma régua, explicar cada decisão e salvar o modelo pronto para uso, vale para qualquer previsão em tabela: inadimplência, perda de safra, demanda de estoque, abandono de cliente.</p>
-  </div>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Tecnologias</h2></div>
+  <div class="stack"><span>Python</span><span>Jupyter</span><span>pandas</span><span>scikit-learn</span><span>TabPFN</span><span>CatBoost</span><span>LightGBM</span><span>XGBoost</span><span>Boruta</span><span>SHAP</span><span>Matplotlib</span></div>
 </div></section>
 
-<section class="bloco"><div class="wrap">
-  <p class="rotulo"><i></i>Tecnologias</p>
-  <div class="stack" style="margin-top:16px"><span>Python</span><span>Jupyter</span><span>pandas</span><span>scikit-learn</span><span>TabPFN</span><span>CatBoost</span><span>LightGBM</span><span>XGBoost</span><span>Boruta</span><span>SHAP</span><span>Matplotlib</span></div>
-</div></section>
-
-<section class="bloco" id="mais"><div class="wrap">
-  <p class="rotulo"><i></i>Continue vendo</p>
-  <div class="proximos" style="margin-top:20px" data-proximos="risco-cardiovascular"></div>
-</div></section>
+<!--nav--><nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><a class="navp__item navp__ant" href="../projetos/calculadora-avc.html"><small>Anterior</small><span>Calculadora de custos do AVC</span></a><a class="navp__item navp__sum" href="../areas/saude.html"><small>Sumário</small><span>Saúde e aprendizado de máquina</span></a><a class="navp__item navp__prox" href="../projetos/telemedicina-avc.html"><small>Próximo</small><span>Telemedicina no AVC</span></a></div></nav><!--/nav-->
 </main>
 
 <footer class="rodape"><div class="wrap rodape__in">
@@ -137,7 +124,6 @@
 </div></footer>
 
 <script src="../assets/js/graficos.js"></script>
-<script src="../assets/js/projetos.js"></script>
 <script src="../assets/js/mosaico.js"></script>
 <script>
 (function () {

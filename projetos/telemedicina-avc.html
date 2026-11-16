@@ -12,17 +12,16 @@
 </head>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
-<header class="topo"><div class="topo__in">
+<!--cabeca--><header class="topo"><div class="topo__in">
   <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
-  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
-  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
-</div></header>
+  <nav class="nav" aria-label="Áreas"><a href="../areas/comercio.html">Comércio</a><a href="../areas/campo.html">Território</a><a href="../areas/gestao.html">Gestão</a><a href="../areas/dados.html">Dados</a><a href="../areas/saude.html" aria-current="page">Saúde e ML</a><a href="../areas/produtos.html">Aplicativos</a></nav>
+</div></header><!--/cabeca-->
 
 <main id="conteudo">
 <section class="caso-hero"><div class="wrap">
-  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-saude">Saúde e aprendizado de máquina</a></p>
-  <h1 class="entra" style="--o:1">Um plantão por vídeo no lugar de <em>dezesseis presenciais</em></h1>
-  <p class="lead entra" style="--o:2">A habilitação de unidade de AVC exige neurologista disponível 24 horas, e nenhuma das 16 unidades da rede municipal de São Paulo cumpria o requisito. Cruzei oito bases da Secretaria Municipal de Saúde para mostrar quanto custa cada modelo, quanto recurso federal e estadual fica sem ser captado e o que mudou no atendimento entre 2023 e 2025.</p>
+  <p class="migalha entra"><!--migalha--><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../areas/saude.html">Saúde e aprendizado de máquina</a><!--/migalha--></p>
+  <h1 class="entra" style="--o:1">Telemedicina no AVC</h1>
+  <p class="lead entra" style="--o:2">Estudo de custo e impacto da telemedicina no atendimento do AVC em 16 hospitais municipais de São Paulo, de 2023 a 2025. Compara o neurologista presencial com o plantão por vídeo e calcula o recurso de habilitação não captado, a partir de oito bases da Secretaria Municipal de Saúde.</p>
   <dl class="ficha entra" style="--o:3">
     <div><dt>Cliente</dt><dd>Boehringer Ingelheim</dd></div>
     <div><dt>Rede analisada</dt><dd>16 hospitais municipais de São Paulo</dd></div>
@@ -33,25 +32,25 @@
 
 <section class="bloco"><div class="wrap">
   <div class="kpis revela">
-    <div class="kpi"><strong class="num">5,6×</strong><span>mais caro manter neurologista presencial nas 16 unidades do que um plantão por telemedicina</span></div>
-    <div class="kpi"><strong class="num">R$ 16,4 mi</strong><span>por ano em incentivo federal e estadual que a rede deixa de captar sem habilitação</span></div>
+    <div class="kpi"><strong class="num">5,6×</strong><span>custo do modelo presencial em relação à telemedicina</span></div>
+    <div class="kpi"><strong class="num">R$ 16,4 mi</strong><span>por ano em incentivos de habilitação não captados</span></div>
     <div class="kpi"><strong class="num">+76%</strong><span>trombólises entre 2023 e 2025, de 398 para 701 por ano</span></div>
     <div class="kpi"><strong class="num">−19%</strong><span>no tempo médio de internação, de 7,75 para 6,28 dias</span></div>
   </div>
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>A conta principal</p><h2>Custo anual dos dois modelos</h2><p>16 postos presenciais exigem 144 neurologistas; o plantão por vídeo cobre a rede com 9. Os modelos só empatariam com o plantão a R$ 510,51.</p></div>
+  <div><h2>Custo anual</h2><p>16 postos presenciais exigem 144 neurologistas; o plantão por telemedicina, 9. Os custos se igualariam com plantão a R$ 510,51.</p></div>
   <div class="revela">
     <div class="painel"><div class="painel__corpo">
       <div id="g-custo"></div>
-      <p class="nota">Plantão de R$ 2.600, 744 plantões por posto no ano. Inclui diaristas, contrato do serviço de telemedicina (R$ 1,2 mi) e 16 estações (R$ 720 mil de investimento inicial). Retorno do investimento em menos de um mês.</p>
+      <p class="nota">Plantão de R$ 2.600, 744 plantões por posto no ano. Inclui diaristas, contrato do serviço de telemedicina (R$ 1,2 mi) e 16 estações (R$ 720 mil de investimento inicial).</p>
     </div></div>
   </div>
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Atendimento</p><h2>Trombólises mês a mês</h2><p>A taxa de trombólise passou de 8,8% para 13,8% das internações. Com a teleconsulta, a resposta do neurologista tem mediana de 4 minutos.</p></div>
+  <div><h2>Trombólises por mês</h2><p>Taxa de trombólise de 8,8% para 13,8%. Mediana de resposta da teleconsulta: 4 minutos.</p></div>
   <div class="revela">
     <div class="painel"><div class="painel__corpo">
       <div id="leg-trombo" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"></div>
@@ -77,26 +76,22 @@
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Escopo</p><h2>Como o estudo foi entregue</h2></div>
+  <div><h2>Escopo</h2></div>
   <ul class="lista revela">
-    <li><strong>Oito bases cruzadas</strong>Internações, mortalidade, microdados hospitalares, teleconsultas e consolidados por hospital, com os CIDs do AVC.</li>
-    <li><strong>Painel de 23 páginas</strong>Arquivo único que abre sem internet, com navegação por páginas e gráficos desenhados pelo gerador.</li>
-    <li><strong>Cada número com rótulo</strong>Tudo marcado como dado, premissa ou projeção, com memória de cálculo e fonte na própria página.</li>
-    <li><strong>Projeção de cinco anos</strong>Diferença acumulada de R$ 138 milhões e resultado líquido de R$ 50,8 milhões a favor da telemedicina.</li>
-    <li><strong>Habilitação por unidade</strong>Tipo de habilitação possível, leitos e recurso anual de cada hospital.</li>
-    <li><strong>PDF e Word prontos</strong>O mesmo conteúdo em relatório para circular entre gestores e anexar a processos.</li>
+    <li><strong>Bases</strong>Internações, mortalidade, microdados hospitalares, teleconsultas e consolidados por hospital.</li>
+    <li><strong>Painel</strong>23 páginas em arquivo único, que abre sem internet.</li>
+    <li><strong>Memória de cálculo</strong>Cada valor identificado como dado, premissa ou projeção, com a fonte.</li>
+    <li><strong>Projeção</strong>Cinco anos: diferença acumulada de R$ 138 milhões e resultado líquido de R$ 50,8 milhões.</li>
+    <li><strong>Unidades</strong>Tipo de habilitação, leitos e recurso anual de cada hospital.</li>
+    <li><strong>Relatórios</strong>Versões em PDF e Word.</li>
   </ul>
 </div></section>
 
-<section class="bloco"><div class="wrap">
-  <p class="rotulo"><i></i>Tecnologias</p>
-  <div class="stack" style="margin-top:16px"><span>Python</span><span>pandas</span><span>SVG gerado em código</span><span>ReportLab</span><span>python-docx</span><span>HTML autônomo</span></div>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Tecnologias</h2></div>
+  <div class="stack"><span>Python</span><span>pandas</span><span>SVG gerado em código</span><span>ReportLab</span><span>python-docx</span><span>HTML autônomo</span></div>
 </div></section>
 
-<section class="bloco"><div class="wrap">
-  <p class="rotulo"><i></i>Continue vendo</p>
-  <div class="proximos" style="margin-top:20px" data-proximos="telemedicina-avc"></div>
-</div></section>
+<!--nav--><nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><a class="navp__item navp__ant" href="../projetos/risco-cardiovascular.html"><small>Anterior</small><span>Predição de risco cardiovascular</span></a><a class="navp__item navp__sum" href="../areas/saude.html"><small>Sumário</small><span>Saúde e aprendizado de máquina</span></a><a class="navp__item navp__prox" href="../projetos/estatistica-avc.html"><small>Próximo</small><span>Estrutura de saúde e letalidade do AVC</span></a></div></nav><!--/nav-->
 </main>
 
 <footer class="rodape"><div class="wrap rodape__in">
@@ -105,7 +100,6 @@
 </div></footer>
 
 <script src="../assets/js/graficos.js"></script>
-<script src="../assets/js/projetos.js"></script>
 <script src="../assets/js/mosaico.js"></script>
 <script>
 (function () {

@@ -4,244 +4,44 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Portfólio · Bruno Lima · HoldUp</title>
-<meta name="description" content="Projetos de Bruno Lima, da HoldUp: lojas virtuais e marketplaces, coleta de dados no campo sem internet, sistemas de gestão, painéis com dados públicos e modelos de aprendizado de máquina em saúde.">
+<meta name="description" content="Projetos de Bruno Lima, HoldUp, organizados por área.">
 <meta name="theme-color" content="#0B1820">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32px.png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="assets/css/portfolio.css">
-<style>
-.vis-ml{padding:28px}
-.vis-cel{position:absolute;inset:0;display:grid;place-items:center}
-.vis-img{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px}
-.vis-img img{border-radius:12px;box-shadow:0 20px 50px -20px rgb(0 0 0 / .7);max-height:100%;width:auto;object-fit:contain}
-</style>
+<style>:root{--acento:#4FD1D4}</style>
 </head>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo"><div class="topo__in">
   <a class="marca" href="index.html"><img src="assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
-  <nav class="nav" aria-label="Seções"><a href="#areas">Áreas</a><a href="#casos">Casos</a><a href="#projetos">Todos os projetos</a><a href="#contato">Contato</a></nav>
-  <a class="btn btn--mini" href="#contato">Conversar</a>
+  <nav class="nav" aria-label="Áreas"><a href="areas/comercio.html">Comércio</a><a href="areas/campo.html">Território</a><a href="areas/gestao.html">Gestão</a><a href="areas/dados.html">Dados</a><a href="areas/saude.html">Saúde e ML</a><a href="areas/produtos.html">Aplicativos</a></nav>
 </div></header>
-
 <main id="conteudo">
-<section class="hero">
+<section class="hero hero--curto">
   <canvas data-mosaico aria-hidden="true"></canvas>
   <div class="wrap">
-    <p class="rotulo entra"><i></i>Portfólio · Bruno Lima · HoldUp</p>
-    <h1 class="entra" style="--o:1">Software que nasce <em>do dado real</em> de quem usa.</h1>
-    <p class="lead entra" style="--o:2">Lojas e marketplaces, aplicativos que funcionam sem sinal, sistemas com regra no banco, painéis com dados oficiais e modelos de aprendizado de máquina. Cada projeto aqui começou lendo os dados de verdade do cliente antes de desenhar a primeira tela.</p>
-    <div class="hero__acoes entra" style="--o:3">
-      <a class="btn" href="#casos">Ver os casos <span class="seta" aria-hidden="true">→</span></a>
-      <a class="btn btn--linha" href="#projetos">Todos os projetos</a>
-    </div>
-    <div class="numeros entra" style="--o:4">
-      <div><strong id="n-proj">37</strong><span>projetos reunidos neste portfólio</span></div>
-      <div><strong id="n-casos">17</strong><span>estudos de caso com demonstração</span></div>
-      <div><strong>1,2 mi</strong><span>profissionais no maior painel entregue</span></div>
-      <div><strong>5.570</strong><span>municípios cobertos em bases nacionais</span></div>
-    </div>
+    <p class="rotulo entra"><i></i>Portfólio</p>
+    <h1 class="entra" style="--o:1">Bruno Lima</h1>
+    <p class="lead entra" style="--o:2">HoldUp, desenvolvimento de soluções. Projetos organizados por área.</p>
   </div>
 </section>
-
 <section class="secao" id="areas"><div class="wrap">
-  <div class="secao__cab">
-    <div><p class="rotulo"><i></i>Áreas</p><h2>Seis frentes, o mesmo jeito de trabalhar</h2></div>
-    <p>Os projetos estão agrupados pelo tipo de problema que resolvem. Clique numa área para ver só os projetos dela.</p>
-  </div>
-  <div class="areas" id="lista-areas"></div>
+  <h2 class="sr">Áreas</h2>
+  <div class="areas"><a class="area revela" href="areas/comercio.html" style="--c:#C9E36A"><div class="area__mosaico"><b style="--o:0.25"></b><b style="--o:0.79"></b><b style="--o:0.56"></b><b style="--o:0.33"></b><b style="--o:0.87"></b><b style="--o:0.63"></b><b style="--o:0.40"></b><b style="--o:0.94"></b><b style="--o:0.71"></b><b style="--o:0.48"></b><b style="--o:0.25"></b><b style="--o:0.79"></b></div><h3>Comércio eletrônico</h3><p>Lojas virtuais com catálogo, carrinho, pagamento, frete e integração com ERP.</p><small>Ver projetos <span class="seta" aria-hidden="true">→</span></small></a><a class="area revela" href="areas/campo.html" style="--c:#5CC98A"><div class="area__mosaico"><b style="--o:0.48"></b><b style="--o:0.25"></b><b style="--o:0.79"></b><b style="--o:0.56"></b><b style="--o:0.33"></b><b style="--o:0.87"></b><b style="--o:0.63"></b><b style="--o:0.40"></b><b style="--o:0.94"></b><b style="--o:0.71"></b><b style="--o:0.48"></b><b style="--o:0.25"></b></div><h3>Campo e território</h3><p>Coleta de dados em campo, mapeamento e bases municipais.</p><small>Ver projetos <span class="seta" aria-hidden="true">→</span></small></a><a class="area revela" href="areas/gestao.html" style="--c:#4FB3E8"><div class="area__mosaico"><b style="--o:0.71"></b><b style="--o:0.48"></b><b style="--o:0.25"></b><b style="--o:0.79"></b><b style="--o:0.56"></b><b style="--o:0.33"></b><b style="--o:0.87"></b><b style="--o:0.63"></b><b style="--o:0.40"></b><b style="--o:0.94"></b><b style="--o:0.71"></b><b style="--o:0.48"></b></div><h3>Sistemas de gestão</h3><p>Plataformas com fluxos de aprovação, perfis de acesso e assinatura digital.</p><small>Ver projetos <span class="seta" aria-hidden="true">→</span></small></a><a class="area revela" href="areas/dados.html" style="--c:#FFD25E"><div class="area__mosaico"><b style="--o:0.94"></b><b style="--o:0.71"></b><b style="--o:0.48"></b><b style="--o:0.25"></b><b style="--o:0.79"></b><b style="--o:0.56"></b><b style="--o:0.33"></b><b style="--o:0.87"></b><b style="--o:0.63"></b><b style="--o:0.40"></b><b style="--o:0.94"></b><b style="--o:0.71"></b></div><h3>Dados e painéis</h3><p>Extração, conferência e visualização de bases públicas e institucionais.</p><small>Ver projetos <span class="seta" aria-hidden="true">→</span></small></a><a class="area revela" href="areas/saude.html" style="--c:#4FD1D4"><div class="area__mosaico"><b style="--o:0.40"></b><b style="--o:0.94"></b><b style="--o:0.71"></b><b style="--o:0.48"></b><b style="--o:0.25"></b><b style="--o:0.79"></b><b style="--o:0.56"></b><b style="--o:0.33"></b><b style="--o:0.87"></b><b style="--o:0.63"></b><b style="--o:0.40"></b><b style="--o:0.94"></b></div><h3>Saúde e aprendizado de máquina</h3><p>Modelos preditivos, avaliação econômica e análises estatísticas em saúde.</p><small>Ver projetos <span class="seta" aria-hidden="true">→</span></small></a><a class="area revela" href="areas/produtos.html" style="--c:#D3A574"><div class="area__mosaico"><b style="--o:0.63"></b><b style="--o:0.40"></b><b style="--o:0.94"></b><b style="--o:0.71"></b><b style="--o:0.48"></b><b style="--o:0.25"></b><b style="--o:0.79"></b><b style="--o:0.56"></b><b style="--o:0.33"></b><b style="--o:0.87"></b><b style="--o:0.63"></b><b style="--o:0.40"></b></div><h3>Aplicativos e produtos</h3><p>Aplicativos de celular, jogo online e ferramentas de áudio e vídeo.</p><small>Ver projetos <span class="seta" aria-hidden="true">→</span></small></a></div>
 </div></section>
-
-<section class="secao secao--clara" id="casos"><div class="wrap">
-  <div class="secao__cab">
-    <div><p class="rotulo"><i></i>Casos em destaque</p><h2>Cinco projetos, contados de perto</h2></div>
-    <p>Cada caso tem o problema, o escopo entregue, os números reais e uma demonstração que dá para usar aqui mesmo.</p>
-  </div>
-  <div class="destaques">
-    <a class="destaque revela" href="casos/canteiros-urbanos.html" style="--c:#C9E36A">
-      <div class="destaque__txt">
-        <span class="card__area" style="--c:#C9E36A"><b></b>Lojas e marketplaces</span>
-        <h3>Canteiros Urbanos: a horta do bairro vendendo pela internet</h3>
-        <p>Loja de hortaliças e temperos com catálogo, cesta recorrente, pagamento online, pedido pelo WhatsApp e painel do produtor com clientes e frete por bairro.</p>
-        <div class="destaque__fatos"><div><strong>61</strong><span>rotas na API</span></div><div><strong>7</strong><span>etapas do pedido</span></div><div><strong>3</strong><span>canais de venda</span></div></div>
-        <div class="destaque__tags"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">WhatsApp</span></div>
-        <span class="destaque__link">Montar uma cesta na demonstração <span class="seta" aria-hidden="true">→</span></span>
-      </div>
-      <div class="destaque__vis" aria-hidden="true"><svg id="vis-cesta" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice"></svg></div>
-    </a>
-    <a class="destaque revela" href="casos/pesca-artesanal.html" style="--c:#4FB3E8">
-      <div class="destaque__txt">
-        <span class="card__area" style="--c:#4FB3E8"><b></b>Campo e território</span>
-        <h3>Registrar a produção onde não tem sinal</h3>
-        <p>Comunidades de pesca artesanal registram cada viagem no celular, sem internet. A ficha fica cifrada no aparelho, sobe sozinha quando há sinal e nunca duplica.</p>
-        <div class="destaque__fatos"><div><strong>338</strong><span>fichas no piloto</span></div><div><strong>70 → 24</strong><span>grafias padronizadas</span></div><div><strong>23</strong><span>tabelas</span></div></div>
-        <div class="destaque__tags"><span class="chip">PWA sem sinal</span><span class="chip">PostgreSQL</span><span class="chip">RLS</span><span class="chip">OCR</span></div>
-        <span class="destaque__link">Testar o envio sem sinal <span class="seta" aria-hidden="true">→</span></span>
-      </div>
-      <div class="destaque__vis" aria-hidden="true"><svg id="vis-sinal" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice"></svg></div>
-    </a>
-    <a class="destaque revela" href="casos/plataforma-inspetores.html" style="--c:#4FB3E8">
-      <div class="destaque__txt">
-        <span class="card__area" style="--c:#4FB3E8"><b></b>Sistemas e plataformas</span>
-        <h3>Plataforma de Inspetores do Crea-SP</h3>
-        <p>Da indicação à posse de cerca de 2.600 inspetores: requisitos conferidos na fonte, assinatura gov.br, dossiê pronto e presença pelo celular.</p>
-        <div class="destaque__fatos"><div><strong>82</strong><span>tabelas com RLS</span></div><div><strong>111</strong><span>funções no banco</span></div><div><strong>81</strong><span>telas web e app</span></div></div>
-        <div class="destaque__tags"><span class="chip">Next.js</span><span class="chip">Expo</span><span class="chip">Supabase</span><span class="chip">gov.br</span></div>
-        <span class="destaque__link">Ver as telas <span class="seta" aria-hidden="true">→</span></span>
-      </div>
-      <div class="destaque__vis"><div class="vis-img"><img src="assets/img/casos/inspetores-painel-vagas.webp" alt="Painel de vagas da plataforma, com dados fictícios" width="1400" height="620" loading="lazy"></div></div>
-    </a>
-    <a class="destaque revela" href="casos/risco-cardiovascular.html" style="--c:#4FD1D4">
-      <div class="destaque__txt">
-        <span class="card__area" style="--c:#4FD1D4"><b></b>Saúde e ML</span>
-        <h3>Prever risco cardiovascular com um transformer para tabelas</h3>
-        <p>Cinco algoritmos sobre 425.195 pacientes. O TabPFN venceu sem ajuste fino, e a interpretação por SHAP mostra o peso de cada fator.</p>
-        <div class="destaque__fatos"><div><strong>0,788</strong><span>AUC-ROC</span></div><div><strong>76,7%</strong><span>acurácia</span></div><div><strong>4 de 12</strong><span>variáveis bastam</span></div></div>
-        <div class="destaque__tags"><span class="chip">TabPFN</span><span class="chip">CatBoost</span><span class="chip">Boruta</span><span class="chip">SHAP</span></div>
-        <span class="destaque__link">Comparar os modelos <span class="seta" aria-hidden="true">→</span></span>
-      </div>
-      <div class="destaque__vis vis-ml" aria-hidden="true"><div id="vis-ml" style="position:absolute;inset:28px;display:flex;align-items:center"></div></div>
-    </a>
-    <a class="destaque revela" href="casos/calculadora-avc.html" style="--c:#5CC98A">
-      <div class="destaque__txt">
-        <span class="card__area" style="--c:#5CC98A"><b></b>Saúde e ML</span>
-        <h3>Calculadora de custos do AVC para a Boehringer Ingelheim</h3>
-        <p>O gestor escolhe o território e vê dose, administração, sequelas, mortalidade e impacto no orçamento em 5 anos. Seis provas automáticas a cada recálculo.</p>
-        <div class="destaque__fatos"><div><strong>5.604</strong><span>territórios</span></div><div><strong>R$ 28,5 mi</strong><span>economia em 5 anos no Brasil</span></div><div><strong>29</strong><span>referências</span></div></div>
-        <div class="destaque__tags"><span class="chip">JavaScript</span><span class="chip">Supabase</span><span class="chip">CMED</span><span class="chip">IBGE</span></div>
-        <span class="destaque__link">Simular um território <span class="seta" aria-hidden="true">→</span></span>
-      </div>
-      <div class="destaque__vis" aria-hidden="true"><svg id="vis-orc" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet"></svg></div>
-    </a>
-  </div>
-</div></section>
-
-<section class="secao"><div class="wrap">
-  <div class="secao__cab">
-    <div><p class="rotulo"><i></i>Método</p><h2>Como os projetos acontecem</h2></div>
-    <p>O mesmo roteiro serve para loja, painel ou plataforma: entender o dado antes da tela e entregar cedo para quem vai usar.</p>
-  </div>
-  <div class="metodo revela">
-    <div class="passo"><h3>Ler os dados de verdade</h3><p>Antes do desenho, a inspeção: quantos cadastros, quantas grafias, onde o número não fecha.</p></div>
-    <div class="passo"><h3>Regra no banco</h3><p>Permissão, trava e cálculo ficam no banco, testados. A tela só mostra.</p></div>
-    <div class="passo"><h3>Primeira versão cedo</h3><p>Uma versão usável entra na rotina em poucas semanas e cresce com o que quem usa pede.</p></div>
-    <div class="passo"><h3>Tudo conferido e documentado</h3><p>Verificações automáticas, histórico de cada alteração e documentação para outra pessoa assumir.</p></div>
-  </div>
-</div></section>
-
-<section class="secao secao--clara" id="projetos"><div class="wrap">
-  <div class="secao__cab">
-    <div><p class="rotulo"><i></i>Todos os projetos</p><h2>O catálogo completo</h2></div>
-    <p>Filtre por área ou busque por tecnologia, cliente ou tema. Projetos com estudo de caso abrem a página com a demonstração.</p>
-  </div>
-  <div class="filtros" id="filtros" role="group" aria-label="Filtrar por área">
-    <input class="busca" id="busca" type="search" placeholder="Buscar: Supabase, mapa, loja…" aria-label="Buscar projetos">
-  </div>
-  <div class="grade" id="grade"></div>
-  <p class="sr" id="contagem" role="status"></p>
-</div></section>
-
-<section class="secao"><div class="wrap">
-  <div class="secao__cab">
-    <div><p class="rotulo"><i></i>Ferramentas</p><h2>Com o que eu construo</h2></div>
-    <p>Escolhidas pelo problema. Na maioria dos projetos, banco PostgreSQL com regras por linha, páginas leves que abrem rápido no celular e Python para dados.</p>
-  </div>
-  <div class="stack revela"><span>PostgreSQL</span><span>Supabase</span><span>Row Level Security</span><span>Edge Functions</span><span>React</span><span>Next.js</span><span>Expo</span><span>Flutter</span><span>Node.js</span><span>TypeScript</span><span>Python</span><span>pandas</span><span>geopandas</span><span>scikit-learn</span><span>TabPFN</span><span>CatBoost</span><span>SHAP</span><span>Playwright</span><span>Cloudflare</span><span>Firebase</span><span>MongoDB</span><span>Redis</span><span>Mercado Pago</span><span>Bling</span><span>Melhor Envio</span><span>WhatsApp</span><span>gov.br</span><span>OpenStreetMap</span><span>IBGE</span><span>INEP</span><span>DATASUS</span></div>
-</div></section>
-
-<section class="secao secao--clara" id="contato"><div class="wrap">
-  <div class="secao__cab" style="margin-bottom:0">
-    <div><p class="rotulo"><i></i>Contato</p><h2>Vamos conversar sobre o seu projeto</h2></div>
-    <div>
-      <p>Bruno Lima, sócio da HoldUp, desenvolvimento de soluções. Formado em Análise e Desenvolvimento de Sistemas e em Filosofia, com formação em Ciência de Dados.</p>
-      <div class="hero__acoes" style="margin-top:22px">
-        <a class="btn" href="https://wa.me/5531987510985">Falar pelo WhatsApp</a>
-        <a class="btn btn--linha" href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a>
-        <a class="btn btn--linha" href="https://github.com/Bruno-LSo">GitHub</a>
-      </div>
-    </div>
-  </div>
+<section class="secao secao--clara" id="contato"><div class="wrap contato">
+  <div><p class="rotulo"><i></i>Contato</p><h2>Bruno Lima</h2><p>Sócio da HoldUp. Análise e Desenvolvimento de Sistemas, Filosofia e Ciência de Dados.</p></div>
+  <div class="hero__acoes"><a class="btn" href="https://wa.me/5531987510985">WhatsApp</a><a class="btn btn--linha" href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a><a class="btn btn--linha" href="https://github.com/Bruno-LSo">GitHub</a></div>
 </div></section>
 </main>
 
 <footer class="rodape"><div class="wrap rodape__in">
   <img src="assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
-  <p>HoldUp · Segura que a gente resolve! · Dados de clientes mostrados só de forma agregada ou fictícia.</p>
+  <p>Bruno Lima · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">github.com/Bruno-LSo</a></p>
 </div></footer>
-
 <script src="assets/js/graficos.js"></script>
-<script src="assets/js/projetos.js"></script>
 <script src="assets/js/mosaico.js"></script>
-<script>
-(function () {
-  const A = window.AREAS, P = window.PROJETOS, $ = (id) => document.getElementById(id);
-  $('n-proj').textContent = P.length;
-  $('n-casos').textContent = P.filter((p) => p.caso).length;
-
-  // áreas com mosaico
-  $('lista-areas').innerHTML = A.map((a, i) => {
-    const n = P.filter((p) => p.area === a.id).length;
-    const quad = Array.from({ length: 12 }, (_, k) => `<b style="--o:${(0.25 + ((k * 7 + i * 3) % 10) / 13).toFixed(2)}"></b>`).join('');
-    return `<a class="area revela${i === 0 || i === 3 ? ' area--grande' : ''}" id="area-${a.id}" href="#projetos" data-area="${a.id}" style="--c:${a.cor}"><div class="area__mosaico">${quad}</div><h3>${a.nome}</h3><p>${a.texto}</p><small>${n} projetos</small></a>`;
-  }).join('');
-
-  // filtros e catálogo; o estado vai na URL
-  const params = new URLSearchParams(location.search);
-  let filtro = params.get('area') || 'todos', termo = params.get('q') || '';
-  const f = $('filtros');
-  f.insertAdjacentHTML('afterbegin', [`<button type="button" class="filtro" data-f="todos" style="--c:#EAF1F6">Todos <span>${P.length}</span></button>`]
-    .concat(A.map((a) => `<button type="button" class="filtro" data-f="${a.id}" style="--c:${a.cor}"><b></b>${a.curto} <span>${P.filter((p) => p.area === a.id).length}</span></button>`)).join(''));
-  $('busca').value = termo;
-  const norm = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-  function render() {
-    f.querySelectorAll('.filtro').forEach((b) => b.setAttribute('aria-pressed', b.dataset.f === filtro));
-    const t = norm(termo.trim());
-    const lista = P.filter((p) => (filtro === 'todos' || p.area === filtro) && (!t || norm([p.titulo, p.resumo, p.tec, p.selo].join(' ')).includes(t)))
-      .sort((a, b) => (b.caso ? 1 : 0) - (a.caso ? 1 : 0));
-    $('grade').innerHTML = lista.length ? lista.map(window.cardProjeto).join('') : `<div class="vazio" style="grid-column:1/-1">Nenhum projeto com “${termo}”. Tente outra palavra ou limpe o filtro.</div>`;
-    $('contagem').textContent = lista.length + ' projetos';
-    const u = new URL(location); filtro === 'todos' ? u.searchParams.delete('area') : u.searchParams.set('area', filtro); termo ? u.searchParams.set('q', termo) : u.searchParams.delete('q');
-    history.replaceState(null, '', u);
-  }
-  f.addEventListener('click', (e) => { const b = e.target.closest('.filtro'); if (!b) return; filtro = b.dataset.f; render(); });
-  $('busca').addEventListener('input', (e) => { termo = e.target.value; render(); });
-  $('lista-areas').addEventListener('click', (e) => { const a = e.target.closest('[data-area]'); if (!a) return; filtro = a.dataset.area; render(); });
-  render();
-
-  // ilustrações dos destaques
-  const NS = 'http://www.w3.org/2000/svg';
-  const add = (svg, n, at) => { const e = document.createElementNS(NS, n); for (const k in at) e.setAttribute(k, at[k]); svg.appendChild(e); return e; };
-  (function cesta() {
-    const s = $('vis-cesta'), cores = ['#5CC98A', '#2E9B57', '#9CC43B', '#C9E36A', '#1FA5A8', '#F08A7E'];
-    for (let y = 0; y < 14; y++) for (let x = 0; x < 18; x++) {
-      const d = Math.hypot(x - 11, y - 8);
-      if (d > 7.2 || (d > 6 && (x + y) % 3)) continue;
-      add(s, 'rect', { x: x * 22 + 4, y: y * 22 + 4, width: 17, height: 17, rx: 3, fill: cores[(x * 3 + y * 5) % cores.length], opacity: (1 - d / 9).toFixed(2) });
-    }
-    add(s, 'text', { x: 24, y: 292, fill: '#C9E36A', 'font-family': 'JetBrains Mono', 'font-size': 12 }).textContent = 'pedido #4821 · 6 itens · em separação';
-  })();
-  (function sinal() {
-    const s = $('vis-sinal');
-    [[60, 'guardada'], [110, 'guardada'], [160, 'guardada'], [210, 'enviada']].forEach(([y, t], i) => {
-      add(s, 'rect', { x: 40, y, width: 170, height: 36, rx: 8, fill: '#162A37', stroke: i < 3 ? '#FFD25E' : '#5CC98A', 'stroke-opacity': .6 });
-      add(s, 'text', { x: 54, y: y + 23, fill: '#A9B8C6', 'font-family': 'JetBrains Mono', 'font-size': 12 }).textContent = 'ficha ' + (i + 1) + ' · ' + t;
-    });
-    for (let k = 0; k < 4; k++) add(s, 'rect', { x: 270 + k * 18, y: 150 - k * 16, width: 12, height: 20 + k * 16, rx: 3, fill: k < 2 ? '#4FB3E8' : '#1D3544' });
-    add(s, 'path', { d: 'M215 228 C 250 228, 250 190, 268 175', stroke: '#5CC98A', 'stroke-width': 2, fill: 'none', 'stroke-dasharray': '4 5' });
-    add(s, 'text', { x: 252, y: 200, fill: '#7FA3B5', 'font-family': 'JetBrains Mono', 'font-size': 11 }).textContent = 'sinal voltou';
-  })();
-  G.barrasH($('vis-ml'), [{ rotulo: 'TabPFN', valor: .788, destaque: true }, { rotulo: 'CatBoost', valor: .785 }, { rotulo: 'LightGBM', valor: .774 }, { rotulo: 'Random Forest', valor: .767 }, { rotulo: 'XGBoost', valor: .718 }], { min: .6, max: .82, largura: 420, esquerda: 110, altura: 30, formato: (v) => G.fmt(v, 3), titulo: 'AUC-ROC por modelo' });
-  (function orc() {
-    const s = $('vis-orc'), v = [3.04, 5.04, 6.52, 6.83, 7.11];
-    v.forEach((x, i) => {
-      const h = x * 24; add(s, 'rect', { x: 50 + i * 64, y: 250 - h, width: 40, height: h, rx: 5, fill: '#5CC98A', opacity: (0.45 + i * 0.13).toFixed(2) });
-      add(s, 'text', { x: 70 + i * 64, y: 272, fill: '#7FA3B5', 'font-family': 'JetBrains Mono', 'font-size': 11, 'text-anchor': 'middle' }).textContent = 'ano ' + (i + 1);
-      add(s, 'text', { x: 70 + i * 64, y: 242 - h, fill: '#EAF1F6', 'font-family': 'JetBrains Mono', 'font-size': 11, 'text-anchor': 'middle' }).textContent = x.toFixed(1).replace('.', ',');
-    });
-    add(s, 'text', { x: 50, y: 40, fill: '#A9B8C6', 'font-family': 'Sora', 'font-size': 13 }).textContent = 'Economia por ano, R$ milhões';
-  })();
-})();
-</script>
 </body>
 </html>

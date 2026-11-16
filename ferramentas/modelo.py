@@ -1,64 +1,68 @@
-"""Partes comuns das páginas de caso: topo, rodapé e blocos."""
+"""Partes comuns das páginas: cabeçalho, rodapé, blocos e navegação."""
 from html import escape
 
-TOPO = """<!doctype html>
+CABECA = """<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{titulo_aba} · Bruno Lima</title>
+<title>{titulo} · Bruno Lima</title>
 <meta name="description" content="{descricao}">
 <meta name="theme-color" content="#0B1820">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/css/portfolio.css">
+<link rel="icon" href="{raiz}favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{raiz}favicon-32px.png" sizes="32x32">
+<link rel="apple-touch-icon" href="{raiz}apple-touch-icon.png">
+<link rel="stylesheet" href="{raiz}assets/css/portfolio.css">
 <style>:root{{--acento:{acento}}}{css}</style>
 </head>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo"><div class="topo__in">
-  <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
-  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
-  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
+  <a class="marca" href="{raiz}index.html"><img src="{raiz}assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
+  <nav class="nav" aria-label="Áreas">{menu}</nav>
 </div></header>
 """
 
 RODAPE = """
 <footer class="rodape"><div class="wrap rodape__in">
-  <img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
+  <img src="{raiz}assets/img/logo-negativo.svg" alt="HoldUp" width="104" height="30">
   <p>Bruno Lima · <a href="https://holdupsolucoes.com.br/">holdupsolucoes.com.br</a> · <a href="https://github.com/Bruno-LSo">github.com/Bruno-LSo</a></p>
 </div></footer>
-
-<script src="../assets/js/graficos.js"></script>
-<script src="../assets/js/projetos.js"></script>
-<script src="../assets/js/mosaico.js"></script>
-{script}
+{scripts}
 </body>
 </html>
 """
 
 
-def hero(c, area_nome, area_id):
-    ficha = "".join(f'<div><dt>{escape(k)}</dt><dd>{v}</dd></div>' for k, v in c["ficha"])
+def menu(areas, raiz, atual=None):
+    return "".join(
+        f'<a href="{raiz}areas/{a["id"]}.html"{" aria-current=\"page\"" if a["id"] == atual else ""}>{a["curto"]}</a>'
+        for a in areas
+    )
+
+
+def hero(p, area, raiz):
+    ficha = "".join(f"<div><dt>{escape(k)}</dt><dd>{v}</dd></div>" for k, v in p.get("ficha", []))
+    ficha_html = f'<dl class="ficha entra" style="--o:3">{ficha}</dl>' if ficha else ""
     return f"""<main id="conteudo">
 <section class="caso-hero"><div class="wrap">
-  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-{area_id}">{area_nome}</a></p>
-  <h1 class="entra" style="--o:1">{c['h1']}</h1>
-  <p class="lead entra" style="--o:2">{c['lead']}</p>
-  <dl class="ficha entra" style="--o:3">{ficha}</dl>
+  <p class="migalha entra"><a href="{raiz}index.html">Portfólio</a><span aria-hidden="true">/</span><a href="{raiz}areas/{area['id']}.html">{area['nome']}</a></p>
+  <h1 class="entra" style="--o:1">{p['nome']}</h1>
+  <p class="lead entra" style="--o:2">{p['lead']}</p>
+  {ficha_html}
 </div></section>
 """
 
 
-def kpis(lista):
-    itens = "".join(
-        f'<div class="kpi"><strong class="num">{v}</strong><span>{t}</span>{f"<small>{n}</small>" if n else ""}</div>'
-        for v, t, *resto in lista for n in [resto[0] if resto else ""]
-    )
+def numeros(lista):
+    if not lista:
+        return ""
+    itens = "".join(f'<div class="kpi"><strong class="num">{v}</strong><span>{t}</span></div>' for v, t in lista)
     return f'<section class="bloco"><div class="wrap"><div class="kpis revela">{itens}</div></div></section>\n'
 
 
-def bloco(rotulo, titulo, texto, corpo):
-    lado = f'<div><p class="rotulo"><i></i>{rotulo}</p><h2>{titulo}</h2>{f"<p>{texto}</p>" if texto else ""}</div>'
+def secao(titulo, corpo, apoio=""):
+    lado = f'<div><h2>{titulo}</h2>{f"<p>{apoio}</p>" if apoio else ""}</div>'
     return f'<section class="bloco"><div class="wrap bloco__grid">{lado}<div class="revela">{corpo}</div></div></section>\n'
 
 
@@ -81,10 +85,18 @@ def painel(barra, interno, nota=""):
     return f'<div class="painel">{b}<div class="painel__corpo">{interno}{n}</div></div>'
 
 
-def stack(itens):
+def tecnologias(itens, link=None):
     s = "".join(f"<span>{i}</span>" for i in itens)
-    return f'<section class="bloco"><div class="wrap"><p class="rotulo"><i></i>Tecnologias</p><div class="stack" style="margin-top:16px">{s}</div></div></section>\n'
+    l = f'<p style="margin-top:22px"><a class="btn btn--mini btn--linha" href="{link[1]}" rel="noopener">{link[0]} <span class="seta" aria-hidden="true">→</span></a></p>' if link else ""
+    return f'<section class="bloco"><div class="wrap bloco__grid"><div><h2>Tecnologias</h2></div><div><div class="stack">{s}</div>{l}</div></div></section>\n'
 
 
-def proximos(slug):
-    return f'<section class="bloco"><div class="wrap"><p class="rotulo"><i></i>Continue vendo</p><div class="proximos" style="margin-top:20px" data-proximos="{slug}"></div></div></section>\n</main>\n'
+def navegacao(ant, prox, area, raiz):
+    def item(p, rot, cls):
+        if not p:
+            return f'<span class="navp__item {cls}" aria-hidden="true"></span>'
+        return f'<a class="navp__item {cls}" href="{raiz}projetos/{p["slug"]}.html"><small>{rot}</small><span>{p["nome"]}</span></a>'
+    return (f'<nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in">'
+            f'{item(ant, "Anterior", "navp__ant")}'
+            f'<a class="navp__item navp__sum" href="{raiz}areas/{area["id"]}.html"><small>Sumário</small><span>{area["nome"]}</span></a>'
+            f'{item(prox, "Próximo", "navp__prox")}</div></nav>\n</main>\n')

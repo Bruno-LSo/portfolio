@@ -24,17 +24,16 @@
 </head>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
-<header class="topo"><div class="topo__in">
+<!--cabeca--><header class="topo"><div class="topo__in">
   <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
-  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
-  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
-</div></header>
+  <nav class="nav" aria-label="Áreas"><a href="../areas/comercio.html">Comércio</a><a href="../areas/campo.html">Território</a><a href="../areas/gestao.html">Gestão</a><a href="../areas/dados.html">Dados</a><a href="../areas/saude.html" aria-current="page">Saúde e ML</a><a href="../areas/produtos.html">Aplicativos</a></nav>
+</div></header><!--/cabeca-->
 
 <main id="conteudo">
 <section class="caso-hero"><div class="wrap">
-  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-saude">Saúde e aprendizado de máquina</a></p>
-  <h1 class="entra" style="--o:1">Quanto o SUS economiza <em>escolhendo o remédio certo</em> no AVC</h1>
-  <p class="lead entra" style="--o:2">Calculadora para gestores de saúde compararem tenecteplase e alteplase no AVC isquêmico olhando além do preço do frasco: dose, administração, sequelas, mortalidade, custo em 5 anos e impacto no orçamento do território escolhido. Usada pela equipe de campo de uma indústria farmacêutica nas conversas com secretarias e hospitais.</p>
+  <p class="migalha entra"><!--migalha--><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../areas/saude.html">Saúde e aprendizado de máquina</a><!--/migalha--></p>
+  <h1 class="entra" style="--o:1">Calculadora de custos do AVC</h1>
+  <p class="lead entra" style="--o:2">Calculadora de impacto orçamentário que compara tenecteplase e alteplase no tratamento do AVC isquêmico, considerando dose, administração, sequelas, mortalidade e custo em 5 anos, para o território escolhido. Usada pela equipe de campo em reuniões com secretarias de saúde e hospitais.</p>
   <dl class="ficha entra" style="--o:3">
     <div><dt>Cliente</dt><dd>Boehringer Ingelheim</dd></div>
     <div><dt>Público</dt><dd>Secretarias de saúde e hospitais</dd></div>
@@ -53,7 +52,7 @@
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Experimente</p><h2>Simule um território</h2><p>Versão de demonstração com as mesmas fórmulas e os parâmetros padrão da calculadora: preço fábrica CMED de setembro de 2026, ICMS 0%, perspectiva SUS e paciente de 70 kg.</p></div>
+  <div><h2>Demonstração</h2><p>Mesmas fórmulas e parâmetros padrão da calculadora: preço fábrica CMED de setembro de 2026, ICMS 0%, perspectiva SUS e paciente de 70 kg.</p></div>
   <div class="revela">
     <div class="painel">
       <div class="painel__barra"><i></i><i></i><i></i><span>calculadora / visão geral</span></div>
@@ -90,50 +89,46 @@
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Impacto no orçamento</p><h2>Cinco anos de troca gradual, no Brasil</h2><p>Cenário proposto: a tenecteplase passa a 50%, 80% e depois 100% dos casos. Valores constantes, sem desconto, com crescimento de 0,39% ao ano nas novas coortes.</p></div>
+  <div><h2>Impacto orçamentário</h2><p>Brasil, cinco anos. Participação da tenecteplase de 50%, 80% e 100% a partir do terceiro ano. Valores constantes, crescimento de 0,39% ao ano nas novas coortes.</p></div>
   <div class="revela">
     <div class="painel"><div class="painel__corpo">
       <div id="graf-impacto"></div>
-      <p class="nota">Impacto acumulado: R$ 28,5 milhões a menos em 5 anos. O remédio mais caro sobe a conta do medicamento em R$ 10,3 milhões, mas a aplicação única derruba a de administração em R$ 20,1 milhões e a de internação aguda em R$ 15,4 milhões.</p>
+      <p class="nota">Impacto acumulado de −R$ 28,5 milhões: medicamento +R$ 10,3 milhões, administração −R$ 20,1 milhões, fase aguda −R$ 15,4 milhões, acompanhamento −R$ 3,1 milhões.</p>
     </div></div>
   </div>
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Escopo</p><h2>O que foi entregue</h2></div>
+  <div><h2>Funcionalidades</h2></div>
   <ul class="lista revela">
-    <li><strong>Nove telas de análise</strong>Custo do tratamento, pacientes, visão geral, custos por sequela, longo prazo, impacto orçamentário, custo de não trombolisar e métodos.</li>
-    <li><strong>Território à escolha</strong>Brasil, UF, município com busca ou população digitada; ICMS, desconto e perspectiva SUS ou saúde suplementar.</li>
-    <li><strong>Dose e frascos automáticos</strong>A alteplase escolhe a combinação de frascos que cobre a dose com menos sobra e menor custo.</li>
+    <li><strong>Telas de análise</strong>Custo do tratamento, pacientes, visão geral, custos por sequela, longo prazo, impacto orçamentário, custo de não trombolisar e métodos.</li>
+    <li><strong>Território</strong>Brasil, UF, município com busca ou população digitada; ICMS, desconto e perspectiva SUS ou saúde suplementar.</li>
+    <li><strong>Dose e frascos</strong>Combinação de frascos de alteplase que cobre a dose com menor sobra e menor custo.</li>
     <li><strong>Mortalidade por sequela</strong>Tábua de mortalidade do IBGE ajustada por risco relativo de cada nível da escala de Rankin.</li>
     <li><strong>Memória de cálculo</strong>Cada número aberto em fórmula e referência, com 29 fontes citadas e edição de custos na sessão.</li>
-    <li><strong>Atualização sem programador</strong>Gerador em Python importa a nova lista CMED e a população do IBGE a partir de planilha.</li>
+    <li><strong>Atualização de preços</strong>Gerador em Python importa a nova lista CMED e a população do IBGE a partir de planilha.</li>
     <li><strong>Cenários e exportação</strong>Cenários salvos, exportação para Excel e CSV e nota técnica pronta para imprimir em PDF.</li>
-    <li><strong>Pronta para o celular</strong>Versão móvel com barra inferior, para usar na visita ao gestor.</li>
+    <li><strong>Celular</strong>Versão móvel com barra de navegação inferior.</li>
   </ul>
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Rigor</p><h2>Seis provas a cada recálculo</h2><p>Numa ferramenta usada para convencer gestor público, um número errado derruba a conversa. Por isso a calculadora se confere sozinha.</p></div>
+  <div><h2>Verificações</h2><p>Executadas a cada recálculo.</p></div>
   <ul class="lista revela">
-    <li><strong>Anos somam o acumulado</strong>O total de 5 anos é a soma exata de cada ano.</li>
-    <li><strong>Componentes somam o total</strong>Medicamento, administração, agudo, acompanhamento e óbitos fecham com o impacto.</li>
-    <li><strong>Cenários iguais dão zero</strong>Se o proposto for igual ao atual, o impacto tem de ser zero.</li>
-    <li><strong>Impacto é proposto menos atual</strong>A diferença é recalculada pelos dois lados.</li>
-    <li><strong>Partes da diferença fecham</strong>Tratamento, incapacidade e mortalidade somam a diferença por paciente.</li>
-    <li><strong>Preço só mexe no preço</strong>Alterar o preço muda apenas o componente de tratamento.</li>
+    <li><strong>Soma dos anos</strong>O total de 5 anos é igual à soma dos anos.</li>
+    <li><strong>Soma dos componentes</strong>Medicamento, administração, fase aguda, acompanhamento e óbitos somam o impacto.</li>
+    <li><strong>Cenários iguais</strong>Cenário proposto igual ao atual resulta em impacto zero.</li>
+    <li><strong>Diferença</strong>Impacto igual a proposto menos atual.</li>
+    <li><strong>Decomposição</strong>Tratamento, incapacidade e mortalidade somam a diferença por paciente.</li>
+    <li><strong>Preço</strong>Alterar o preço muda apenas o componente de tratamento.</li>
   </ul>
 </div></section>
 
-<section class="bloco"><div class="wrap">
-  <p class="rotulo"><i></i>Tecnologias</p>
-  <div class="stack" style="margin-top:16px"><span>HTML, CSS e JavaScript</span><span>Chart.js</span><span>SheetJS</span><span>Supabase</span><span>PostgreSQL com RLS</span><span>Python</span><span>pandas</span></div>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Tecnologias</h2></div>
+  <div class="stack"><span>HTML, CSS e JavaScript</span><span>Chart.js</span><span>SheetJS</span><span>Supabase</span><span>PostgreSQL com RLS</span><span>Python</span><span>pandas</span></div>
 </div></section>
 
-<section class="bloco"><div class="wrap">
-  <p class="rotulo"><i></i>Continue vendo</p>
-  <div class="proximos" style="margin-top:20px" data-proximos="calculadora-avc"></div>
-</div></section>
+<!--nav--><nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><span class="navp__item navp__ant" aria-hidden="true"></span><a class="navp__item navp__sum" href="../areas/saude.html"><small>Sumário</small><span>Saúde e aprendizado de máquina</span></a><a class="navp__item navp__prox" href="../projetos/risco-cardiovascular.html"><small>Próximo</small><span>Predição de risco cardiovascular</span></a></div></nav><!--/nav-->
 </main>
 
 <footer class="rodape"><div class="wrap rodape__in">
@@ -142,7 +137,6 @@
 </div></footer>
 
 <script src="../assets/js/graficos.js"></script>
-<script src="../assets/js/projetos.js"></script>
 <script src="../assets/js/mosaico.js"></script>
 <script>
 (function () {

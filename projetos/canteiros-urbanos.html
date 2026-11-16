@@ -38,21 +38,20 @@
 </head>
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
-<header class="topo"><div class="topo__in">
+<!--cabeca--><header class="topo"><div class="topo__in">
   <a class="marca" href="../index.html"><img src="../assets/img/logo-negativo.svg" alt="HoldUp" width="132" height="38"><span>Portfólio · Bruno Lima</span></a>
-  <nav class="nav" aria-label="Seções"><a href="../index.html#areas">Áreas</a><a href="../index.html#casos">Casos</a><a href="../index.html#projetos">Todos os projetos</a><a href="../index.html#contato">Contato</a></nav>
-  <a class="btn btn--mini btn--linha" href="../index.html#projetos">Ver todos</a>
-</div></header>
+  <nav class="nav" aria-label="Áreas"><a href="../areas/comercio.html" aria-current="page">Comércio</a><a href="../areas/campo.html">Território</a><a href="../areas/gestao.html">Gestão</a><a href="../areas/dados.html">Dados</a><a href="../areas/saude.html">Saúde e ML</a><a href="../areas/produtos.html">Aplicativos</a></nav>
+</div></header><!--/cabeca-->
 
 <main id="conteudo">
 <section class="caso-hero"><div class="wrap">
-  <p class="migalha entra"><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../index.html#area-comercio">Lojas virtuais e marketplaces</a></p>
-  <h1 class="entra" style="--o:1">Canteiros Urbanos: a horta do bairro <em>vendendo pela internet</em></h1>
-  <p class="lead entra" style="--o:2">Loja virtual completa para quem produz hortaliças e temperos em canteiros na cidade: o cliente monta a cesta no celular, paga online ou fecha pelo WhatsApp, repete o pedido da semana com um toque, e quem vende acompanha pedidos, estoque e clientes por bairro num painel próprio.</p>
+  <p class="migalha entra"><!--migalha--><a href="../index.html">Portfólio</a><span aria-hidden="true">/</span><a href="../areas/comercio.html">Comércio eletrônico</a><!--/migalha--></p>
+  <h1 class="entra" style="--o:1">Canteiros Urbanos</h1>
+  <p class="lead entra" style="--o:2">Loja virtual de hortaliças e temperos. O cliente monta a cesta, paga online ou envia o pedido pelo WhatsApp e pode repetir um pedido anterior. O lojista acompanha pedidos, estoque e clientes num painel administrativo.</p>
   <dl class="ficha entra" style="--o:3">
-    <div><dt>Cliente</dt><dd>Produção urbana de hortaliças e temperos</dd></div>
+    <div><dt>Cliente</dt><dd>Canteiros Urbanos</dd></div>
     <div><dt>Entrega</dt><dd>Loja, área do cliente, painel administrativo e API</dd></div>
-    <div><dt>Arquitetura</dt><dd>React, Node.js, MongoDB e Redis em Docker</dd></div>
+    <div><dt>Arquitetura</dt><dd>React, Node.js, MongoDB e Redis</dd></div>
     <div><dt>Canais</dt><dd>Site, painel do lojista e WhatsApp</dd></div>
   </dl>
 </div></section>
@@ -67,7 +66,7 @@
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Experimente</p><h2>Monte uma cesta</h2><p>Demonstração com produtos de exemplo. Ao fechar, a loja gera a mensagem do pedido para o WhatsApp no mesmo formato do sistema real, e o lojista avança o pedido pelas etapas.</p></div>
+  <div><h2>Demonstração</h2><p>Produtos de exemplo. Ao fechar o pedido, a mensagem para o WhatsApp é gerada no formato usado pelo sistema, e o pedido pode ser avançado pelas etapas do painel.</p></div>
   <div class="revela">
     <div class="painel">
       <div class="painel__barra"><i></i><i></i><i></i><span>canteirosurbanos / loja</span></div>
@@ -95,49 +94,37 @@
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Escopo</p><h2>O que foi construído</h2></div>
+  <div><h2>Funcionalidades</h2></div>
   <ul class="lista revela">
     <li><strong>Catálogo e busca</strong>Categorias com imagem, várias fotos por produto com ordem e foto principal, busca por palavra, filtros e paginação.</li>
-    <li><strong>Carrinho que vira hábito</strong>Cesta salva com nome e cópia de pedidos anteriores, para a compra recorrente da semana.</li>
-    <li><strong>Pagamento e pedido pelo WhatsApp</strong>Pagamento online integrado e, como alternativa, a mensagem do pedido pronta para enviar ao produtor.</li>
-    <li><strong>Pedido lançado pelo lojista</strong>Quem vende registra pedidos que chegaram por telefone e associa ao cliente depois.</li>
-    <li><strong>Etapas com histórico</strong>Não processado, processando, em separação, enviado, entregue ou cancelado, com registro de cada mudança.</li>
-    <li><strong>Contas e segurança</strong>Cadastro com verificação por e-mail, recuperação de senha, login com token, limite de tentativas e áreas separadas para cliente e lojista.</li>
-    <li><strong>Métricas por bairro</strong>Clientes e frete agrupados por bairro e cidade, clientes novos em 30 dias, taxa de retenção, desempenho por produto e alerta de estoque.</li>
-    <li><strong>SEO de produto</strong>Título e descrição próprios para buscadores em cada produto, e endereço amigável.</li>
+    <li><strong>Carrinho</strong>Cesta salva com nome e cópia de pedidos anteriores.</li>
+    <li><strong>Pagamento e WhatsApp</strong>Pagamento online ou envio do pedido em mensagem pelo WhatsApp.</li>
+    <li><strong>Pedido pelo lojista</strong>Registro de pedidos recebidos por telefone, associados ao cliente depois.</li>
+    <li><strong>Etapas do pedido</strong>Não processado, processando, em separação, enviado, entregue ou cancelado, com histórico.</li>
+    <li><strong>Contas</strong>Cadastro com verificação por e-mail, recuperação de senha, limite de tentativas e áreas separadas para cliente e lojista.</li>
+    <li><strong>Métricas</strong>Clientes e frete por bairro e cidade, clientes novos em 30 dias, retenção, desempenho por produto e alerta de estoque.</li>
+    <li><strong>Buscadores</strong>Título, descrição e endereço próprios para cada produto.</li>
   </ul>
 </div></section>
 
 <section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Arquitetura</p><h2>Como as peças conversam</h2></div>
+  <div><h2>Arquitetura</h2></div>
   <div class="revela">
     <div class="fluxo">
-      <div><b>cliente</b><h4>Loja em React</h4><p>Ant Design, gráficos com Recharts, máscara de telefone e endereço, carrinho e busca com cache local.</p></div>
+      <div><b>cliente</b><h4>Loja em React</h4><p>Ant Design, Recharts, carrinho e busca com cache local.</p></div>
       <div><b>api</b><h4>Node.js e Express</h4><p>Controladores, serviços e modelos separados; autenticação por token e limite de requisições.</p></div>
-      <div><b>dados</b><h4>MongoDB e Redis</h4><p>Pedidos, produtos e usuários no Mongo; Redis para cache das consultas mais pedidas.</p></div>
+      <div><b>dados</b><h4>MongoDB e Redis</h4><p>Pedidos, produtos e usuários no MongoDB; cache das consultas no Redis.</p></div>
       <div><b>serviços</b><h4>E-mail, pagamento, WhatsApp</h4><p>SendGrid para verificação e senha, gateway de pagamento e geração do link do WhatsApp.</p></div>
     </div>
-    <p class="nota">Ambiente em Docker Compose com banco e painel de administração do Mongo.</p>
+    <p class="nota">Ambiente em Docker Compose.</p>
   </div>
 </div></section>
 
-<section class="bloco"><div class="wrap bloco__grid">
-  <div><p class="rotulo"><i></i>Por que importa</p><h2>Pequeno produtor, venda organizada</h2></div>
-  <div class="texto revela">
-    <p>Quem planta em canteiro na cidade vende pouco volume para muita gente, quase sempre pelo celular. A loja respeita isso: <strong>o pedido pode terminar no WhatsApp</strong>, que é onde o cliente já está, sem perder o registro. A cesta repetida transforma a compra avulsa em assinatura informal, e as métricas por bairro mostram onde vale concentrar a entrega.</p>
-    <p>A mesma base serve para qualquer venda de hortifrúti: catálogo por produtor, estoque com quantidade, pedido com etapas e entrega por região.</p>
-  </div>
+<section class="bloco"><div class="wrap bloco__grid"><div><h2>Tecnologias</h2></div>
+  <div class="stack"><span>React 18</span><span>Ant Design</span><span>Recharts</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Mongoose</span><span>Redis</span><span>JWT</span><span>SendGrid</span><span>Braintree</span><span>Docker</span></div>
 </div></section>
 
-<section class="bloco"><div class="wrap">
-  <p class="rotulo"><i></i>Tecnologias</p>
-  <div class="stack" style="margin-top:16px"><span>React 18</span><span>Ant Design</span><span>Recharts</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Mongoose</span><span>Redis</span><span>JWT</span><span>SendGrid</span><span>Braintree</span><span>Docker</span></div>
-</div></section>
-
-<section class="bloco"><div class="wrap">
-  <p class="rotulo"><i></i>Continue vendo</p>
-  <div class="proximos" style="margin-top:20px" data-proximos="canteiros-urbanos"></div>
-</div></section>
+<!--nav--><nav class="navp" aria-label="Projetos da área"><div class="wrap navp__in"><span class="navp__item navp__ant" aria-hidden="true"></span><a class="navp__item navp__sum" href="../areas/comercio.html"><small>Sumário</small><span>Comércio eletrônico</span></a><a class="navp__item navp__prox" href="../projetos/emede.html"><small>Próximo</small><span>EMEDE</span></a></div></nav><!--/nav-->
 </main>
 
 <footer class="rodape"><div class="wrap rodape__in">
@@ -146,7 +133,6 @@
 </div></footer>
 
 <script src="../assets/js/graficos.js"></script>
-<script src="../assets/js/projetos.js"></script>
 <script src="../assets/js/mosaico.js"></script>
 <script>
 (function () {

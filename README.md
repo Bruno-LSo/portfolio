@@ -1,25 +1,26 @@
 # Portfólio · Bruno Lima · HoldUp
 
-Site com os meus projetos, agrupados pelo tipo de problema que resolvem: saúde e aprendizado de máquina, campo e território, lojas virtuais e marketplaces, sistemas de gestão, dados públicos e aplicativos.
+Projetos organizados por área.
 
 Site publicado: https://bruno-lso.github.io/portfolio/
 
-## O que tem aqui
+## Estrutura
 
-- `index.html`: abertura, áreas, casos em destaque, método e o catálogo completo com filtro e busca. O filtro fica no endereço (`?area=saude`, `?q=supabase`), para dar para mandar o link já filtrado.
-- `casos/`: um estudo de caso por projeto, com problema, escopo, números reais e, quando faz sentido, uma demonstração que roda na própria página (montar uma cesta, enviar ficha sem sinal, simular a calculadora, comparar modelos).
-- `assets/js/projetos.js`: o catálogo. Projeto novo entra aqui; se tiver estudo de caso, `caso: true`.
-- `assets/js/graficos.js`: gráficos em SVG sem dependência.
-- `assets/js/mosaico.js`: o mosaico animado da abertura, nas cores da marca. Pausa fora da tela e respeita quem prefere menos movimento.
-- `ferramentas/gerar_casos.py`: gera as páginas de caso padronizadas a partir do conteúdo no próprio script.
+- `index.html`: áreas do portfólio.
+- `areas/`: uma página por área, com o sumário dos projetos.
+- `projetos/`: uma página por projeto.
+- `ferramentas/conteudo.py`: conteúdo de todas as páginas e a ordem das áreas e dos projetos.
+- `ferramentas/gerar.py`: gera `index.html`, `areas/`, `projetos/` e `assets/js/projetos.js`.
+- `assets/js/graficos.js`: gráficos em SVG.
+- `assets/js/mosaico.js`: mosaico animado da página inicial.
+
+As páginas de Canteiros Urbanos, pesca artesanal, calculadora do AVC, risco cardiovascular e telemedicina têm demonstração própria e são editadas no HTML; o gerador atualiza apenas o cabeçalho, a migalha e a navegação delas.
 
 ## Como atualizar
 
 ```bash
-python ferramentas/gerar_casos.py
+python ferramentas/gerar.py
 ```
-
-As páginas `risco-cardiovascular`, `calculadora-avc`, `telemedicina-avc`, `canteiros-urbanos` e `pesca-artesanal` têm demonstração própria e são editadas direto no HTML.
 
 ## Cuidados com os dados
 
