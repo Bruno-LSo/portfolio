@@ -128,6 +128,38 @@ def dados_js():
         encoding="utf-8")
 
 
+PROPRIO = "https://bruno-lso.github.io/portfolio"
+_LINK_FORA = re.compile(r'<a(\s[^>]*?)?\shref="(https?://[^"]+)"([^>]*)>')
+
+
+def _nova_aba(m):
+    antes, url, depois = m.groups()
+    antes = (antes or "") + " "
+    attrs = antes + depois
+    if url.startswith(PROPRIO) or "target=" in attrs:
+        return m.group(0)
+    rel = re.search(r'\brel="([^"]*)"', attrs)
+    if rel:
+        valores = rel.group(1).split()
+        for v in ("noopener", "noreferrer"):
+            if v not in valores:
+                valores.append(v)
+        novo_rel = f'rel="{" ".join(valores)}"'
+        antes = antes.replace(rel.group(0), novo_rel)
+        depois = depois.replace(rel.group(0), novo_rel)
+        return f'<a{antes}href="{url}"{depois} target="_blank">'
+    return f'<a{antes}href="{url}"{depois} target="_blank" rel="noopener noreferrer">'
+
+
+def links_externos_em_nova_aba():
+    """Link para outra plataforma abre em nova aba (regra do Bruno, 16/11/2026)."""
+    for arq in [RAIZ / "index.html", *(RAIZ / "areas").glob("*.html"), *(RAIZ / "projetos").glob("*.html")]:
+        texto = arq.read_text(encoding="utf-8")
+        novo = _LINK_FORA.sub(_nova_aba, texto)
+        if novo != texto:
+            arq.write_text(novo, encoding="utf-8", newline="")
+
+
 def main():
     (RAIZ / "areas").mkdir(exist_ok=True)
     (RAIZ / "projetos").mkdir(exist_ok=True)
@@ -139,6 +171,7 @@ def main():
         pagina_area(a)
     pagina_inicial()
     dados_js()
+    links_externos_em_nova_aba()
     esperados = set(f"{s}.html" for s in slugs)
     sobra = [f.name for f in (RAIZ / "projetos").glob("*.html") if f.name not in esperados]
     if sobra:
