@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 18 120 166"><defs><clipPath id="hu-head"><circle cx="100" cy="132" r="10"/></clipPath>
+<symbol id="hu" viewBox="44 22 112 158"><g fill="none" stroke-linejoin="round">
+<path d="M52 30 V172" stroke-width="9" stroke-linecap="round" style="stroke:#2F3A45"/>
+<path d="M148 30 V172" stroke-width="9" stroke-linecap="round" style="stroke:#2F3A45"/>
+<path d="M52 72 V100 A48 48 0 0 0 148 100 V72" stroke-width="9" stroke-linecap="round" style="stroke:#2F3A45"/>
+<path d="M100 120 C100 92 110 70 134 50" pathLength="100" stroke-width="9" stroke-dasharray="24 76" stroke-dashoffset="0" style="stroke:#1FA5A8"/>
+<path d="M100 120 C100 92 110 70 134 50" pathLength="100" stroke-width="9" stroke-dasharray="20 80" stroke-dashoffset="-25" style="stroke:#1F6FB2"/>
+<path d="M100 120 C100 92 110 70 134 50" pathLength="100" stroke-width="9" stroke-dasharray="22 78" stroke-dashoffset="-46" style="stroke:#2E9B57"/>
+<path d="M100 120 C100 92 110 70 134 50" pathLength="100" stroke-width="9" stroke-dasharray="31 69" stroke-dashoffset="-69" style="stroke:#F2B935"/>
+<path d="M103 92 C90 78 80 64 72 44" pathLength="100" stroke-width="6" stroke-dasharray="40 60" stroke-dashoffset="0" style="stroke:#9CC43B"/>
+<path d="M103 92 C90 78 80 64 72 44" pathLength="100" stroke-width="6" stroke-dasharray="25 75" stroke-dashoffset="-41" style="stroke:#7A5C46"/>
+<path d="M103 92 C90 78 80 64 72 44" pathLength="100" stroke-width="6" stroke-dasharray="34 66" stroke-dashoffset="-66" style="stroke:#1FA5A8"/>
+<g clip-path="url(#hu-head)"><rect x="88" y="120" width="24" height="24" style="fill:#1FA5A8"/>
+<polygon points="88,120 112,120 112,128 88,138" style="fill:#1F6FB2"/>
+<polygon points="100,144 112,130 112,144" style="fill:#F2B935"/></g></g></symbol></defs><use href="#hu" x="44" y="22" width="112" height="158"/></svg>
